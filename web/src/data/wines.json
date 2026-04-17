@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Tarima",
+    "type": "white",
+    "grapes": "Moscatell, Merseguera",
+    "region": "Alicante",
+    "description": "Floral aromas with stone fruit, very expressive, balanced, and aromatic.",
+    "similar_to": "Moscato"
+  },
+  {
+    "id": 2,
+    "name": "Shaya",
+    "type": "white",
+    "grapes": "Verdejo",
+    "region": "Rueda",
+    "description": "Well balanced, complex with a distinct minerality which augments the abundance of fruit flavors.",
+    "similar_to": "Sauvignon Blanc"
+  },
+  {
+    "id": 3,
+    "name": "Polvorete",
+    "type": "white",
+    "grapes": "Godello",
+    "region": "Bierzo",
+    "description": "Nice phenolic structure to the zesty, round palate. Medium to full body, with lemon zest, mineral and some oyster shells followed by a mouthwatering finish.",
+    "similar_to": "Unoaked Chardonnay"
+  },
+  {
+    "id": 4,
+    "name": "Inazio Urruzola",
+    "type": "white",
+    "grapes": "Hondarribi Zuri",
+    "region": "Getariako Txakolina",
+    "description": "Intense aromas of citrus and white flowers, ripe tropical fruit on the base gives complexity and character.",
+    "similar_to": "Pinot Grigio"
+  },
+  {
+    "id": 5,
+    "name": "Hacienda Arinzano Blanco",
+    "type": "white",
+    "grapes": "Chardonnay",
+    "region": "Navarra",
+    "description": "Notes of citrus fruits, such as lemon and orange peel, with nuances of exotic fruit, such as pear and mango. Long and balanced finish.",
+    "similar_to": "Oaked Chardonnay"
+  },
+  {
+    "id": 6,
+    "name": "Mar de Frades",
+    "type": "white",
+    "grapes": "Albari\u00f1o",
+    "region": "Rias Baixas",
+    "description": "Aromas of stone fruits, like apricot, medlar fruit, along with almond flowers and subtle tropical salt notes. Has an elegant freshness and complexity.",
+    "similar_to": "Albari\u00f1o"
+  },
+  {
+    "id": 7,
+    "name": "Pazo Barrantes",
+    "type": "white",
+    "grapes": "Albari\u00f1o",
+    "region": "Rias Baixas",
+    "description": "Elegant, insinuating, perfumed, floral and subtle. Very vibrant, and it's fresh and with mandarin orange peel\u2013infused acidity, with tropical hints of guava and pineapple flavors.",
+    "similar_to": "Albari\u00f1o"
+  },
+  {
+    "id": 8,
+    "name": "El Coto \"Crianza\"",
+    "type": "red",
+    "grapes": "Tempranillo",
+    "region": "Rioja",
+    "description": "Balanced with notes of raspberry, cherry, spice and toasted note that lead to a silky finish.",
+    "similar_to": "Light-Bodied Pinot Noir"
+  },
+  {
+    "id": 9,
+    "name": "Finca Resalso",
+    "type": "red",
+    "grapes": "Tempranillo",
+    "region": "Ribera del Duero",
+    "description": "Ripe black cherry color with ripe red berry hints (mulberry and blackcurrant) intermingled with elegant, balsamic, oaky aromas.",
+    "similar_to": "Light-Bodied Pinot Noir"
+  },
+  {
+    "id": 10,
+    "name": "Juan Gil Silver",
+    "type": "red",
+    "grapes": "Monastrell",
+    "region": "Jumilla",
+    "description": "Full bodied wine with dark cherry color and powerful aromas of red berries, toasted and smoked notes.",
+    "similar_to": "Cabernet"
+  },
+  {
+    "id": 11,
+    "name": "Termes",
+    "type": "red",
+    "grapes": "Tempranillo",
+    "region": "Toro",
+    "description": "Balanced wine with blackberry, chocolate and walnut aromas, fruit-driven, with fine tannins.",
+    "similar_to": "Cabernet"
+  },
+  {
+    "id": 12,
+    "name": "Marqu\u00e9s de Murrieta \"Reserva\"",
+    "type": "red",
+    "grapes": "Garnacha, Cari\u00f1ena, Syrah, Cabernet",
+    "region": "Rioja",
+    "description": "Concentrated and spicy with a hint of pepper in the nose. A generous yet polished red, still fresh, with plum, mineral, and coffee bean.",
+    "similar_to": "Merlot"
+  },
+  {
+    "id": 13,
+    "name": "Juan Gil Blue",
+    "type": "red",
+    "grapes": "Monastrell, Cabernet, Syrah",
+    "region": "Jumilla",
+    "description": "Purple/black in color, with nose of pain grill\u00e9, graphite, earth tones, spice box, black fruits, and a hint of balsamic, It opens in the glass to reveal savory flavors and a lengthy, pure finish.",
+    "similar_to": "Cabernet"
+  },
+  {
+    "id": 14,
+    "name": "Clio",
+    "type": "red",
+    "grapes": "Monastrell, Cabernet",
+    "region": "Jumilla",
+    "description": "Opaque purple color with an expressive nose of brier, mineral, blueberry and blackberry fruit leading to a plush, opulent wine with great density, savory flavors and a lengthy finish.",
+    "similar_to": "Cabernet"
+  },
+  {
+    "id": 15,
+    "name": "Emilio Moro",
+    "type": "red",
+    "grapes": "Tempranillo",
+    "region": "Ribera del Duero",
+    "description": "Blueberry and plum-cake character. Full, but quite supple tannins with blackberry and chocolaty oak on the palate and intense finish.",
+    "similar_to": "Cabernet"
+  },
+  {
+    "id": 16,
+    "name": "Hacienda Arinzano Ros\u00e9",
+    "type": "ros\u00e9",
+    "grapes": "Tempranillo",
+    "region": "Navarra",
+    "description": "Intense presence of red fruits with pronounced citric notes, flowers. Velvety, refined and elegant.",
+    "similar_to": "Rose"
+  }
+]

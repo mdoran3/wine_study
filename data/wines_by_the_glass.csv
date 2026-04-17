@@ -1,0 +1,17 @@
+id,name,type,grapes,region,description,similar_to
+1,Tarima,white,"Moscatell, Merseguera",Alicante,"Floral aromas with stone fruit, very expressive, balanced, and aromatic.",Moscato
+2,Shaya,white,Verdejo,Rueda,"Well balanced, complex with a distinct minerality which augments the abundance of fruit flavors.",Sauvignon Blanc
+3,Polvorete,white,Godello,Bierzo,"Nice phenolic structure to the zesty, round palate. Medium to full body, with lemon zest, mineral and some oyster shells followed by a mouthwatering finish.",Unoaked Chardonnay
+4,Inazio Urruzola,white,Hondarribi Zuri,Getariako Txakolina,"Intense aromas of citrus and white flowers, ripe tropical fruit on the base gives complexity and character.",Pinot Grigio
+5,Hacienda Arinzano Blanco,white,Chardonnay,Navarra,"Notes of citrus fruits, such as lemon and orange peel, with nuances of exotic fruit, such as pear and mango. Long and balanced finish.",Oaked Chardonnay
+6,Mar de Frades,white,Albariño,Rias Baixas,"Aromas of stone fruits, like apricot, medlar fruit, along with almond flowers and subtle tropical salt notes. Has an elegant freshness and complexity.",Albariño
+7,Pazo Barrantes,white,Albariño,Rias Baixas,"Elegant, insinuating, perfumed, floral and subtle. Very vibrant, and it's fresh and with mandarin orange peel–infused acidity, with tropical hints of guava and pineapple flavors.",Albariño
+8,El Coto "Crianza",red,Tempranillo,Rioja,"Balanced with notes of raspberry, cherry, spice and toasted note that lead to a silky finish.",Light-Bodied Pinot Noir
+9,Finca Resalso,red,Tempranillo,Ribera del Duero,"Ripe black cherry color with ripe red berry hints (mulberry and blackcurrant) intermingled with elegant, balsamic, oaky aromas.",Light-Bodied Pinot Noir
+10,Juan Gil Silver,red,Monastrell,Jumilla,"Full bodied wine with dark cherry color and powerful aromas of red berries, toasted and smoked notes.",Cabernet
+11,Termes,red,Tempranillo,Toro,"Balanced wine with blackberry, chocolate and walnut aromas, fruit-driven, with fine tannins.",Cabernet
+12,Marqués de Murrieta "Reserva",red,"Garnacha, Cariñena, Syrah, Cabernet",Rioja,"Concentrated and spicy with a hint of pepper in the nose. A generous yet polished red, still fresh, with plum, mineral, and coffee bean.",Merlot
+13,Juan Gil Blue,red,"Monastrell, Cabernet, Syrah",Jumilla,"Purple/black in color, with nose of pain grillé, graphite, earth tones, spice box, black fruits, and a hint of balsamic, It opens in the glass to reveal savory flavors and a lengthy, pure finish.",Cabernet
+14,Clio,red,"Monastrell, Cabernet",Jumilla,"Opaque purple color with an expressive nose of brier, mineral, blueberry and blackberry fruit leading to a plush, opulent wine with great density, savory flavors and a lengthy finish.",Cabernet
+15,Emilio Moro,red,Tempranillo,Ribera del Duero,"Blueberry and plum-cake character. Full, but quite supple tannins with blackberry and chocolaty oak on the palate and intense finish.",Cabernet
+16,Hacienda Arinzano Rosé,rosé,Tempranillo,Navarra,"Intense presence of red fruits with pronounced citric notes, flowers. Velvety, refined and elegant.",Rose

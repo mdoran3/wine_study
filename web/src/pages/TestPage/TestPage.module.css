@@ -1,0 +1,365 @@
+.page {
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  gap: 16px;
+}
+
+.quizCard,
+.resultsCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exitBtn {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text);
+  opacity: 0.45;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-end;
+  touch-action: manipulation;
+  transition: opacity 0.15s;
+}
+
+@media (hover: hover) {
+  .exitBtn:hover {
+    opacity: 0.8;
+  }
+}
+
+.progress {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progressLabel {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text);
+  opacity: 0.55;
+  margin: -12px 0 0;
+  text-align: right;
+}
+
+.wineName {
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: normal;
+  color: var(--color-accent);
+  margin: 0;
+  text-align: center;
+}
+
+.iconCorrect {
+  color: #2e9e5e;
+  margin-left: 10px;
+  font-size: 26px;
+}
+
+.iconWrong {
+  color: #d94f3d;
+  margin-left: 10px;
+  font-size: 26px;
+}
+
+.question {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  color: var(--color-text);
+  text-align: center;
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionBtn {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #faf7f2;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .optionBtn:not(:disabled):hover {
+    border-color: var(--color-accent);
+    background: #fff5f6;
+  }
+}
+
+.optionBtn:disabled {
+  cursor: default;
+}
+
+.optionBtn.selectedPending {
+  background: #f3eef8;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.optionBtn.correct {
+  background: #edfaf2;
+  border-color: #2e9e5e;
+  color: #1a6640;
+  font-weight: 600;
+}
+
+.optionBtn.wrong {
+  background: #fdecea;
+  border-color: #d94f3d;
+  color: #9b2c1e;
+}
+
+.optionBtn.dimmed {
+  opacity: 0.45;
+}
+
+.confirmBtn {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  background: linear-gradient(to bottom, #a84e62 0%, #7b2d3e 45%, #5e2230 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+    0 4px 0 #3a1220,
+    0 6px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: box-shadow 0.1s, transform 0.1s, opacity 0.15s;
+}
+
+.confirmBtn:disabled {
+  opacity: 0.35;
+  box-shadow: none;
+  cursor: default;
+  transform: none;
+  background: linear-gradient(to bottom, #a84e62 0%, #7b2d3e 100%);
+}
+
+@media (hover: hover) {
+  .confirmBtn:not(:disabled):hover {
+    box-shadow:
+      0 5px 0 #3a1220,
+      0 8px 16px rgba(0, 0, 0, 0.33),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+  }
+}
+
+.confirmBtn:not(:disabled):active {
+  box-shadow:
+    0 1px 0 #3a1220,
+    0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(3px);
+}
+
+.nextBtn {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s;
+}
+
+@media (hover: hover) {
+  .nextBtn:hover {
+    background: var(--color-accent-hover);
+  }
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--color-accent);
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 0 6px #fff, 0 0 3px #fff;
+}
+
+.sub {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 0 6px #000, 0 0 3px #000;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 16px 20px;
+  max-width: 360px;
+  width: 100%;
+}
+
+.instructions p {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  padding-left: 18px;
+  position: relative;
+}
+
+.instructions p::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.startBtn {
+  font-family: var(--font-body);
+  font-size: 20px;
+  padding: 18px 48px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  background: linear-gradient(to bottom, #a84e62 0%, #7b2d3e 45%, #5e2230 100%);
+  box-shadow:
+    0 6px 0 #3a1220,
+    0 8px 16px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.1s, transform 0.1s;
+}
+
+@media (hover: hover) {
+  .startBtn:hover {
+    box-shadow:
+      0 7px 0 #3a1220,
+      0 10px 20px rgba(0, 0, 0, 0.38),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+  }
+}
+
+.startBtn:active {
+  box-shadow:
+    0 2px 0 #3a1220,
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(4px);
+}
+
+.scoreDisplay {
+  font-family: var(--font-body);
+  font-size: 48px;
+  color: var(--color-accent);
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pct {
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.missedHeading {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  opacity: 0.55;
+  margin: 0 0 10px;
+}
+
+.missed {
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.missedRow {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.missedWine {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.missedLabel {
+  opacity: 0.6;
+}
+
+.missedAnswer {
+  color: var(--color-text);
+}

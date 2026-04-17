@@ -13,3 +13,7 @@ venv/
 
 # Pytest cache
 .pytest_cache/
+
+# React / Node
+web/node_modules/
+web/dist/

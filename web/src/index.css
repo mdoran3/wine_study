@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #faf7f2;
+  --color-text: #2c1a0e;
+  --color-accent: #7b2d3e;
+  --color-accent-hover: #5e2230;
+  --color-border: #d4b8a0;
+  --font-body: 'Playfair Display', Georgia, serif;
+  --font-ui: 'Lato', system-ui, sans-serif;
+}
+
+body {
+  background:
+    linear-gradient(rgba(20, 10, 5, 0.55), rgba(20, 10, 5, 0.55)),
+    url('/background.jpg') center / cover fixed;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+button {
+  touch-action: manipulation;
+}

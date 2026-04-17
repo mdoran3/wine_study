@@ -1,0 +1,161 @@
+.page {
+  padding: 20px 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .page {
+    padding: 32px 24px;
+  }
+}
+
+.group {
+  margin-bottom: 36px;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.groupTitle {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  white-space: nowrap;
+  text-shadow: 0 0 6px #fff, 0 0 3px #fff;
+}
+
+.groupDivider {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wineName {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--color-accent);
+}
+
+.region {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text);
+  opacity: 0.45;
+}
+
+.phrase {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.4;
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.lang {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.playBtn {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(to bottom, #a84e62 0%, #7b2d3e 45%, #5e2230 100%);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+    0 4px 0 #3a1220,
+    0 6px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: box-shadow 0.1s, transform 0.1s;
+}
+
+@media (hover: hover) {
+  .playBtn:hover {
+    box-shadow:
+      0 5px 0 #3a1220,
+      0 8px 14px rgba(0, 0, 0, 0.33),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+  }
+}
+
+.playBtn:active {
+  box-shadow:
+    0 1px 0 #3a1220,
+    0 2px 4px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(3px);
+}
+
+.playBtn.playing {
+  background: linear-gradient(to bottom, #5e2230 0%, #7b2d3e 100%);
+  box-shadow:
+    0 1px 0 #3a1220,
+    0 2px 4px rgba(0, 0, 0, 0.25),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(3px);
+}
+
+.playBtn.unavailable {
+  background: linear-gradient(to bottom, #ccc, #aaa);
+  box-shadow: 0 3px 0 #888, 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: default;
+}

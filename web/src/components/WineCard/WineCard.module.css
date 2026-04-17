@@ -1,0 +1,83 @@
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.15s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.name {
+  font-size: 19px;
+  color: var(--color-accent);
+  font-weight: normal;
+  margin: 0;
+}
+
+.typeBadge {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.typeBadge.white {
+  background: #fef9ec;
+  color: #7a5c00;
+  border: 1px solid #e8d48a;
+}
+
+.typeBadge.red {
+  background: #fdf0f0;
+  color: #7b2d3e;
+  border: 1px solid #e8a8a8;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metaRow {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-family: var(--font-ui);
+}
+
+.metaKey {
+  color: var(--color-text);
+  opacity: 0.55;
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text);
+  opacity: 0.8;
+  border-top: 1px solid var(--color-border);
+  padding-top: 12px;
+  margin: 0;
+}
