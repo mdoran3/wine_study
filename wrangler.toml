@@ -1,4 +1,4 @@
-name = "meson-sabika-education"
+name = "winestudies"
 compatibility_date = "2025-04-17"
 
 assets = { directory = "./web/dist" }
