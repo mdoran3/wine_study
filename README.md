@@ -1,6 +1,6 @@
 # Wine & Server Education Center
 
-A mobile-first web application for restaurant staff to study, review, and test their knowledge of the Spanish wine list at Meson Sabika.
+A mobile-first web application for restaurant staff to study, review, and test their knowledge of a Spanish wine list.
 
 ---
 
