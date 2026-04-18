@@ -1,0 +1,10 @@
+id,name,oil_content,firmness,flake_type,description
+1,Halibut,lean,firm,large flakes,"Lean white fish with a mild, slightly sweet flavor similar to tilapia but firmer than cod. Has a gentle taste that easily takes on other flavors and is not oily."
+2,Atlantic Salmon,oily,medium,large flakes,"Rich, buttery, and slightly sweet fish with a moist texture. Flavor can range from mild to robust depending on species. High in omega-3s and distinctly oily."
+3,Lake Whitefish,lean,medium,large flakes,"Delicate, mild freshwater fish ideal for those who dislike 'fishy' flavors. Medium-firm with large flakes. Though lean, it can have higher omega-3 levels than very lean fish like cod."
+4,Chilean Sea Bass,oily,firm,large flakes,"Luxurious, rich fish with a buttery, slightly sweet flavor. White, firm flesh separates into large, tender flakes with a silky mouthfeel. High fat content makes it distinctly oily."
+5,Bacalao,lean,firm,large flakes,"Salted cod that is rehydrated before cooking. Firm, flaky texture with a mild but slightly briny flavor. Lean fish despite its rich culinary applications."
+6,Rainbow Trout,semi-oily,medium,medium flakes,"Mild fish with a delicate, slightly nutty flavor. Flesh is tender, soft, and flaky, ranging from white to pink/orange. Semi-oily with a moist texture and subtle richness."
+7,Skate,lean,firm,fibrous,"Mildly pronounced flavor similar to scallops or crab. Flesh is soft when raw but firms up when cooked. Wing meat has a distinctive fibrous, fan-like structure and is not oily."
+8,Branzino,lean,medium,small flakes,"Very mild, slightly sweet Mediterranean fish with a delicate flavor. Lean yet tender, with fine flakes and a light, clean taste. Not an oily fish."
+9,Tilapia,lean,firm,small flakes,"Extremely mild, neutral-tasting fish with slight sweetness. Firm, fine flake and highly adaptable. Flavor depends on farming conditions; not an oily fish."

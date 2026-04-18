@@ -11,7 +11,6 @@
   }
 }
 
-
 .toolbar {
   display: flex;
   align-items: center;
@@ -26,7 +25,7 @@
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 700;
-  color: var(--color-accent);
+  color: #0f4e4e;
   margin-right: 4px;
   text-shadow:
     0 0 6px #fff,
@@ -48,14 +47,14 @@
 
 @media (hover: hover) {
   .sortBtn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: #0f4e4e;
+    color: #0f4e4e;
   }
 }
 
 .sortBtn.active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: #0f4e4e;
+  border-color: #0f4e4e;
   color: #fff;
 }
 
@@ -76,7 +75,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: #0f4e4e;
   white-space: nowrap;
   text-shadow:
     0 0 6px #fff,

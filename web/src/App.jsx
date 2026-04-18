@@ -5,6 +5,8 @@ import HomePage from './pages/HomePage/HomePage';
 import ReviewPage from './pages/ReviewPage/ReviewPage';
 import TestPage from './pages/TestPage/TestPage';
 import PronunciationPage from './pages/PronunciationPage/PronunciationPage';
+import FishReviewPage from './pages/FishReviewPage/FishReviewPage';
+import FishTestPage from './pages/FishTestPage/FishTestPage';
 import styles from './App.module.css';
 
 export default function App() {
@@ -18,6 +20,8 @@ export default function App() {
             <Route path="/review" element={<ReviewPage />} />
             <Route path="/test" element={<TestPage />} />
             <Route path="/pronunciation" element={<PronunciationPage />} />
+            <Route path="/fish-review" element={<FishReviewPage />} />
+            <Route path="/fish-test" element={<FishTestPage />} />
           </Routes>
         </main>
         <Footer />

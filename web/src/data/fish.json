@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Halibut",
+    "oil_content": "lean",
+    "firmness": "firm",
+    "flake_type": "large flakes",
+    "description": "Lean white fish with a mild, slightly sweet flavor similar to tilapia but firmer than cod. Has a gentle taste that easily takes on other flavors and is not oily."
+  },
+  {
+    "id": 2,
+    "name": "Atlantic Salmon",
+    "oil_content": "oily",
+    "firmness": "medium",
+    "flake_type": "large flakes",
+    "description": "Rich, buttery, and slightly sweet fish with a moist texture. Flavor can range from mild to robust depending on species. High in omega-3s and distinctly oily."
+  },
+  {
+    "id": 3,
+    "name": "Lake Whitefish",
+    "oil_content": "lean",
+    "firmness": "medium",
+    "flake_type": "large flakes",
+    "description": "Delicate, mild freshwater fish ideal for those who dislike 'fishy' flavors. Medium-firm with large flakes. Though lean, it can have higher omega-3 levels than very lean fish like cod."
+  },
+  {
+    "id": 4,
+    "name": "Chilean Sea Bass",
+    "oil_content": "oily",
+    "firmness": "firm",
+    "flake_type": "large flakes",
+    "description": "Luxurious, rich fish with a buttery, slightly sweet flavor. White, firm flesh separates into large, tender flakes with a silky mouthfeel. High fat content makes it distinctly oily."
+  },
+  {
+    "id": 5,
+    "name": "Bacalao",
+    "oil_content": "lean",
+    "firmness": "firm",
+    "flake_type": "large flakes",
+    "description": "Salted cod that is rehydrated before cooking. Firm, flaky texture with a mild but slightly briny flavor. Lean fish despite its rich culinary applications."
+  },
+  {
+    "id": 6,
+    "name": "Rainbow Trout",
+    "oil_content": "semi-oily",
+    "firmness": "medium",
+    "flake_type": "medium flakes",
+    "description": "Mild fish with a delicate, slightly nutty flavor. Flesh is tender, soft, and flaky, ranging from white to pink/orange. Semi-oily with a moist texture and subtle richness."
+  },
+  {
+    "id": 7,
+    "name": "Skate",
+    "oil_content": "lean",
+    "firmness": "firm",
+    "flake_type": "fibrous",
+    "description": "Mildly pronounced flavor similar to scallops or crab. Flesh is soft when raw but firms up when cooked. Wing meat has a distinctive fibrous, fan-like structure and is not oily."
+  },
+  {
+    "id": 8,
+    "name": "Branzino",
+    "oil_content": "lean",
+    "firmness": "medium",
+    "flake_type": "small flakes",
+    "description": "Very mild, slightly sweet Mediterranean fish with a delicate flavor. Lean yet tender, with fine flakes and a light, clean taste. Not an oily fish."
+  },
+  {
+    "id": 9,
+    "name": "Tilapia",
+    "oil_content": "lean",
+    "firmness": "firm",
+    "flake_type": "small flakes",
+    "description": "Extremely mild, neutral-tasting fish with slight sweetness. Firm, fine flake and highly adaptable. Flavor depends on farming conditions; not an oily fish."
+  }
+]
