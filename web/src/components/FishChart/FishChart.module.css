@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 6px;
   margin-bottom: 40px;
   padding: 20px 16px 16px;
@@ -21,17 +20,19 @@
   text-shadow: 0 0 6px #fff, 0 0 3px #fff;
 }
 
+/* Row containing y-axis label, y-labels, and scrollable grid */
 .inner {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  width: 100%;
-  gap: 8px;
+  gap: 4px;
+  min-height: 0;
 }
 
+/* Rotated "Oil Content" text on far left */
 .yAxisLabel {
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -42,20 +43,17 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  padding-bottom: 32px; /* roughly aligns with grid, not x-labels */
 }
 
-.chartArea {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  gap: 0;
-}
-
+/* Row labels (Oily / Semi-Oily / Lean) — fixed width, never scrolls */
 .yLabels {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  width: 62px;
+  width: 58px;
+  padding-bottom: 32px; /* leave space for x-labels row */
+  border-right: 2px solid #0f4e4e;
 }
 
 .yLabel {
@@ -68,25 +66,30 @@
   font-weight: 600;
   color: #0f4e4e;
   white-space: nowrap;
-  padding-right: 8px;
+  padding-right: 6px;
   opacity: 0.85;
   transform: rotate(-45deg);
   transform-origin: right center;
 }
 
+/* Scrollable container — only this part moves on mobile */
+.scrollArea {
+  flex: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .gridAndX {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  min-width: 300px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(75px, 1fr));
   grid-template-rows: repeat(3, 1fr);
-  border-left: 2px solid #0f4e4e;
   border-bottom: 2px solid #0f4e4e;
-  flex: 1;
 }
 
 .cell {
@@ -126,7 +129,7 @@
 
 .xLabels {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(75px, 1fr));
   margin-top: 6px;
 }
 
@@ -149,4 +152,6 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #0f4e4e;
+  text-align: center;
+  margin-top: 22px;
 }
