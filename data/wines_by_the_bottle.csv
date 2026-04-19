@@ -1,0 +1,57 @@
+id,name,type,grapes,region,description,similar_to
+1,Mercat Brut Rose,sparkling,Macabeo,Penedes,"Pale salmon pink in color with zesty aromas of citrus, wild strawberry and fennel. Apple, berry and brioche flavors are balanced on a firm structure of mineral acidity and fine bubbles.",Sparkling Rosé
+2,Marques de Caceres Brut,sparkling,Macabeo,Penedes,"Pale straw color revived by fine bubbles. Bouquet of citrus fruits with notes of brioche with a refreshing, balanced structure.",Champagne
+3,III Lustros Grand Reserva,sparkling,"Xarello, Macabeo",Penedes,"Creamy texture and finesse of the bubbles with very attractive smoke and candied lemon-peel nose. Dried fruits and honey on the nose and palate with a long finish.",Vintage Champagne
+4,Los Bermejos,white,Malvasia,Canary Islands,"Pleasant nose with white flowers and the dry palate is supple with good freshness and a honeyed, slightly exotic with ripe peach and orange zest notes on the finish.",Viognier
+5,Segura Viudas Heredad,sparkling,"Macabeo, Chardonnay",Penedes,"Straw yellow in color, with a small, fine, plentiful mousse with aromas of aging on lees, lightly smokey.",Blanc de Blancs
+6,Segura Viudas Aria Brut,sparkling,Macabeo,Penedes,"Dry and lively with flavors of pineapple, almonds, honey, pears and fresh bread.",Prosecco
+7,Flor de Muga,rosé,Garnacha,Rioja,"An elegant, pale pink colour with very marked aromatic intensity. Complex nose with stone fruit aromas (peach, nectarine), citrus fruit, white blossom.",Dry Rosé
+8,Muga Rose,rosé,"Garnacha, Viura, Tempranillo",Rioja,"Bright pink color with nectarine and tangerine on the nose, and cantaloupe and peach on the palate and a long finish.",Dry Rosé
+9,Hacienda Rose,rosé,Tempranillo,Navarra,"Intense presence of red fruits with pronounced citric notes, flowers. Velvety, refined and elegant.",Dry Rosé
+10,Shaya,white,Verdejo,Rueda,"Well balanced, complex with a distinct minerality which augments the abundance of fruit flavors.",Sauvignon Blanc
+11,Shaya Habis,white,Verdejo,Rueda,"Grapes are specially selected and aged in oak, creating a richer more complex wine.",Oaked Sauvignon Blanc
+12,La Cana Navia,white,Albariño,Rias Baixas,"Aromas of orange, nectarine, citrus, and touch of anise. Mineral-tinged finishing flavors of pear and orange peel.",Albariño
+13,Tarima,white,"Moscatell, Merseguera",Alicante,"Floral aromas with stone fruit, very expressive, balanced, and aromatic.",Moscato
+14,Muga Blanco,white,"Viura, Malvasia",Rioja,"Crisp aromas of green apple and citrus fruit with white peach, grapefruit and hints of oak on the palate.",Unoaked Chardonnay
+15,Gessami,white,"Muscat, Gewurztraminer, Sauvignon Blanc",Penedes,"White flowers, jasmine, orange blossom, and rose. Aromas of anise and chamomile tea. Table grape, pineapple, peach, and a citric breeze.",Gewurztraminer
+16,El Coto Blanco,white,"Viura, Sauvignon Blanc, Verdejo",Rioja,"Apple blossom, apricot, pear and hazelnut on the nose. Full-bodied with fresh acidity, fruity, spicy and a waxy texture.",White Rioja
+17,Polvorete,white,Godello,Bierzo,"Nice phenolic structure to the zesty, round palate. Medium to full body, with lemon zest, mineral and some oyster shells followed by a mouthwatering finish.",Unoaked Chardonnay
+18,La Revelia,white,Godello,Bierzo,"Rich with lots of freshness, with pineapple, honey cream and mango notes, infused with floral, baking spice. Graceful, with lots of complexity through the citrusy finish.",White Burgundy
+19,Inazio Urruzola,white,"Hondarribi Zuri, Petit Corvou",Getariako Txakolina,"Intense aromas of citrus and white flowers, ripe tropical fruit on the base gives complexity and character.",Pinot Grigio
+20,Ramon Bilbao,white,Verdejo,Rueda,"Green pears, grapefruit, jasmine and melon rind on the nose. Crunchy and fresh with a medium body and crisp, refreshing finish.",Sauvignon Blanc
+21,Hacienda Arinzano Blanco,white,Chardonnay,Navarra,"Notes of citrus fruits, such as lemon and orange peel, with nuances of exotic fruit, such as pear and mango. Long and balanced finish.",Oaked Chardonnay
+22,Mar de Frades,white,Albariño,Rias Baixas,"Aromas of stone fruits, like apricot, medlar fruit, along with almond flowers and subtle tropical salt notes. Has an elegant freshness and complexity.",Albariño
+23,Pazo Barrantes Gran Vino,white,Albariño,Rias Baixas,"Elegant, insinuating, perfumed, floral and subtle. Very vibrant, and it's fresh and with mandarin orange peel–infused acidity, with tropical hints of guava and pineapple flavors.",Albariño
+24,Atance,red,Bobal,Valencia,"Aromas of bramble berry, black olive, and coffee. Medium-bodied with bright red fruit flavors, a hint of spice, wild herbs and a citric note on the finish.",Medium-Bodied Pinot Noir
+25,Can Blau,red,"Mazuelo, Garnacha, Syrah",Montsant,"Full bodied, a smooth and fruity initial burst with classic raspberry and black cherry flavors.",Merlot
+26,Alto Moncayo Veraton,red,Garnacha,Campo de Borja,"Aromas of dark cherries, plums, raisins, sweet spices and cigar box. Full-bodied and rich, ripe and velvety with a flavorful spicy finish.",Cabernet
+27,Vatan,red,Tinto del Toro,Toro,"Full-bodied with glossy tannins; juicy, chewy and nicely balanced with ripe blackberry and integrated oak.",Cabernet
+28,Laurel,red,"Garnatxa, Syrah, Cabernet Sauvignon",Priorat,"Round and powerful but harmonious with good freshness. Nicely textured, powerful and elegant. Ripe berries, spice and herbs and a touch of smoke.",Cabernet
+29,Clos Erasmus,red,"Garnacha, Syrah",Priorat,"Freshness with notes of orange blossom, floral character and incredible complexity. Blood orange, spice and cassis. Great purity, complexity, elegance and finesse.",Cabernet
+30,El Coto Crianza,red,Tempranillo,Rioja,"Balanced with notes of raspberry, cherry, spice and toasted note that lead to a silky finish.",Light-Bodied Pinot Noir
+31,Vina Alberdi Reserva,red,Tempranillo,Rioja,"Fresh aromas of ripe fruit, wild strawberries, currants and raspberries against a balsamic background with notes of vanilla, toasted caramel, bakery, coffee and sweet mints.",Medium-Bodied Pinot Noir
+32,Vina Ardanza,red,Tempranillo,Rioja,"Soft freshness, nice structure, and delicately elegant tannins with hints of sweet cherries and black currant chocolate, assembled with notes of black pepper, tobacco, nutmeg, coffee, mocha and cinnamon.",Merlot
+33,Muga Seleccion Especial,red,"Tempranillo, Garnacha",Rioja,"Suave wine with earthy, crushed cherry flavors. Gentle acidity and tannins.",Merlot
+34,Prado Enea Grand Reserva,red,"Tempranillo, Garnacha, Mazuelo, Graciano",Rioja,"The most structured Prado Enea ever. A reduced center palate that is so compact with dark fruit, dark mushrooms and cedary spice.",Cabernet
+35,Torre Muga,red,"Tempranillo, Graciano, Mazuelo",Rioja,"Deep purple in color, with aromas of ripe dark fruit, spicy notes of black pepper, mineral hints of graphite. Smooth soft tannins, elegant and balanced acidity.",Cabernet
+36,Coto de Imaz Reserva,red,Tempranillo,Rioja,"Intense cherry color with garnet edge, with ripe fruit and fine cocoa, velvety and ripe tannins.",Medium-Bodied Pinot Noir
+37,Grand Reserva 904,red,Tempranillo,Rioja,"Very intense nose, with mint chocolate vanilla and roasted coffee lead into notes of jammy fruit. Balanced structure with pleasant acidity and ultra-fine tannins providing a long and complex finish.",Cabernet
+38,Juan Gil Blue,red,"Monastrell, Cabernet, Syrah",Jumilla,"Purple/black in color, with nose of pain grillé, graphite, earth tones, spice box, black fruits, and a hint of balsamic. Opens in the glass to reveal savory flavors and a lengthy, pure finish.",Cabernet
+39,Clio,red,"Monastrell, Cabernet",Jumilla,"Opaque purple color with an expressive nose of brier, mineral, blueberry and blackberry fruit leading to a plush, opulent wine with great density, savory flavors and a lengthy finish.",Cabernet
+40,Coto de Imaz Gran Reserva,red,Tempranillo,Rioja,"Aromas of spiced cherries, blueberries, orange peel, savory plums with chocolate and vanilla. Creamy tannins with dark fruit and long finish.",Cabernet
+41,El Nido,red,"Cabernet, Monastrell",Jumilla,"Scents of blueberry, boysenberry, tobacco, licorice and vanilla bean. Juicy and firmly built with suave candied dark fruit flavors accented by floral and Asian spice qualities. Impressively long finish.",Cabernet
+42,Juan Gil Silver,red,Monastrell,Jumilla,"Full bodied wine with dark cherry color and powerful aromas of red berries, toasted and smoked notes.",Cabernet
+43,Tinto Pesquera,red,Tempranillo,Ribera del Duero,"Elegant and soft with aromas of red fruit, dark cherries, vanilla, and nutmeg. Silky on the mid-palate with well-rounded tannins and a velvety finish.",Merlot
+44,Malleolus,red,Tempranillo,Ribera del Duero,"Rich flavors of blackberry, currant, toast and mineral which are harmonious over well-integrated tannins showing balance and a long finish of spice and smoke.",Cabernet
+45,Zarihs,red,Syrah,Ribera del Duero,"The nose has a powerful impression of blackberries with a hint of wood smoke and sweet vanilla. Flavors of dark berries dominate; wild blackberries and dried plums with notes of espresso coffee.",Syrah
+46,Emilio Moro,red,Tempranillo,Ribera del Duero,"Blueberry and plum-cake character. Full, but quite supple tannins with blackberry and chocolaty oak on the palate and intense finish.",Cabernet
+47,Finca Resalso,red,Tempranillo,Ribera del Duero,"Ripe black cherry color with ripe red berry hints (mulberry and blackcurrant) intermingled with elegant, balsamic, oaky aromas.",Medium-Bodied Pinot Noir
+48,Termes,red,Tempranillo,Toro,"Balanced wine with blackberry, chocolate and walnut aromas, fruit-driven, with fine tannins.",Cabernet
+49,Marques de Murrieta Reserva,red,"Tempranillo, Mazuelo, Graciano, Garnacha",Rioja,"Concentrated and spicy with a hint of pepper in the nose. A generous yet polished red, still fresh, with plum, mineral, and coffee bean.",Merlot
+50,Blue Grey,red,"Grenache, Carignan, Syrah, Merlot",Priorat,"Ripe black fruit and cherry flavors that are focused and accented by herbal mineral and spicy notes.",Merlot
+51,Honoro Vera,red,Monastrell,Jumilla,"Bright acidity, integrated tannins with pepper, plum, fig, blackberry, leather, black raisin, smoke, tobacco, and dark chocolate notes.",Cabernet
+52,Clar de Basc,red,"Garnacha, Cariñena, Syrah, Cabernet",Priorat,"Fresh pithy fruit on the nose with notes of cherry, red currant, raspberry and blackberry. Elegant on the palate, with fresh berry fruit and hints of liquorice with a long mineral-spicy finish.",Cabernet
+53,Codorniu Zero Rose,sparkling non-alcoholic,"Macabeo, Xarel-lo, Parraleta",Penedes,A pleasant non-alcoholic sparkling rosé.,Non-Alcoholic Sparkling
+54,Codorniu Zero,sparkling non-alcoholic,Airén,Penedes,A pleasant non-alcoholic sparkling wine made with the white Airén.,Non-Alcoholic Sparkling
+55,Shania White 0.0,white non-alcoholic,Verdejo,Rueda,"Citrus aromas with hints of lime and white flowers on the nose.",Non-Alcoholic White
+56,Shania Red 0.0,red non-alcoholic,"Monastrell, Syrah",Jumilla,"Intense flavors of dark cherries, blueberries and hints of plum.",Non-Alcoholic Red
