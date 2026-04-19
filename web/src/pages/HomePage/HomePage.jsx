@@ -14,6 +14,10 @@ export default function HomePage() {
         🍷 Review the Wines
         <span className={styles.btnSub}>by the glass</span>
       </button>
+      <button className={styles.navBtn} onClick={() => navigate('/bottle-review')}>
+        🍾 Review the Wines
+        <span className={styles.btnSub}>by the bottle</span>
+      </button>
       <button className={styles.navBtn} onClick={() => navigate('/pronunciation')}>
         🗣️ Practice Wine Pronunciation
       </button>

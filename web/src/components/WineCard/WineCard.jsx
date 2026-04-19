@@ -5,7 +5,7 @@ export default function WineCard({ wine }) {
     <article className={styles.card}>
       <div className={styles.header}>
         <h3 className={styles.name}>{wine.name}</h3>
-        <span className={`${styles.typeBadge} ${styles[wine.type]}`}>
+        <span className={`${styles.typeBadge} ${styles[wine.type.split(' ')[0]]}`}>
           {wine.type}
         </span>
       </div>

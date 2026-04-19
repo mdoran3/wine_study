@@ -52,6 +52,18 @@
   border: 1px solid #e8a8a8;
 }
 
+.typeBadge.rosé {
+  background: #fdf0f6;
+  color: #8b2a5a;
+  border: 1px solid #e8a8cc;
+}
+
+.typeBadge.sparkling {
+  background: #f4f8e8;
+  color: #4a6a00;
+  border: 1px solid #c8e08a;
+}
+
 .meta {
   display: flex;
   flex-direction: column;
