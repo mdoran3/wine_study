@@ -42,7 +42,7 @@ All 32 possible questions (16 wines × 2 question types).
 | Finca Resalso | Tempranillo |
 | Juan Gil Silver | Monastrell |
 | Termes | Tempranillo |
-| Marqués de Murrieta "Reserva" | Garnacha, Cariñena, Syrah, Cabernet |
+| Marqués de Murrieta "Reserva" | Tempranillo, Mazuelo, Graciano, Garnacha |
 | Juan Gil Blue | Monastrell, Cabernet, Syrah |
 | Clio | Monastrell, Cabernet |
 | Emilio Moro | Tempranillo |
@@ -70,7 +70,7 @@ All 32 possible questions (16 wines × 2 question types).
 | Finca Resalso | Ribera del Duero | Tempranillo |
 | Juan Gil Silver | Jumilla | Monastrell |
 | Termes | Toro | Tempranillo |
-| Marqués de Murrieta "Reserva" | Rioja | Garnacha, Cariñena, Syrah, Cabernet |
+| Marqués de Murrieta "Reserva" | Rioja | Tempranillo, Mazuelo, Graciano, Garnacha |
 | Juan Gil Blue | Jumilla | Monastrell, Cabernet, Syrah |
 | Clio | Jumilla | Monastrell, Cabernet |
 | Emilio Moro | Ribera del Duero | Tempranillo |
