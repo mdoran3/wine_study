@@ -34,9 +34,11 @@ function generateQuiz() {
   for (const item of menu) {
     const ingredients = item.main_ingredients.split(',').map(s => s.trim());
     const correct = ingredients[0];
-    const allOtherIngredients = menu
-      .filter(i => i.id !== item.id)
-      .flatMap(i => i.main_ingredients.split(',').map(s => s.trim()));
+    // For desserts, distractors come only from other dessert ingredients
+    const pool = item.type === 'dessert'
+      ? menu.filter(i => i.type === 'dessert' && i.id !== item.id)
+      : menu.filter(i => i.id !== item.id);
+    const allOtherIngredients = pool.flatMap(i => i.main_ingredients.split(',').map(s => s.trim()));
     const distractors = shuffle([...new Set(allOtherIngredients.filter(i => i !== correct))]).slice(0, 3);
     questions.push({
       question: `Which is a key ingredient in ${item.name}?`,
