@@ -8,6 +8,8 @@ import PronunciationPage from './pages/PronunciationPage/PronunciationPage';
 import BottleReviewPage from './pages/BottleReviewPage/BottleReviewPage';
 import FishReviewPage from './pages/FishReviewPage/FishReviewPage';
 import FishTestPage from './pages/FishTestPage/FishTestPage';
+import HolidayMenusPage from './pages/HolidayMenusPage/HolidayMenusPage';
+import MothersDayPage from './pages/MothersDayPage/MothersDayPage';
 import styles from './App.module.css';
 
 export default function App() {
@@ -24,6 +26,8 @@ export default function App() {
             <Route path="/bottle-review" element={<BottleReviewPage />} />
             <Route path="/fish-review" element={<FishReviewPage />} />
             <Route path="/fish-test" element={<FishTestPage />} />
+            <Route path="/holiday" element={<HolidayMenusPage />} />
+            <Route path="/holiday/mothers-day-2026" element={<MothersDayPage />} />
           </Routes>
         </main>
         <Footer />

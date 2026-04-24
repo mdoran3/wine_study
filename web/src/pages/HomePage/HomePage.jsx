@@ -34,6 +34,12 @@ export default function HomePage() {
       <button className={`${styles.navBtn} ${styles.fishBtn}`} onClick={() => navigate('/fish-test')}>
         📝 Generate Fish Test
       </button>
+      <div className={styles.divider}>
+        <span>🎉 Holiday</span>
+      </div>
+      <button className={`${styles.navBtn} ${styles.holidayBtn}`} onClick={() => navigate('/holiday')}>
+        🎉 Holiday Menus
+      </button>
     </section>
   );
 }

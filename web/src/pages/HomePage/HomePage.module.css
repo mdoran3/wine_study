@@ -95,6 +95,45 @@
   transform: translateY(4px);
 }
 
+.holidayBtn {
+  background:
+    linear-gradient(
+      to bottom,
+      #7a4a9e 0%,
+      #5a2d7e 45%,
+      #44206a 100%
+    );
+  box-shadow:
+    0 6px 0 #2a1040,
+    0 8px 16px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+@media (hover: hover) {
+  .navBtn.holidayBtn:hover {
+    background:
+      linear-gradient(
+        to bottom,
+        #8a5aae 0%,
+        #6a3d8e 45%,
+        #54307a 100%
+      );
+    box-shadow:
+      0 7px 0 #2a1040,
+      0 10px 20px rgba(0, 0, 0, 0.38),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+  }
+}
+
+.holidayBtn:active {
+  box-shadow:
+    0 2px 0 #2a1040,
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(4px);
+}
+
 .btnSub {
   font-size: 14px;
   opacity: 0.75;
