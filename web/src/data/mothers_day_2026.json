@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "type": "cold tapa",
+    "name": "Jam\u00f3n Serrano",
+    "main_ingredients": "Serrano ham, Manchego cheese, ripe tomatoes, toast points",
+    "description": "Traditional Serrano ham served with Manchego cheese, ripe tomatoes, and toast points",
+    "sauces": ""
+  },
+  {
+    "id": 2,
+    "type": "cold tapa",
+    "name": "Patatas con Alioli",
+    "main_ingredients": "Rustic garlic potato salad",
+    "description": "Rustic garlic potato salad",
+    "sauces": ""
+  },
+  {
+    "id": 3,
+    "type": "cold tapa",
+    "name": "Ensalada con Cangrejos",
+    "main_ingredients": "Crabmeat, avocado, vine-ripened tomatoes, chives, capers, red onion",
+    "description": "Crabmeat with avocado, vine-ripened tomatoes, chives, capers, and red onion",
+    "sauces": "Balsamic vinaigrette, garlic pepper mayonnaise"
+  },
+  {
+    "id": 4,
+    "type": "cold tapa",
+    "name": "Tostada de Queso",
+    "main_ingredients": "Creamy burrata, caramelized cherry tomatoes, fresh basil, toast",
+    "description": "Creamy burrata served atop toast points with caramelized cherry tomatoes and fresh basil",
+    "sauces": ""
+  },
+  {
+    "id": 5,
+    "type": "hot tapa",
+    "name": "Bu\u00f1uelos de Mariscos",
+    "main_ingredients": "Shrimp, squid, crabmeat",
+    "description": "Seafood croquettes made with shrimp, squid, and crabmeat",
+    "sauces": "Vegetable alioli"
+  },
+  {
+    "id": 6,
+    "type": "hot tapa",
+    "name": "Queso de Cabra",
+    "main_ingredients": "Goat cheese, tomato basil sauce, garlic bread",
+    "description": "Oven-baked goat cheese in tomato basil sauce, served with garlic bread",
+    "sauces": "Tomato basil sauce"
+  },
+  {
+    "id": 7,
+    "type": "hot tapa",
+    "name": "D\u00e1tiles con Tocino",
+    "main_ingredients": "Roasted dates, bacon, red bell pepper sauce",
+    "description": "Roasted dates wrapped in bacon, served with red bell pepper sauce",
+    "sauces": "Red bell pepper sauce"
+  },
+  {
+    "id": 8,
+    "type": "hot tapa",
+    "name": "Empanada de Buey",
+    "main_ingredients": "Ground beef tenderloin, goat cheese, wild mushrooms, Monterey Jack, Parmesan",
+    "description": "Puff pastry filled with ground beef tenderloin, goat cheese, and wild mushrooms, topped with Monterey Jack and Parmesan",
+    "sauces": "Tomato goat cheese sauce"
+  },
+  {
+    "id": 9,
+    "type": "entree",
+    "name": "Lubina Chilena",
+    "main_ingredients": "Chilean sea bass, roasted root vegetables, tri-color quinoa",
+    "description": "Grilled Chilean sea bass served with roasted root vegetables, tri-color quinoa, and finished with a lemon butter sauce",
+    "sauces": "Lemon butter sauce"
+  },
+  {
+    "id": 10,
+    "type": "entree",
+    "name": "Pechuga de Pollo",
+    "main_ingredients": "Chicken breast, julienne vegetables, creamy potato pur\u00e9e",
+    "description": "Grilled chicken breast accompanied by julienne vegetables and creamy potato pur\u00e9e, finished with a delicate lemon cream sauce",
+    "sauces": "Lemon cream sauce"
+  },
+  {
+    "id": 11,
+    "type": "entree",
+    "name": "Chuleta de Cerdo",
+    "main_ingredients": "French-cut pork chop, sweet potato pur\u00e9e, red wine-poached pear",
+    "description": "Grilled French-cut pork chop served with sweet potato pur\u00e9e, red wine-poached pear, and Pedro Xim\u00e9nez black truffle cream sauce",
+    "sauces": "Pedro Xim\u00e9nez black truffle cream sauce"
+  },
+  {
+    "id": 12,
+    "type": "entree",
+    "name": "Solomillos a la Plancha",
+    "main_ingredients": "Beef tenderloin medallions, mashed potatoes, broccolini",
+    "description": "Grilled beef tenderloin medallions served with mashed potatoes and broccolini, drizzled with a rich red wine reduction",
+    "sauces": "Red wine reduction"
+  },
+  {
+    "id": 13,
+    "type": "dessert",
+    "name": "Delicia de Chocolate",
+    "main_ingredients": "Chocolate mousse, chocolate sponge cake, mixed berry compote",
+    "description": "Chocolate mousse layered with chocolate sponge cake, served with mixed berry compote",
+    "sauces": ""
+  },
+  {
+    "id": 14,
+    "type": "dessert",
+    "name": "Tres Leches",
+    "main_ingredients": "Vanilla sponge cake, three milks, fresh berries, cinnamon",
+    "description": "Classic vanilla sponge cake soaked in three milks, served with fresh berries and cinnamon cr\u00e8me anglaise",
+    "sauces": "Cinnamon cr\u00e8me anglaise"
+  },
+  {
+    "id": 15,
+    "type": "dessert",
+    "name": "Tarta de Pistacho",
+    "main_ingredients": "Pistachio cheesecake, caramelized bananas",
+    "description": "Pistachio cheesecake served with caramelized bananas and caramel cr\u00e8me anglaise",
+    "sauces": "Caramel cr\u00e8me anglaise"
+  },
+  {
+    "id": 16,
+    "type": "dessert",
+    "name": "Tarta de Coco y Mango",
+    "main_ingredients": "Coconut mousse, mango mousse, chocolate cookie crumble, pineapple coulis",
+    "description": "Coconut mousse layered with mango mousse atop a chocolate cookie crumble, finished with pineapple coulis",
+    "sauces": "Pineapple coulis"
+  }
+]

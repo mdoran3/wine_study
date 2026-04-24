@@ -10,6 +10,7 @@ import FishReviewPage from './pages/FishReviewPage/FishReviewPage';
 import FishTestPage from './pages/FishTestPage/FishTestPage';
 import HolidayMenusPage from './pages/HolidayMenusPage/HolidayMenusPage';
 import MothersDayPage from './pages/MothersDayPage/MothersDayPage';
+import MothersDayReviewPage from './pages/MothersDayReviewPage/MothersDayReviewPage';
 import styles from './App.module.css';
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/fish-test" element={<FishTestPage />} />
             <Route path="/holiday" element={<HolidayMenusPage />} />
             <Route path="/holiday/mothers-day-2026" element={<MothersDayPage />} />
+            <Route path="/holiday/mothers-day-2026/review" element={<MothersDayReviewPage />} />
           </Routes>
         </main>
         <Footer />
