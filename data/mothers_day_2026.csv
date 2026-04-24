@@ -1,0 +1,17 @@
+id,type,name,main_ingredients,description,sauces
+1,cold tapa,Jamón Serrano,"Serrano ham, Manchego cheese, ripe tomatoes, toast points","Traditional Serrano ham served with Manchego cheese, ripe tomatoes, and toast points",
+2,cold tapa,Patatas con Alioli,Rustic garlic potato salad,Rustic garlic potato salad,Alioli
+3,cold tapa,Ensalada con Cangrejos,"Crabmeat, avocado, vine-ripened tomatoes, chives, capers, red onion","Crabmeat with avocado, vine-ripened tomatoes, chives, capers, and red onion","Balsamic vinaigrette, garlic pepper mayonnaise"
+4,cold tapa,Tostada de Queso,"Creamy burrata, caramelized cherry tomatoes, fresh basil, toast","Creamy burrata served atop toast points with caramelized cherry tomatoes and fresh basil",
+5,hot tapa,Buñuelos de Mariscos,"Shrimp, squid, crabmeat","Seafood croquettes made with shrimp, squid, and crabmeat",Vegetable alioli
+6,hot tapa,Queso de Cabra,"Goat cheese, tomato basil sauce, garlic bread","Oven-baked goat cheese in tomato basil sauce, served with garlic bread",Tomato basil sauce
+7,hot tapa,Dátiles con Tocino,"Roasted dates, bacon, red bell pepper sauce","Roasted dates wrapped in bacon, served with red bell pepper sauce",Red bell pepper sauce
+8,hot tapa,Empanada de Buey,"Ground beef tenderloin, goat cheese, wild mushrooms, Monterey Jack, Parmesan","Puff pastry filled with ground beef tenderloin, goat cheese, and wild mushrooms, topped with Monterey Jack and Parmesan","Tomato goat cheese sauce"
+9,entree,Lubina Chilena,"Chilean sea bass, roasted root vegetables, tri-color quinoa","Grilled Chilean sea bass served with roasted root vegetables, tri-color quinoa, and finished with a lemon butter sauce",Lemon butter sauce
+10,entree,Pechuga de Pollo,"Chicken breast, julienne vegetables, creamy potato purée","Grilled chicken breast accompanied by julienne vegetables and creamy potato purée, finished with a delicate lemon cream sauce",Lemon cream sauce
+11,entree,Chuleta de Cerdo,"French-cut pork chop, sweet potato purée, red wine-poached pear","Grilled French-cut pork chop served with sweet potato purée, red wine-poached pear, and Pedro Ximénez black truffle cream sauce",Pedro Ximénez black truffle cream sauce
+12,entree,Solomillos a la Plancha,"Beef tenderloin medallions, mashed potatoes, broccolini","Grilled beef tenderloin medallions served with mashed potatoes and broccolini, drizzled with a rich red wine reduction",Red wine reduction
+13,dessert,Delicia de Chocolate,"Chocolate mousse, chocolate sponge cake, mixed berry compote","Chocolate mousse layered with chocolate sponge cake, served with mixed berry compote",
+14,dessert,Tres Leches,"Vanilla sponge cake, three milks, fresh berries, cinnamon","Classic vanilla sponge cake soaked in three milks, served with fresh berries and cinnamon crème anglaise",Cinnamon crème anglaise
+15,dessert,Tarta de Pistacho,"Pistachio cheesecake, caramelized bananas","Pistachio cheesecake served with caramelized bananas and caramel crème anglaise",Caramel crème anglaise
+16,dessert,Tarta de Coco y Mango,"Coconut mousse, mango mousse, chocolate cookie crumble, pineapple coulis","Coconut mousse layered with mango mousse atop a chocolate cookie crumble, finished with pineapple coulis",Pineapple coulis
