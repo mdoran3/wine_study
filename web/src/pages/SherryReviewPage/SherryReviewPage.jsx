@@ -9,6 +9,7 @@ export default function SherryReviewPage() {
 
   return (
     <div className={styles.page}>
+      <h2 className={styles.heading}>Review Sherry Knowledge</h2>
       <SherryInfoPanel />
       <div className={styles.grid}>
         {sherry.map(s => (

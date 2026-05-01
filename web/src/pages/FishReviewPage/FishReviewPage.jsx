@@ -44,6 +44,7 @@ export default function FishReviewPage() {
 
   return (
     <div className={styles.page}>
+      <h2 className={styles.heading}>Review Fish Knowledge</h2>
       <FishChart />
       <div className={styles.toolbar}>
         <span className={styles.sortLabel}>Sort by:</span>

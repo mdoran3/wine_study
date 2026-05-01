@@ -31,6 +31,7 @@ export default function ReviewPage() {
 
   return (
     <div className={styles.page}>
+      <h2 className={styles.heading}>Review the Wines by the Glass</h2>
       <div className={styles.toolbar}>
         <span className={styles.sortLabel}>Sort by:</span>
         {SORT_OPTIONS.map(opt => (

@@ -15,6 +15,7 @@ export default function MothersDayReviewPage() {
 
   return (
     <div className={styles.page}>
+      <h2 className={styles.heading}>Mother's Day Menu</h2>
       {SECTIONS.map(({ type, label }) => {
         const items = menu.filter(item => item.type === type);
         return (

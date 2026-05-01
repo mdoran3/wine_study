@@ -94,6 +94,7 @@ export default function PronunciationPage() {
 
   return (
     <div className={styles.page}>
+      <h2 className={styles.heading}>Wine Pronunciation</h2>
       {TYPE_ORDER.map(type => (
         groups[type].length > 0 && (
           <section key={type} className={styles.group}>

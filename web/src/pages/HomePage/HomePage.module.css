@@ -3,170 +3,212 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 48px 24px;
+  gap: 28px;
+  padding: 40px 24px;
   width: 100%;
 }
 
-/* ── Drawer shell ───────────────────────────────────────────── */
+/* ── Section group ───────────────────────────────────────────── */
 
 .drawer {
-  width: min(360px, 100%);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  width: min(400px, 100%);
 }
 
-/* ── Drawer header (the clickable row) ──────────────────────── */
+/* ── Section header ──────────────────────────────────────────── */
 
 .drawerHeader {
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  font-family: var(--font-body);
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: filter 0.15s;
-}
-
-.drawerHeader:hover { filter: brightness(1.12); }
-.drawerHeader:active { filter: brightness(0.9); }
-
-.chevron {
-  font-size: 22px;
-  line-height: 1;
-  display: inline-block;
-  transform: rotate(0deg);
-  transition: transform 0.25s ease;
-}
-
-.chevronOpen {
-  transform: rotate(90deg);
-}
-
-/* ── Drawer body (slides open) ──────────────────────────────── */
-
-.drawerBody {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.drawerBodyOpen {
-  max-height: 600px;
-}
-
-.drawerItems {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px 20px;
+  padding: 0 2px 12px;
+  border: none;
+  background: none;
+  cursor: default;
+  width: 100%;
 }
 
-/* ── Nav buttons inside drawers ─────────────────────────────── */
+.drawerHeader span:first-child {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 3px solid currentColor;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0eaea 100%);
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 7px currentColor,
+    0 6px 12px rgba(0, 0, 0, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
 
-.navBtn {
-  font-family: var(--font-body);
-  font-size: 18px;
-  padding: 16px 32px;
+.drawerRule {
+  flex: 1;
+  height: 1px;
+}
+
+.chevron { display: none; }
+.chevronOpen { display: none; }
+
+/* ── Section items ───────────────────────────────────────────── */
+
+.drawerBody { max-height: none; overflow: visible; }
+.drawerBodyOpen { max-height: none; }
+
+.drawerItems {
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 6px;
+  padding: 0 0 0 20px;
+}
+
+.coilSvg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+/* ── Nav buttons ─────────────────────────────────────────────── */
+
+.navBtn {
+  position: relative;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 13px 16px 13px 24px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 4px;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--color-text);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 22px,
+      rgba(140, 160, 210, 0.13) 22px, rgba(140, 160, 210, 0.13) 23px
+    ),
+    #fefdf6;
+  border: 1px solid #e0d8cc;
+  border-left-width: 10px;
+  border-radius: 6px;
   cursor: pointer;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.1s, transform 0.1s, filter 0.15s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.15s, transform 0.12s, background 0.12s;
+  z-index: 1;
+  overflow: visible;
 }
 
-.navBtn:hover { filter: brightness(1.1); transform: translateY(-1px); }
-.navBtn:active { filter: brightness(0.9); transform: translateY(2px); }
+.navBtn::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background:
+    radial-gradient(circle at 50% 33%, transparent 4px, rgba(0,0,0,0.3) 4px, rgba(0,0,0,0.3) 6px, transparent 6px),
+    radial-gradient(circle at 50% 67%, transparent 4px, rgba(0,0,0,0.3) 4px, rgba(0,0,0,0.3) 6px, transparent 6px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.navBtnInner {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+}
+
+.navBtn::after {
+  content: '›';
+  font-size: 18px;
+  opacity: 0.2;
+  flex-shrink: 0;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.navBtn:hover {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
+  transform: translateX(3px);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 22px,
+      rgba(140, 160, 210, 0.13) 22px, rgba(140, 160, 210, 0.13) 23px
+    ),
+    var(--btn-hover-bg, #fefdf6);
+}
+
+.navBtn:hover::after {
+  opacity: 0.6;
+  transform: translateX(2px);
+}
+
+.navBtn:active {
+  transform: translateX(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
 
 .btnSub {
-  font-size: 13px;
-  opacity: 0.75;
-  font-style: italic;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  opacity: 0.35;
+  white-space: nowrap;
 }
 
-/* ── Theme: Wine ────────────────────────────────────────────── */
+/* ── Theme: Wine ─────────────────────────────────────────────── */
 
-.drawer_wine { background: #5e2230; }
+.drawer_wine .drawerHeader span:first-child { color: #7b2d3e; }
+.drawer_wine .drawerRule { background: linear-gradient(to right, #7b2d3e55, transparent); }
+.navBtn_wine { border-left-color: #7b2d3e; }
+.navBtn_wine    { --btn-hover-bg: #f5e8eb; }
 
-.drawerHeader.drawer_wine,
-.drawer_wine .drawerHeader {
-  background: linear-gradient(to bottom, #a84e62 0%, #7b2d3e 45%, #5e2230 100%);
-}
+/* ── Theme: Fish ─────────────────────────────────────────────── */
 
-.navBtn_wine {
-  background: linear-gradient(to bottom, #8b3448 0%, #6b2538 45%, #5a1e30 100%);
-  box-shadow: 0 4px 0 #3a1220, 0 6px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
+.drawer_fish .drawerHeader span:first-child { color: #0f4e4e; }
+.drawer_fish .drawerRule { background: linear-gradient(to right, #0f4e4e55, transparent); }
+.navBtn_fish { border-left-color: #0f4e4e; }
+.navBtn_fish    { --btn-hover-bg: #e4f2f2; }
 
-/* ── Theme: Fish ────────────────────────────────────────────── */
+/* ── Theme: Sherry ───────────────────────────────────────────── */
 
-.drawer_fish { background: #0d4a4a; }
+.drawer_sherry .drawerHeader span:first-child { color: #7a5c06; }
+.drawer_sherry .drawerRule { background: linear-gradient(to right, #7a5c0655, transparent); }
+.navBtn_sherry { border-left-color: #7a5c06; }
+.navBtn_sherry  { --btn-hover-bg: #f5edcd; }
 
-.drawer_fish .drawerHeader {
-  background: linear-gradient(to bottom, #1a6b6b 0%, #0f4e4e 45%, #0d4a4a 100%);
-}
+/* ── Theme: Holiday ──────────────────────────────────────────── */
 
-.navBtn_fish {
-  background: linear-gradient(to bottom, #155c5c 0%, #0f4e4e 45%, #0b3e3e 100%);
-  box-shadow: 0 4px 0 #062e2e, 0 6px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
+.drawer_holiday .drawerHeader span:first-child { color: #54287a; }
+.drawer_holiday .drawerRule { background: linear-gradient(to right, #54287a55, transparent); }
+.navBtn_holiday { border-left-color: #54287a; }
+.navBtn_holiday { --btn-hover-bg: #ede0f7; }
 
-/* ── Theme: Sherry ──────────────────────────────────────────── */
+/* ── Theme: Allergy ──────────────────────────────────────────── */
 
-.drawer_sherry { background: #6b4e06; }
-
-.drawer_sherry .drawerHeader {
-  background: linear-gradient(to bottom, #b8860b 0%, #8b6508 45%, #6b4e06 100%);
-}
-
-.navBtn_sherry {
-  background: linear-gradient(to bottom, #9b7508 0%, #7a5c06 45%, #5e4705 100%);
-  box-shadow: 0 4px 0 #3d2d03, 0 6px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-/* ── Theme: Holiday ─────────────────────────────────────────── */
-
-.drawer_holiday { background: #44206a; }
-
-.drawer_holiday .drawerHeader {
-  background: linear-gradient(to bottom, #7a4a9e 0%, #5a2d7e 45%, #44206a 100%);
-}
-
-.navBtn_holiday {
-  background: linear-gradient(to bottom, #6a3d8e 0%, #54307a 45%, #3e2060 100%);
-  box-shadow: 0 4px 0 #2a1040, 0 6px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-/* ── Theme: Allergy ─────────────────────────────────────────── */
-
-.drawer_allergy { background: #7a3300; }
-
-.drawer_allergy .drawerHeader {
-  background: linear-gradient(to bottom, #c45a00 0%, #963d00 45%, #7a3300 100%);
-}
-
-.navBtn_allergy {
-  background: linear-gradient(to bottom, #a84e00 0%, #7a3300 45%, #612800 100%);
-  box-shadow: 0 4px 0 #3d1800, 0 6px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
+.drawer_allergy .drawerHeader span:first-child { color: #7a3300; }
+.drawer_allergy .drawerRule { background: linear-gradient(to right, #7a330055, transparent); }
+.navBtn_allergy { border-left-color: #7a3300; }
+.navBtn_allergy { --btn-hover-bg: #f5e0cc; }
