@@ -4,37 +4,38 @@
     {
       "name": "Soups & Salads",
       "items": [
-        { "name": "Alubias",                 "allergens": ["Dairy", "Shellfish"] },
-        { "name": "Cabrales",                "allergens": ["Dairy"] },
+        { "name": "Alubias",                 "allergens": ["Dairy", "Gluten"] },
+        { "name": "Cabrales",                "allergens": ["Dairy", "Tree Nuts"] },
         { "name": "Ensalada con Mariscos",   "allergens": ["Shellfish"] },
-        { "name": "Ensalada con Salmon",     "allergens": ["Dairy"] },
+
+        { "name": "Ensalada con Salmon",     "allergens": [] },
         { "name": "Ensalada de la Casa",     "allergens": ["Dairy"] },
-        { "name": "Ensalada del Rey",        "allergens": [] },
-        { "name": "Mixta con Pollo",         "allergens": ["Eggs", "Tree Nuts", "Peanuts"] },
-        { "name": "Remolacha",               "allergens": [] }
+        { "name": "Ensalada del Rey",        "allergens": ["Dairy"] },
+        { "name": "Mixta con Pollo",         "allergens": [] },
+        { "name": "Remolacha",               "allergens": ["Dairy", "Eggs", "Tree Nuts"] }
       ]
     },
     {
       "name": "Cold Tapas",
       "items": [
-        { "name": "Aceitunas Alinadas",      "allergens": ["Tree Nuts"] },
-        { "name": "Alcachofas con Cabrales", "allergens": ["Eggs", "Gluten"] },
-        { "name": "Canalon Relleno",         "allergens": ["Eggs", "Shellfish"] },
-        { "name": "Escalivada con Queso",    "allergens": ["Tree Nuts", "Gluten"] },
-        { "name": "Gambas Frías",            "allergens": ["Shellfish", "Gluten"] },
-        { "name": "Jamon Iberico",           "allergens": ["Eggs"] },
-        { "name": "Jamon Serrano",           "allergens": ["Eggs"] },
-        { "name": "Menestra de Verduras",    "allergens": ["Tree Nuts"] },
-        { "name": "Patatas con Alioli",      "allergens": ["Tree Nuts"] },
-        { "name": "Pollo al Curry",          "allergens": ["Eggs", "Tree Nuts"] },
-        { "name": "Queso con Pacanas",       "allergens": ["Eggs"] },
-        { "name": "Quesos Españoles",        "allergens": ["Eggs", "Tree Nuts", "Gluten"] },
-        { "name": "Rollito de Buey",         "allergens": ["Eggs"] },
-        { "name": "Salmon Curado con Queso", "allergens": ["Dairy", "Shellfish"] },
+        { "name": "Aceitunas Alinadas",      "allergens": [] },
+        { "name": "Alcachofas con Cabrales", "allergens": ["Dairy", "Tree Nuts"] },
+        { "name": "Canalon Relleno",         "allergens": ["Dairy", "Eggs", "Gluten"] },
+        { "name": "Escalivada con Queso",    "allergens": ["Dairy", "Gluten"] },
+        { "name": "Gambas Frías",            "allergens": ["Eggs", "Shellfish"] },
+        { "name": "Jamon Iberico",           "allergens": ["Gluten"] },
+        { "name": "Jamon Serrano",           "allergens": ["Dairy", "Gluten"] },
+        { "name": "Menestra de Verduras",    "allergens": ["Dairy"] },
+        { "name": "Patatas con Alioli",      "allergens": ["Eggs"] },
+        { "name": "Pollo al Curry",          "allergens": ["Eggs"] },
+        { "name": "Queso con Pacanas",       "allergens": ["Dairy", "Tree Nuts", "Gluten"] },
+        { "name": "Quesos Españoles",        "allergens": ["Dairy"] },
+        { "name": "Rollito de Buey",         "allergens": ["Dairy", "Tree Nuts"] },
+        { "name": "Salmon Curado con Queso", "allergens": ["Dairy", "Gluten"] },
         { "name": "Salpicon de Mariscos",    "allergens": ["Shellfish"] },
-        { "name": "Tortillas Españolas",     "allergens": ["Eggs", "Shellfish", "Gluten"] },
-        { "name": "Tostada con Centollo",    "allergens": ["Peanuts", "Shellfish"] },
-        { "name": "Tostada con Pato",        "allergens": ["Gluten"] }
+        { "name": "Tortillas Españolas",     "allergens": ["Eggs"] },
+        { "name": "Tostada con Centollo",    "allergens": ["Eggs", "Shellfish", "Gluten"] },
+        { "name": "Tostada con Pato",        "allergens": ["Eggs", "Gluten"] }
       ]
     },
     {
