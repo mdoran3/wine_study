@@ -12,6 +12,8 @@ import HolidayMenusPage from './pages/HolidayMenusPage/HolidayMenusPage';
 import MothersDayPage from './pages/MothersDayPage/MothersDayPage';
 import MothersDayReviewPage from './pages/MothersDayReviewPage/MothersDayReviewPage';
 import MothersDayTestPage from './pages/MothersDayTestPage/MothersDayTestPage';
+import SherryReviewPage from './pages/SherryReviewPage/SherryReviewPage';
+import SherryTestPage from './pages/SherryTestPage/SherryTestPage';
 import styles from './App.module.css';
 
 export default function App() {
@@ -32,6 +34,8 @@ export default function App() {
             <Route path="/holiday/mothers-day-2026" element={<MothersDayPage />} />
             <Route path="/holiday/mothers-day-2026/review" element={<MothersDayReviewPage />} />
             <Route path="/holiday/mothers-day-2026/test" element={<MothersDayTestPage />} />
+            <Route path="/sherry-review" element={<SherryReviewPage />} />
+            <Route path="/sherry-test" element={<SherryTestPage />} />
           </Routes>
         </main>
         <Footer />
