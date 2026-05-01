@@ -27,20 +27,9 @@ function groupedWines() {
   return groups;
 }
 
-function WineAudioCard({ wine }) {
+function WineAudioCard({ wine, isPlaying, onPlay, onStop, onEnded }) {
   const audioRef = useRef(null);
-  const [state, setState] = useState('idle');
-
-  const play = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.currentTime = 0;
-    audio.play().catch(() => setState('error'));
-    setState('playing');
-  };
-
-  const onEnded = () => setState('idle');
-  const onError = () => setState('error');
+  const [hasError, setHasError] = useState(false);
 
   return (
     <div className={styles.card}>
@@ -48,7 +37,7 @@ function WineAudioCard({ wine }) {
         ref={audioRef}
         src={`/audio/${wine.id}.mp3`}
         onEnded={onEnded}
-        onError={onError}
+        onError={() => setHasError(true)}
         preload="none"
       />
       <div className={styles.cardBody}>
@@ -64,12 +53,12 @@ function WineAudioCard({ wine }) {
         </span>
       </div>
       <button
-        className={`${styles.playBtn} ${state === 'playing' ? styles.playing : ''} ${state === 'error' ? styles.unavailable : ''}`}
-        onClick={play}
-        disabled={state === 'error'}
-        aria-label={`Play pronunciation of ${wine.name}`}
+        className={`${styles.playBtn} ${isPlaying ? styles.playing : ''} ${hasError ? styles.unavailable : ''}`}
+        onClick={() => isPlaying ? onStop() : onPlay(wine.id, audioRef.current)}
+        disabled={hasError}
+        aria-label={isPlaying ? `Stop ${wine.name}` : `Play pronunciation of ${wine.name}`}
       >
-        {state === 'error' ? '—' : '▶'}
+        {hasError ? '—' : isPlaying ? '■' : '▶'}
       </button>
     </div>
   );
@@ -77,7 +66,31 @@ function WineAudioCard({ wine }) {
 
 export default function PronunciationPage() {
   useEffect(() => { document.title = 'Meson Sabika - Wine Pronunciation'; }, []);
+
+  const [playingId, setPlayingId] = useState(null);
+  const currentAudioRef = useRef(null);
   const groups = groupedWines();
+
+  const handlePlay = (wineId, audioEl) => {
+    if (currentAudioRef.current && currentAudioRef.current !== audioEl) {
+      currentAudioRef.current.pause();
+      currentAudioRef.current.currentTime = 0;
+    }
+    currentAudioRef.current = audioEl;
+    audioEl.currentTime = 0;
+    audioEl.play().catch(() => {});
+    setPlayingId(wineId);
+  };
+
+  const handleStop = () => {
+    if (currentAudioRef.current) {
+      currentAudioRef.current.pause();
+      currentAudioRef.current.currentTime = 0;
+    }
+    setPlayingId(null);
+  };
+
+  const handleEnded = () => setPlayingId(null);
 
   return (
     <div className={styles.page}>
@@ -90,7 +103,14 @@ export default function PronunciationPage() {
             </div>
             <div className={styles.list}>
               {groups[type].map(wine => (
-                <WineAudioCard key={wine.id} wine={wine} />
+                <WineAudioCard
+                  key={wine.id}
+                  wine={wine}
+                  isPlaying={playingId === wine.id}
+                  onPlay={handlePlay}
+                  onStop={handleStop}
+                  onEnded={handleEnded}
+                />
               ))}
             </div>
           </section>
