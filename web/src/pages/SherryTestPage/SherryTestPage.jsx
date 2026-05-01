@@ -24,6 +24,15 @@ const SHERRY_REGIONS = ['Jerez de la Frontera', 'Sanlúcar de Barrameda', 'El Pu
 
 const SORT_ORDER = ['Fino', 'Manzanilla', 'Amontillado', 'Oloroso', 'East India Sherry', 'Pedro Ximénez'];
 
+const AGING_TF = [
+  { sherry: 'Fino',             statement: 'Fino is aged under a protective layer of flor yeast',                    answer: true  },
+  { sherry: 'Manzanilla',       statement: 'Manzanilla undergoes oxidative ageing',                                  answer: false },
+  { sherry: 'Amontillado',      statement: 'Amontillado begins its life aged under flor before transitioning to oxidative ageing', answer: true },
+  { sherry: 'Oloroso',          statement: 'Oloroso is protected from oxygen by flor during ageing',                 answer: false },
+  { sherry: 'East India Sherry', statement: 'East India Sherry is always aged under a layer of flor',               answer: false },
+  { sherry: 'Pedro Ximénez',    statement: 'Pedro Ximénez grapes are sun-dried before fermentation',                 answer: true  },
+];
+
 const STATES = { idle: 'idle', active: 'active', confirmed: 'confirmed', done: 'done' };
 
 // ── helpers ───────────────────────────────────────────────────────────────────
@@ -55,6 +64,8 @@ function checkAnswer(q, answer) {
   switch (q.type) {
     case 'mc':
       return answer === q.correct;
+    case 'tf':
+      return (answer === 'True') === q.correct;
     case 'fill': {
       if (q.answers.length === 1) return fuzzyMatch(answer, q.answers[0]);
       const typed = answer.split(',').map(s => s.trim()).filter(Boolean);
@@ -83,48 +94,70 @@ function generateQuiz() {
   const allRegions = [...new Set(wines.map(w => w.region))];
   const regionOptions = shuffle([...SHERRY_REGIONS, ...shuffle(allRegions).slice(0, 7)]);
 
-  const mcQuestions = shuffle(
-    sherry.flatMap(s =>
-      ['pairing', 'sweetness', 'body'].map(field => ({
-        type: 'mc', sherry: s, field,
-        correct: s[field],
-        options: shuffle(OPTIONS[field]),
-      }))
-    )
-  ).slice(0, 12);
+  const tfQuestions = AGING_TF.map(tf => ({
+    type: 'tf',
+    sherryName: tf.sherry,
+    statement: tf.statement,
+    correct: tf.answer,
+    options: ['True', 'False'],
+  }));
 
-  return [
-    ...mcQuestions,
-    {
-      type: 'fill', id: 'soil',
-      prompt: 'What is the unique chalky white soil of the Sherry region called?',
-      hint: 'One word',
-      answers: ['albariza'],
-      missedLabel: 'Soil name',
-    },
-    {
-      type: 'fill', id: 'grapes',
-      prompt: 'Name the three grape varieties used to make Sherry.',
-      hint: 'Separate with commas — e.g. Grape One, Grape Two, Grape Three',
-      answers: ['Palomino', 'Moscatel', 'Pedro Ximénez'],
-      missedLabel: 'Sherry grapes',
-    },
-    {
-      type: 'multiselect', id: 'regions',
-      prompt: 'Select the three towns that make up the Sherry Triangle.',
-      correct: SHERRY_REGIONS,
-      options: regionOptions,
-      selectCount: 3,
-      missedLabel: 'Sherry Triangle',
-    },
-    {
-      type: 'sort', id: 'lightest-darkest',
-      prompt: 'Arrange these sherries from lightest to darkest.',
-      correct: SORT_ORDER,
-      initial: shuffle([...SORT_ORDER]),
-      missedLabel: 'Light → Dark',
-    },
-  ];
+  const mcPool = sherry.flatMap(s =>
+    ['pairing', 'sweetness', 'body'].map(field => ({
+      type: 'mc', sherry: s, field,
+      correct: s[field],
+      options: shuffle(OPTIONS[field]),
+    }))
+  );
+
+  const pool12 = shuffle([...mcPool, ...tfQuestions]).slice(0, 12);
+
+  const soilQ = {
+    type: 'fill', id: 'soil',
+    prompt: 'What is the unique chalky white soil of the Sherry region called?',
+    hint: 'One word',
+    answers: ['albariza'],
+    missedLabel: 'Soil name',
+  };
+  const grapesQ = {
+    type: 'fill', id: 'grapes',
+    prompt: 'Name the three grape varieties used to make Sherry.',
+    hint: 'Separate with commas — e.g. Grape One, Grape Two, Grape Three',
+    answers: ['Palomino', 'Moscatel', 'Pedro Ximénez'],
+    missedLabel: 'Sherry grapes',
+  };
+  const regionsQ = {
+    type: 'multiselect', id: 'regions',
+    prompt: 'Select the three towns that make up the Sherry Triangle.',
+    correct: SHERRY_REGIONS,
+    options: regionOptions,
+    selectCount: 3,
+    missedLabel: 'Sherry Triangle',
+  };
+  const sortQ = {
+    type: 'sort', id: 'lightest-darkest',
+    prompt: 'Arrange these sherries from lightest to darkest.',
+    correct: SORT_ORDER,
+    initial: shuffle([...SORT_ORDER]),
+    missedLabel: 'Light → Dark',
+  };
+
+  // 16 slots total: soil in [0,4], grapes in [5,10], regions at 14, sort at 15
+  const soilPos   = Math.floor(Math.random() * 5);       // 0–4
+  const grapesPos = 5 + Math.floor(Math.random() * 6);   // 5–10
+
+  const result = new Array(16);
+  result[soilPos]   = soilQ;
+  result[grapesPos] = grapesQ;
+  result[14]        = regionsQ;
+  result[15]        = sortQ;
+
+  let poolIdx = 0;
+  for (let i = 0; i < 16; i++) {
+    if (!result[i]) result[i] = pool12[poolIdx++];
+  }
+
+  return result;
 }
 
 // ── component ─────────────────────────────────────────────────────────────────
@@ -251,6 +284,12 @@ export default function SherryTestPage() {
                     <span className={styles.missedAnswer}>{q.correct}</span>
                   </div>
                 );
+                if (q.type === 'tf') return (
+                  <div key={i} className={styles.missedRow}>
+                    <span className={styles.missedName}>{q.sherryName}:</span>
+                    <span className={styles.missedAnswer}>{q.statement} — <strong>{q.correct ? 'True' : 'False'}</strong></span>
+                  </div>
+                );
                 if (q.type === 'fill') return (
                   <div key={i} className={styles.missedRow}>
                     <span className={styles.missedName}>{q.missedLabel}:</span>
@@ -286,7 +325,8 @@ export default function SherryTestPage() {
   const isConfirmDisabled = (() => {
     if (isConfirmed) return true;
     switch (q.type) {
-      case 'mc':          return !pending;
+      case 'mc':
+      case 'tf':          return !pending;
       case 'fill':        return !pending?.trim();
       case 'multiselect': return (pending?.length ?? 0) !== q.selectCount;
       case 'sort':        return false;
@@ -323,6 +363,39 @@ export default function SherryTestPage() {
                 if (opt === q.correct)   cls = `${styles.optionBtn} ${styles.correct}`;
                 else if (opt === selected) cls = `${styles.optionBtn} ${styles.wrong}`;
                 else                     cls = `${styles.optionBtn} ${styles.dimmed}`;
+              } else if (opt === pending) {
+                cls = `${styles.optionBtn} ${styles.selectedPending}`;
+              }
+              return (
+                <button key={opt} className={cls}
+                  onClick={() => { if (!isConfirmed) setPending(opt); }}
+                  disabled={isConfirmed}>
+                  {opt}
+                </button>
+              );
+            })}
+          </div>
+        </>}
+
+        {/* ── True / False question ── */}
+        {q.type === 'tf' && <>
+          <h2 className={styles.sherryName}>
+            {q.sherryName}
+            {isConfirmed && (
+              <span className={wasCorrect ? styles.iconCorrect : styles.iconWrong}>
+                {wasCorrect ? '✓' : '✗'}
+              </span>
+            )}
+          </h2>
+          <p className={styles.question}>{q.statement}</p>
+          <div className={styles.options}>
+            {q.options.map(opt => {
+              const correctLabel = q.correct ? 'True' : 'False';
+              let cls = styles.optionBtn;
+              if (isConfirmed) {
+                if (opt === correctLabel)  cls = `${styles.optionBtn} ${styles.correct}`;
+                else if (opt === selected) cls = `${styles.optionBtn} ${styles.wrong}`;
+                else                      cls = `${styles.optionBtn} ${styles.dimmed}`;
               } else if (opt === pending) {
                 cls = `${styles.optionBtn} ${styles.selectedPending}`;
               }
