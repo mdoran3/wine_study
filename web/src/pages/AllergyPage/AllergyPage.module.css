@@ -19,6 +19,7 @@
   color: var(--color-accent);
   margin: 0;
   text-align: center;
+  text-shadow: 0 0 6px #fff, 0 0 3px #fff;
 }
 
 .subheading {
