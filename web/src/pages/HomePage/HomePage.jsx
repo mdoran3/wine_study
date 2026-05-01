@@ -42,7 +42,7 @@ const SECTIONS = [
   },
   {
     id: 'allergy',
-    label: '⚠️ Allergens',
+    label: '⚠️ Allergies',
     theme: 'allergy',
     items: [
       { label: '⚠️ Menu Allergen Guide', path: '/allergy' },
