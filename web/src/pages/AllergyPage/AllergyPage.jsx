@@ -14,7 +14,13 @@ const ALLERGEN_META = {
 export default function AllergyPage() {
   useEffect(() => { document.title = 'Meson Sabika - Allergy Guide'; }, []);
 
+  const [mode, setMode] = useState('contains');
   const [active, setActive] = useState(new Set());
+
+  const switchMode = (m) => {
+    setMode(m);
+    setActive(new Set());
+  };
 
   const toggle = (a) => setActive(prev => {
     const next = new Set(prev);
@@ -24,16 +30,42 @@ export default function AllergyPage() {
 
   const filteredCategories = active.size === 0 ? [] : data.categories.map(cat => ({
     ...cat,
-    items: cat.items.filter(item => item.allergens.some(a => active.has(a))),
+    items: cat.items.filter(item =>
+      mode === 'contains'
+        ? item.allergens.some(a => active.has(a))
+        : item.allergens.every(a => !active.has(a))
+    ),
   })).filter(cat => cat.items.length > 0);
+
+  const subheading = mode === 'contains'
+    ? 'Select allergens to see which dishes contain them.'
+    : 'Select allergens to see dishes that are free from them.';
+
+  const emptyMsg = mode === 'contains'
+    ? 'No dishes found containing the selected allergens.'
+    : 'No dishes found that are free from all selected allergens.';
 
   return (
     <div className={styles.page}>
       <div className={styles.inner}>
         <h2 className={styles.heading}>Menu Allergen Guide</h2>
-        <p className={styles.subheading}>
-          Select one or more allergens to see which dishes contain them.
-        </p>
+
+        <div className={styles.modeToggle}>
+          <button
+            className={`${styles.modeBtn} ${mode === 'contains' ? styles.modeBtnContains : ''}`}
+            onClick={() => switchMode('contains')}
+          >
+            ⚠️ Contains
+          </button>
+          <button
+            className={`${styles.modeBtn} ${mode === 'free' ? styles.modeBtnFree : ''}`}
+            onClick={() => switchMode('free')}
+          >
+            ✅ Safe Options
+          </button>
+        </div>
+
+        <p className={styles.subheading}>{subheading}</p>
 
         <div className={styles.chips}>
           {data.allergens.map(a => {
@@ -69,7 +101,7 @@ export default function AllergyPage() {
 
         {active.size > 0 && filteredCategories.length === 0 && (
           <div className={styles.empty}>
-            <p>No dishes found containing the selected allergens.</p>
+            <p>{emptyMsg}</p>
           </div>
         )}
 
@@ -81,18 +113,21 @@ export default function AllergyPage() {
                 <div key={item.name} className={styles.item}>
                   <span className={styles.itemName}>{item.name}</span>
                   <div className={styles.itemTags}>
-                    {item.allergens.filter(a => active.has(a)).map(a => {
-                      const meta = ALLERGEN_META[a];
-                      return (
-                        <span
-                          key={a}
-                          className={styles.tag}
-                          style={{ background: meta.bg, borderColor: meta.border, color: meta.color }}
-                        >
-                          {meta.emoji} {a}
-                        </span>
-                      );
-                    })}
+                    {mode === 'contains'
+                      ? item.allergens.filter(a => active.has(a)).map(a => {
+                          const meta = ALLERGEN_META[a];
+                          return (
+                            <span
+                              key={a}
+                              className={styles.tag}
+                              style={{ background: meta.bg, borderColor: meta.border, color: meta.color }}
+                            >
+                              {meta.emoji} {a}
+                            </span>
+                          );
+                        })
+                      : <span className={styles.safeTag}>✓ Safe</span>
+                    }
                   </div>
                 </div>
               ))}

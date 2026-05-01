@@ -30,6 +30,61 @@
   text-align: center;
 }
 
+/* ── Mode toggle ── */
+
+.modeToggle {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  background: #f5f0f0;
+}
+
+.modeBtn {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+.modeBtnContains {
+  background: #c0392b;
+  color: #fff;
+  opacity: 1;
+}
+
+.modeBtnFree {
+  background: #2e7d32;
+  color: #fff;
+  opacity: 1;
+}
+
+/* ── Safe tag ── */
+
+.safeTag {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #edf7ee;
+  border: 1px solid #90c893;
+  color: #2e7d32;
+  white-space: nowrap;
+}
+
 /* ── Allergen chips ── */
 
 .chips {
