@@ -75,6 +75,15 @@ export default function AllergyPage() {
       <div className={styles.inner}>
         <h2 className={styles.heading}>Menu Allergen Guide</h2>
 
+        <div className={styles.disclaimer}>
+          <span className={styles.disclaimerIcon}>⚠️</span>
+          <p>
+            This guide is a reference tool only. Ingredients and preparations may vary.
+            Always confirm allergen information directly with the Chef before serving a guest with dietary restrictions.
+            <strong> The Chef's word is final.</strong>
+          </p>
+        </div>
+
         {/* ── Search bar ── */}
         <div className={styles.searchWrapper}>
           <div className={styles.searchInputRow}>
