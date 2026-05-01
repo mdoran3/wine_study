@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Fino",
+    "pairing": "Aperitive",
+    "sweetness": "Very dry",
+    "body": "Light",
+    "descriptors": ["Bone dry", "Light", "Mineral", "Yeasty"],
+    "aging": "Aged under a protective layer of flor yeast in Jerez de la Frontera or El Puerto de Santa María, each town contributing its own characteristic microclimate.",
+    "description": "Fresh, crisp, and slightly salty. The driest and lightest style of sherry, protected during aging by a layer of flor yeast."
+  },
+  {
+    "id": 2,
+    "name": "Manzanilla",
+    "pairing": "Aperitive",
+    "sweetness": "Very dry",
+    "body": "Light",
+    "descriptors": ["Bone dry", "Briny", "Marine", "Floral"],
+    "aging": "Aged under flor exclusively in Sanlúcar de Barrameda, a coastal town whose humid Atlantic microclimate keeps the flor thicker year-round, producing an even lighter and saltier wine.",
+    "description": "A coastal style of Fino from Sanlúcar de Barrameda. Even lighter and more delicate, with a noticeable salty, sea-air character from the humid Atlantic climate."
+  },
+  {
+    "id": 3,
+    "name": "Amontillado",
+    "pairing": "Dry meats",
+    "sweetness": "Dry",
+    "body": "Medium",
+    "descriptors": ["Dry", "Nutty", "Versatile"],
+    "aging": "Undergoes two phases: biological ageing under flor as a Fino or Manzanilla, then transitions to oxidative ageing after the flor dies, developing its characteristic nutty depth.",
+    "description": "Begins as Fino but is aged with oxygen after the flor dies. Medium-bodied with a nutty, slightly deeper flavor profile."
+  },
+  {
+    "id": 4,
+    "name": "Oloroso",
+    "pairing": "Hot food",
+    "sweetness": "Dry",
+    "body": "Full",
+    "descriptors": ["Dry", "Intense", "Fragrant"],
+    "aging": "The ultimate expression of oxidative ageing — no flor protection from the start. All flavors and aromas develop through direct contact with air and the oak of the barrels.",
+    "description": "Aged fully with oxygen from the start — no flor protection. Full-bodied and rich, with a darker color and pronounced notes of nuts and warm spice."
+  },
+  {
+    "id": 5,
+    "name": "East India Sherry",
+    "pairing": "Dessert",
+    "sweetness": "Sweet",
+    "body": "Full",
+    "descriptors": ["Velvety", "Sweet", "Complex"],
+    "aging": "Created by 'cabeceo' — the traditional practice of blending aged dry sherry wines with sweet sherry wines, inspired by wines that were once aged on long sea voyages.",
+    "description": "Inspired by wines aged on long sea voyages. Usually a blend, often including Pedro Ximénez. Smooth and rich with flavors of caramel and dried fruit."
+  },
+  {
+    "id": 6,
+    "name": "Pedro Ximénez",
+    "pairing": "Dessert",
+    "sweetness": "Very sweet",
+    "body": "Full",
+    "descriptors": ["Intensely sweet", "Raisined", "Syrupy"],
+    "aging": "Pedro Ximénez grapes are spread in the sun after harvest until they are nearly raisins, concentrating their sugars. The resulting must is then fermented and aged oxidatively.",
+    "description": "The quintessential dessert sherry. Made entirely from sun-dried Pedro Ximénez grapes, it is opulently sweet and dark, with flavors of raisins, figs, molasses, and chocolate."
+  }
+]

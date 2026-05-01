@@ -1,0 +1,252 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: normal;
+  color: #8b6508;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── 2×2 background facts grid ── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sectionTitle {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8b6508;
+  margin: 0;
+}
+
+.sectionText {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text);
+  opacity: 0.85;
+  margin: 0;
+}
+
+.list {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text);
+  opacity: 0.85;
+  margin: 2px 0 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Shared image section wrapper ── */
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.photoCredit {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text);
+  opacity: 0.45;
+  margin: 0;
+}
+
+.photoCredit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ── Under Flor ── */
+
+.florLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .florLayout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.florPhoto {
+  width: 100%;
+  max-width: 260px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+@media (min-width: 640px) {
+  .florPhoto {
+    align-self: flex-start;
+  }
+}
+
+/* ── Solera System ── */
+
+.soleraLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 700px) {
+  .soleraLayout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.soleraLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.soleraPhoto {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 699px) {
+  .soleraPhoto {
+    max-width: 100%;
+    height: 180px;
+  }
+}
+
+.soleraRight {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+/* ── Tier diagram ── */
+
+.tierDiagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #c08820;
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  gap: 2px;
+  border-bottom: 1px solid rgba(139, 101, 8, 0.15);
+}
+
+.tier3      { background: #f7efbe; }
+.tier2      { background: #f0c050; }
+.tier1      { background: #e07828; }
+.tierSolera { background: #c05010; border-bottom: none; }
+
+.tierLabel {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b4e06;
+}
+
+.tier1 .tierLabel,
+.tierSolera .tierLabel { color: #fff; }
+
+.tierSub {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #8b6508;
+  opacity: 0.8;
+}
+
+.tier1 .tierSub,
+.tierSolera .tierSub { color: rgba(255, 255, 255, 0.8); opacity: 1; }
+
+.diagramAndText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .diagramAndText {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.diagramWrap {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .diagramWrap {
+    width: 260px;
+  }
+}
+
+.tierArrow {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #8b6508;
+  text-align: center;
+  padding: 8px 0 2px;
+  opacity: 0.7;
+}

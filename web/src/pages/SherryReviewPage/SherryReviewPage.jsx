@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+import sherry from '../../data/sherry.json';
+import SherryCard from '../../components/SherryCard/SherryCard';
+import SherryInfoPanel from '../../components/SherryInfoPanel/SherryInfoPanel';
 import styles from './SherryReviewPage.module.css';
 
 export default function SherryReviewPage() {
@@ -6,8 +9,12 @@ export default function SherryReviewPage() {
 
   return (
     <div className={styles.page}>
-      <h2 className={styles.heading}>Sherry Review</h2>
-      <p className={styles.placeholder}>Coming soon — sherry knowledge cards will appear here.</p>
+      <SherryInfoPanel />
+      <div className={styles.grid}>
+        {sherry.map(s => (
+          <SherryCard key={s.id} sherry={s} />
+        ))}
+      </div>
     </div>
   );
 }
