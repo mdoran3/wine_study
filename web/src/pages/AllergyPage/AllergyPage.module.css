@@ -1,0 +1,145 @@
+.page {
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: normal;
+  color: var(--color-accent);
+  margin: 0;
+  text-align: center;
+}
+
+.subheading {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text);
+  opacity: 0.65;
+  margin: -16px 0 0;
+  text-align: center;
+}
+
+/* ── Allergen chips ── */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.chip {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s, box-shadow 0.1s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chip:active { transform: scale(0.96); }
+
+.chipOn {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chipEmoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ── Empty state ── */
+
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--color-text);
+  opacity: 0.45;
+  font-family: var(--font-ui);
+  font-size: 15px;
+}
+
+.empty p { margin: 0; }
+
+/* ── Category sections ── */
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryName {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  opacity: 0.45;
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Item rows ── */
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.itemName {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.itemTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}

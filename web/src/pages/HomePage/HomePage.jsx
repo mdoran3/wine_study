@@ -40,6 +40,14 @@ const SECTIONS = [
       { label: '🎉 Holiday Menus', path: '/holiday' },
     ],
   },
+  {
+    id: 'allergy',
+    label: '⚠️ Allergens',
+    theme: 'allergy',
+    items: [
+      { label: '⚠️ Menu Allergen Guide', path: '/allergy' },
+    ],
+  },
 ];
 
 export default function HomePage() {
