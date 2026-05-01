@@ -6,3 +6,9 @@
   font-family: var(--font-ui);
   font-size: 14px;
 }
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

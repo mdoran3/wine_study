@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
-      <p>&copy; {year} Meson Sabika. All rights reserved.</p>
+      <p>&copy; {year} <a href="https://mitchelld.net" className={styles.link}>mitchelld.net</a>. All rights reserved.</p>
     </footer>
   );
 }
