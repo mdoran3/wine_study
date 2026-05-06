@@ -1,0 +1,650 @@
+[
+  {
+    "id": 1,
+    "type": "cold_tapas",
+    "name": "Jamón Serrano",
+    "ingredients": ["Serrano ham", "country bread", "parsley", "olive oil", "garlic", "vine ripened tomato slices", "Manchego cheese"],
+    "sauces": [],
+    "description": "Shaved imported Serrano ham, sliced toasted country bread topped with parsley, olive oil, and garlic, whole peeled garlic clove, and vine ripened tomato slices, Manchego cheese accompanied with a cruet of blended olive oil.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 2,
+    "type": "cold_tapas",
+    "name": "Tostada Con Pato",
+    "ingredients": ["toast points", "duck confit", "caramelized onions", "smoked duck breast", "orange", "pimentos", "Dijon mustard", "julienned apple"],
+    "sauces": [],
+    "description": "Toast points spread with duck confit topped with caramelized onions, smoked duck breast, orange, pimentos, and Dijon mustard served with julienned apple.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 3,
+    "type": "cold_tapas",
+    "name": "Pollo Al Curry",
+    "ingredients": ["chicken breast", "salt", "white pepper", "cayenne pepper", "olive oil", "white wine", "curry mayonnaise", "celery", "green onions", "red grapes", "Bibb lettuce", "chives", "grape tomato"],
+    "sauces": [],
+    "description": "Whole chicken breast baked with salt, white pepper, cayenne pepper, olive oil and white wine, then chilled, shredded and mixed with curry mayonnaise, celery, green onions and red grapes. Garnish: Bibb lettuce, chives and a grape tomato. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 4,
+    "type": "cold_tapas",
+    "name": "Queso Con Pacanas",
+    "ingredients": ["goat cheese", "pecans", "honey", "red wine poached pear slices", "toast points", "mixed greens"],
+    "sauces": ["sherry balsamic vinaigrette"],
+    "description": "Goat cheese rolled in crushed toasted pecans and drizzled with honey served with red wine poached pear slices, toast points, and mixed greens tossed with sherry balsamic vinaigrette. (V)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 5,
+    "type": "cold_tapas",
+    "name": "Jamon Iberico",
+    "ingredients": ["parmesan cheese", "flat bread", "minced tomatoes", "minced garlic", "Jamon Iberico"],
+    "sauces": [],
+    "description": "Parmesan cheese crusted flat bread with minced tomatoes (concasse), minced garlic and Jamon Iberico — 100% jamón ibérico de bellota from purebred Iberian free-range pigs that roam oak forests and eat only acorns. Minimum 36 months aging.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 6,
+    "type": "cold_tapas",
+    "name": "Salmón Curado Con Queso",
+    "ingredients": ["Atlantic salmon", "sugar", "salt", "dill", "extra virgin olive oil", "cream cheese", "toast points", "sour cream", "diced carrots", "celery", "capers", "red onion", "chives"],
+    "sauces": [],
+    "description": "House cured Atlantic salmon (covered in sugar, salt, and dill, cured for 4 days) thinly sliced and drizzled with extra virgin olive oil, wrapped around a mixture of dill and cream cheese, accompanied with toast points spread with sour cream. Garnish: diced carrots, celery, capers, red onion, and chives.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 7,
+    "type": "cold_tapas",
+    "name": "Quesos Españoles",
+    "ingredients": ["Cana de Cabra cheese", "Manchego cheese", "Mahon cheese", "cranberries", "white wine", "apricots", "tomatoes", "sugar", "tomato paste", "thyme"],
+    "sauces": [],
+    "description": "An assortment of Spanish cheeses — Cana de Cabra (goat's milk semi-soft), Manchego (sheep's milk semi-soft), and Mahon (cow's milk semi-soft) — served with caramelized cranberries, apricots and smoked tomato marmalade. (GF, V)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 8,
+    "type": "cold_tapas",
+    "name": "Patatas Con Alioli",
+    "ingredients": ["red potatoes", "garlic", "mayonnaise", "white pepper", "salt", "parsley", "Bibb lettuce", "red onion", "Peruvian tear drop peppers", "roasted garlic cloves"],
+    "sauces": [],
+    "description": "Chopped, boiled red potatoes with diced garlic, mayonnaise, white pepper, salt and parsley. Garnish: Bibb lettuce, red onion, Peruvian tear drop peppers, and roasted garlic cloves. (GF, V)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 9,
+    "type": "cold_tapas",
+    "name": "Salpicon De Mariscos",
+    "ingredients": ["bay scallops", "calamari", "shrimp", "lemon juice", "tri-colored bell peppers", "cilantro", "onions", "cucumber", "sherry vinegar", "olive oil"],
+    "sauces": [],
+    "description": "Chilled seafood medley of poached bay scallops, calamari, and shrimp with lemon juice, tri-colored bell peppers, cilantro, onions, cucumber, sherry vinegar, and olive oil. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 10,
+    "type": "cold_tapas",
+    "name": "Escalivada Con Queso",
+    "ingredients": ["avocado", "portobello mushrooms", "peppers", "onions", "fennel", "asparagus", "tomato", "fresh mozzarella", "cucumbers", "red onion"],
+    "sauces": ["balsamic reduction"],
+    "description": "Half avocado filled with portobello mushrooms, peppers, onions, fennel, asparagus, tomato, with fresh mozzarella and drizzled with balsamic reduction. Garnish: cucumbers and red onion. (V, VE*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 11,
+    "type": "cold_tapas",
+    "name": "Gambas Marinadas",
+    "ingredients": ["tiger shrimp", "thyme", "rosemary", "onions", "olive oil", "salt", "Bibb lettuce", "lemon wedge"],
+    "sauces": ["cumin mayonnaise", "garlic aioli", "tomato-brandy sauce", "tomato vinaigrette"],
+    "description": "Five marinated (thyme, rosemary, onions, olive oil and salt) and poached tiger shrimp served with 3 sauces: cumin mayonnaise, garlic aioli, and tomato-brandy sauce. Garnish: Bibb lettuce, tomato vinaigrette, and a lemon wedge. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 12,
+    "type": "cold_tapas",
+    "name": "Aceitunas Alinadas",
+    "ingredients": ["Manzanilla olives", "olive juice", "olive oil", "sherry vinegar", "red onion", "paprika", "oregano", "cayenne"],
+    "sauces": [],
+    "description": "Marinated imported Manzanilla olives with olive juice, olive oil, sherry vinegar, red onion, paprika, oregano, and a hint of cayenne. (GF, V, VE)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": true, "vegan_modifiable": false }
+  },
+  {
+    "id": 13,
+    "type": "cold_tapas",
+    "name": "Tostadas Con Centollo",
+    "ingredients": ["toast points", "tomato", "avocado", "Alaskan king crab", "shredded lettuce", "cherry tomato", "lemon wedge"],
+    "sauces": ["roasted garlic pepper sauce (mayonnaise, piquillo pepper, mustard, garlic)", "sherry balsamic vinaigrette"],
+    "description": "Toast points topped with roasted garlic pepper sauce, chopped tomato, avocado, and Alaskan king crab drizzled with sherry balsamic vinaigrette. Garnish: shredded lettuce, cherry tomato, and a lemon wedge. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 14,
+    "type": "cold_tapas",
+    "name": "Canalón Relleno",
+    "ingredients": ["lasagna noodle", "tuna", "asparagus", "fresh basil", "red onions", "green olives", "hard-boiled egg", "mayonnaise", "salt", "black pepper", "chives"],
+    "sauces": ["creamy white wine vinaigrette (mayonnaise, white wine, sherry vinegar, black pepper, salt)", "tomato-basil vinaigrette (tomato, basil, olive oil, sherry vinegar, black pepper, salt)"],
+    "description": "Lasagna noodle filled with tuna, asparagus, fresh basil, red onions, green olives, chopped hard-boiled egg, mayonnaise, salt and black pepper. Topped with a creamy white wine vinaigrette and diced tomato-basil vinaigrette. Garnish: chopped hard-boiled egg, chives, and tomato vinaigrette.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 15,
+    "type": "cold_tapas",
+    "name": "Tortillas Espanolas",
+    "ingredients": ["potato", "onion", "red pepper", "green pepper", "asparagus", "zucchini", "squash", "spinach", "eggs", "mixed greens"],
+    "sauces": ["sherry balsamic vinaigrette"],
+    "description": "Spanish style omelet made with potato and onion, and an omelet with vegetables (red and green pepper, asparagus, onions, zucchini, squash and spinach) served with mixed greens tossed in sherry balsamic vinaigrette. (GF, V)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 16,
+    "type": "hot_tapas",
+    "name": "Bogavante Al Horno",
+    "ingredients": ["lobster tail", "olive oil", "paprika", "salt", "asparagus spears", "Sevillana potatoes", "lemon wedge"],
+    "sauces": ["lemon butter sauce"],
+    "description": "5-6 oz baked lobster tail brushed with olive oil, paprika, and salt, served with asparagus spears, Sevillana potatoes, and a lemon butter sauce. Garnish: lemon wedge. (Dish takes about 25 min to make)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 17,
+    "type": "hot_tapas",
+    "name": "Bunuelos De Jamon Y Pollo",
+    "ingredients": ["Serrano ham", "chicken leg meat", "basil", "milk", "tomato paste", "nutmeg", "bread crumbs", "diced red bell pepper"],
+    "sauces": ["herbed tomato sauce (tomatoes, onions, carrots, celery, basil, butter, black pepper, garlic)", "red pepper aioli"],
+    "description": "Five lightly breaded croquettes of Serrano ham and chicken served with herbed tomato sauce. Filling: ground Serrano ham and chopped chicken leg meat, basil, milk, tomato paste, and nutmeg. Garnish: diced red bell pepper.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 18,
+    "type": "hot_tapas",
+    "name": "Pulpo Con Salsa Verde",
+    "ingredients": ["octopus", "water", "white wine", "crushed red peppers", "bay leaves", "onion", "Sevillana potatoes", "lemon wedge"],
+    "sauces": ["salsa verde (basil, parsley, pine nuts, pepper, carrots, celery, parmesan cheese, white wine, olive oil, salt)"],
+    "description": "Poached octopus on top of Sevillana potatoes, served with spicy green vegetable and pine nut vinaigrette (Salsa Verde). Garnish: lemon wedge. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 19,
+    "type": "hot_tapas",
+    "name": "Pincho De Pollo",
+    "ingredients": ["chicken breast", "black pepper", "chorizo", "lemon wedge", "parsley"],
+    "sauces": ["cumin mayonnaise (cumin, mayo, garlic, sherry vinegar)"],
+    "description": "Chicken breast skewer seasoned with black pepper, served with chorizo and cumin mayonnaise sauce. Garnish: lemon wedge and parsley. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 20,
+    "type": "hot_tapas",
+    "name": "Empanada De Buey",
+    "ingredients": ["puff pastry", "ground beef tenderloin", "goat cheese", "Shiitake mushrooms", "Crimini mushrooms", "Oyster mushrooms", "Monterey jack cheese", "parmesan cheese", "horseradish sour cream", "white cabbage", "purple cabbage", "carrots"],
+    "sauces": ["tomato goat cheese sauce"],
+    "description": "Triangular shaped puff pastry filled with a mixture of ground beef tenderloin, goat cheese and wild mushrooms (Shiitake, Crimini and Oyster) topped with tomato goat cheese sauce, melted Monterey jack cheese, and shredded parmesan. Garnish: horseradish sour cream, julienned white and purple cabbage and carrots.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 21,
+    "type": "hot_tapas",
+    "name": "Pipirrana De Buey",
+    "ingredients": ["skirt steak", "Sevillana potatoes", "onions", "Cabrales blue cheese"],
+    "sauces": ["cava Manchego cream sauce"],
+    "description": "Grilled strips of skirt steak with Sevillana potatoes and onions in a cava Manchego cream sauce, topped with Cabrales blue cheese crumble.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 22,
+    "type": "hot_tapas",
+    "name": "Salteado De Quinoa",
+    "ingredients": ["red quinoa", "baby kale", "sweet potato", "brussels sprouts"],
+    "sauces": ["tomato basil vinaigrette", "lemon butter sauce"],
+    "description": "Sautéed red quinoa, baby kale, sweet potato, brussels sprouts, and tomato basil vinaigrette with a lemon butter sauce. (V, VE*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 23,
+    "type": "hot_tapas",
+    "name": "Gambas A La Plancha",
+    "ingredients": ["tiger shrimp", "lemon wedge", "parsley"],
+    "sauces": ["lemon garlic butter"],
+    "description": "Five grilled tiger shrimp served on a bed of lemon garlic butter. Garnish: lemon wedge and parsley. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 24,
+    "type": "hot_tapas",
+    "name": "Pimientos Del Piquillo",
+    "ingredients": ["piquillo peppers", "Monterey Jack cheese", "Manchego cheese", "parmesan cheese", "spinach", "colored cauliflower"],
+    "sauces": ["black bean sauce", "lemon garlic butter"],
+    "description": "Imported wood roasted peppers stuffed with Monterey Jack, Manchego, parmesan cheese and spinach, baked and served over black bean sauce, drizzled with lemon garlic butter. Garnish: colored cauliflower and parmesan cheese. (V*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": true, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 25,
+    "type": "hot_tapas",
+    "name": "Pollo Al Limon",
+    "ingredients": ["chicken breast", "angel hair pasta", "broccoli", "diced red pepper"],
+    "sauces": ["lemon cream sauce (shallots, onions, white wine, lemon juice, cream, chicken stock)"],
+    "description": "Sautéed chicken breast, angel hair pasta and broccoli served with lemon cream sauce. Garnish: diced red pepper.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 26,
+    "type": "hot_tapas",
+    "name": "Champiñones Rellenos",
+    "ingredients": ["mushroom caps", "white wine", "garlic", "olive oil", "spinach", "bread crumbs", "Manchego cheese", "Monterey jack cheese", "parmesan cheese"],
+    "sauces": ["tomato basil sauce (tomatoes, onions, carrots, celery, basil, butter, black pepper, garlic)", "garlic lemon butter"],
+    "description": "Mushroom caps marinated with white wine, garlic, olive oil then stuffed with chopped mushrooms, spinach, bread crumbs, Manchego cheese, Monterey jack, parmesan cheese and garlic. Served on a bed of tomato basil sauce and drizzled with garlic lemon butter. (V)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 27,
+    "type": "hot_tapas",
+    "name": "Pasta Vegetariana",
+    "ingredients": ["fettuccine pasta", "seasonal vegetables", "goat cheese", "Manchego cheese"],
+    "sauces": ["tomato goat cheese sauce"],
+    "description": "Fettuccine pasta with seasonal vegetables, tossed with a tomato goat cheese sauce topped with shredded Manchego cheese. (V)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 28,
+    "type": "hot_tapas",
+    "name": "Col De Brusela",
+    "ingredients": ["Brussels sprouts", "sun-dried tomatoes", "Serrano ham", "red peppers"],
+    "sauces": ["cava Manchego cheese sauce"],
+    "description": "Sautéed Brussels sprouts with sun-dried tomatoes, Serrano ham and cava Manchego cheese sauce. Garnish: red peppers. (V*, GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": true, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 29,
+    "type": "hot_tapas",
+    "name": "Queso De Cabra",
+    "ingredients": ["American goat cheese", "French goat cheese", "cream cheese", "garlic bread", "garlic", "parsley", "olive oil"],
+    "sauces": ["tomato basil sauce (tomatoes, onions, carrots, celery, basil, butter, black pepper, garlic)"],
+    "description": "Blend of two goat cheeses (American and French) with cream cheese, baked in tomato basil sauce, served with garlic bread topped with a puree of garlic, parsley and olive oil. Garnish: parsley. (V)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 30,
+    "type": "hot_tapas",
+    "name": "Salmon A La Plancha",
+    "ingredients": ["Atlantic salmon", "garlic", "peapods"],
+    "sauces": ["lemon butter sauce"],
+    "description": "Grilled Atlantic salmon served with sautéed garlic, sautéed peapods and lemon butter sauce. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 31,
+    "type": "hot_tapas",
+    "name": "Albondigas Con Almendras",
+    "ingredients": ["lamb (70%)", "beef (20%)", "pork (10%)", "toasted almonds"],
+    "sauces": ["spicy tomato sauce (red bell peppers, guajillo peppers, onions, tomatoes, garlic, white wine, cream, chicken stock)"],
+    "description": "Meatballs of 70% lamb, 20% beef, 10% pork served with a spicy tomato sauce and toasted almonds.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 32,
+    "type": "hot_tapas",
+    "name": "Solomillos A La Plancha",
+    "ingredients": ["beef tenderloins", "mashed potatoes", "cherry tomatoes"],
+    "sauces": ["red wine sauce (red wine, garlic, shallots, rosemary, thyme, marjoram, white wine, paprika)"],
+    "description": "Two grilled beef tenderloins served with mashed potatoes drizzled with red wine sauce. Garnish: cherry tomatoes. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 33,
+    "type": "hot_tapas",
+    "name": "Chuletas De Cordero",
+    "ingredients": ["lamb chops", "roasted potatoes", "grilled asparagus"],
+    "sauces": ["rosemary red wine sauce (red peppers, carrots, celery, rosemary, white wine, brandy, lamb stock)"],
+    "description": "Two grilled lamb chops served with roasted potatoes and grilled asparagus with a rosemary red wine sauce. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 34,
+    "type": "hot_tapas",
+    "name": "Codillo De Cordero",
+    "ingredients": ["lamb shank", "couscous", "spinach", "julienned vegetables"],
+    "sauces": ["lemon rosemary white wine sauce"],
+    "description": "Roasted lamb shank served with couscous, sautéed spinach and topped with julienned vegetables in a lemon rosemary white wine sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 35,
+    "type": "hot_tapas",
+    "name": "Vieiras Albarino",
+    "ingredients": ["sea scallops", "olive oil", "couscous", "grilled apples", "sun-dried tomatoes", "chives", "dry sherry", "lemon", "chopped tomato", "shallots", "butter"],
+    "sauces": ["tomato basil lemon butter sauce"],
+    "description": "3-4 fresh sea scallops sautéed with olive oil, served with Mediterranean couscous (mixed with grilled apples, sun-dried tomatoes, chives, dry sherry, lemon, chopped tomato, shallots, butter, salt and pepper) and tomato basil lemon butter sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 36,
+    "type": "hot_tapas",
+    "name": "Chorizos Espanoles",
+    "ingredients": ["chorizo", "Morcilla (pork blood sausage)", "Bilbao sausage", "Butifarra sausage", "Chistorra sausage"],
+    "sauces": [],
+    "description": "Grilled chorizo, Morcilla (pork blood sausage), Bilbao sausage, Butifarra sausage, and Chistorra sausage.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 37,
+    "type": "hot_tapas",
+    "name": "Pincho De Solomillo",
+    "ingredients": ["beef tenderloin", "cracked black pepper", "horseradish sour cream", "red onions", "red wine", "sugar", "parsley"],
+    "sauces": ["horseradish sour cream"],
+    "description": "Grilled beef tenderloin skewer rolled in cracked black pepper, served with horseradish sour cream and caramelized red onions (red onions, red wine, sugar). Garnish: parsley. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 38,
+    "type": "hot_tapas",
+    "name": "Calamares A La Plancha",
+    "ingredients": ["squid", "lemon juice", "olive oil", "garlic", "parsley", "lemon wedge"],
+    "sauces": [],
+    "description": "Squid steak and tentacles char-grilled with lemon juice, olive oil, garlic and parsley. Garnish: lemon wedge & parsley. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 39,
+    "type": "hot_tapas",
+    "name": "Datiles Con Tocino",
+    "ingredients": ["dates", "bacon", "parsley"],
+    "sauces": ["red bell pepper butter sauce (red bell pepper, garlic, shallots, sherry, butter, cream)"],
+    "description": "Six dates wrapped in bacon, baked until crispy served over red bell pepper butter sauce. Garnish: parsley.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 40,
+    "type": "hot_tapas",
+    "name": "Patatas Bravas",
+    "ingredients": ["new potatoes", "Manchego cheese", "green onions"],
+    "sauces": ["spicy red pepper wine sauce (dried red pepper, tomato, shallots, white wine)", "dry red pepper garlic alioli"],
+    "description": "Sautéed diced new potatoes served with a spicy red pepper wine sauce, topped with shredded Manchego cheese and green onions. (V, VE*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 41,
+    "type": "hot_tapas",
+    "name": "Carne Asada",
+    "ingredients": ["ribeye steak", "broccolini"],
+    "sauces": [],
+    "description": "Grilled prime ribeye steak, served with sautéed broccolini. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 42,
+    "type": "hot_tapas",
+    "name": "Trucha A La Plancha",
+    "ingredients": ["Rainbow trout", "spinach"],
+    "sauces": ["lemon butter sauce"],
+    "description": "Grilled Rainbow trout served with sautéed spinach and a lemon butter sauce. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 43,
+    "type": "hot_tapas",
+    "name": "Chuleta De Cerdo",
+    "ingredients": ["pork chop", "root vegetable puree", "poached pear"],
+    "sauces": ["Pedro Ximenez black truffle cream sauce"],
+    "description": "Grilled French cut pork chop served with root vegetable puree and poached pear with a Pedro Ximenez black truffle cream sauce. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 44,
+    "type": "soup",
+    "name": "Sopa De Alubias",
+    "ingredients": ["black beans", "chorizo", "onion", "carrot", "celery", "water", "cumin", "jalapeno", "bacon", "tabasco", "sour cream", "parsley"],
+    "sauces": [],
+    "description": "Black bean soup made with chorizo, onion, carrot, celery, water, cumin, jalapeno, bacon and tabasco. Cooked for 4 hours and then blended. Garnished with sour cream and parsley.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 45,
+    "type": "salad",
+    "name": "Ensalada De La Casa",
+    "ingredients": ["mixed baby greens", "tomatoes", "cucumber", "red onion", "fresh mozzarella"],
+    "sauces": ["sherry balsamic vinaigrette"],
+    "description": "Mixed baby greens with tomatoes, cucumber, red onion, fresh mozzarella and sherry balsamic vinaigrette. (GF, V, VE*)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 46,
+    "type": "salad",
+    "name": "Ensalada Con Cangrejos",
+    "ingredients": ["crabmeat", "avocado", "vine ripped tomatoes", "chives", "capers", "red onions"],
+    "sauces": ["balsamic vinaigrette", "garlic pepper mayonnaise"],
+    "description": "Crabmeat with avocado, vine ripped tomatoes, chives, capers, red onions, drizzled with balsamic vinaigrette and a garlic pepper mayonnaise. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 47,
+    "type": "salad",
+    "name": "Cabrales",
+    "ingredients": ["mixed greens", "Cabrales bleu cheese", "tomatoes", "cucumbers", "endives", "honeyed walnuts"],
+    "sauces": ["sherry vinaigrette"],
+    "description": "Mixed greens with Cabrales bleu cheese, two tomatoes, two cucumbers, endives, and honeyed walnuts tossed in sherry vinaigrette. Cabrales is a cow milk base blended with goat's milk. (GF, V, VE*)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 48,
+    "type": "salad",
+    "name": "Remolacha",
+    "ingredients": ["arugula", "gold beets", "red beets", "honey walnuts", "Mahon cheese"],
+    "sauces": ["lemon mayonnaise dressing"],
+    "description": "Arugula with gold and red beets, honey walnuts, tossed with a lemon mayonnaise dressing and topped with Mahon cheese (white cheese from cows' milk). (GF, V, VE*)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 49,
+    "type": "salad",
+    "name": "Ensalada De Queso De Cabra",
+    "ingredients": ["mixed greens", "sundried tomatoes", "caramelized pistachio", "sour cherries", "goat cheese"],
+    "sauces": ["cherry balsamic reduction"],
+    "description": "Mixed greens with sundried tomatoes, caramelized pistachio, sour cherries, goat cheese, drizzled with a cherry balsamic reduction. (GF, V, VE*)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": true }
+  },
+  {
+    "id": 50,
+    "type": "paella",
+    "name": "Paella Vegetariana",
+    "ingredients": ["saffron rice", "bell peppers", "onions", "assorted vegetables", "yellow onion", "red pepper", "green pepper", "garlic", "tomato juice", "tomato", "tomato paste", "olive oil", "parsley", "white wine"],
+    "sauces": [],
+    "description": "Baked saffron rice casserole tossed with bell peppers, onions and assorted vegetables. Base sauce: yellow onion, red pepper, green pepper, garlic, tomato juice, tomato, tomato paste, picatta (olive oil, parsley, garlic, white wine).",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": true, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 51,
+    "type": "paella",
+    "name": "Paella Valenciana",
+    "ingredients": ["saffron rice", "vegetables", "chicken", "shrimp", "mussels", "clams", "celery", "onion", "carrot", "saffron", "olive oil"],
+    "sauces": [],
+    "description": "Baked saffron rice casserole tossed with vegetables and topped with chicken, shrimp, mussels and clams. Saffron stock: celery, onion, carrot, shrimp, mussel, clam shells, saffron, and olive oil.",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 52,
+    "type": "paella",
+    "name": "Paella Campesina",
+    "ingredients": ["saffron rice", "vegetables", "chicken", "Spanish chorizo", "celery", "onion", "carrot", "saffron", "olive oil"],
+    "sauces": [],
+    "description": "Baked saffron rice casserole tossed with vegetables and topped with chicken and Spanish chorizo. Saffron stock: celery, onion, carrot, saffron, and olive oil.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 53,
+    "type": "paella",
+    "name": "Paella Mariscos",
+    "ingredients": ["saffron rice", "vegetables", "shrimp", "mussels", "clams", "scallops", "octopus", "celery", "onion", "carrot", "saffron", "olive oil"],
+    "sauces": [],
+    "description": "Baked saffron rice casserole tossed with vegetables and topped with shrimp, mussels, clams, scallops and octopus. Saffron stock: celery, onion, carrot, shrimp, mussel, clam shells, saffron, and olive oil.",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 54,
+    "type": "dessert",
+    "name": "Profiteroles Del Pirineo",
+    "ingredients": ["flour", "egg", "butter", "water", "vanilla ice cream"],
+    "sauces": ["bittersweet chocolate sauce"],
+    "description": "Twin pastries filled with vanilla ice cream, topped with bittersweet chocolate sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 55,
+    "type": "dessert",
+    "name": "Crema Catalana Del Meson",
+    "ingredients": ["heavy cream", "vanilla bean", "sugar", "egg yolk", "chocolate chips"],
+    "sauces": [],
+    "description": "Vanilla custard with melted bittersweet chocolate and topped with caramelized sugar. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 56,
+    "type": "dessert",
+    "name": "Platano Con Helado",
+    "ingredients": ["banana", "flour", "butter", "chopped pistachios", "vanilla ice cream"],
+    "sauces": ["caramel sauce (heavy cream, sugar)"],
+    "description": "Sautéed banana coated in flour and butter with chopped pistachios, caramel sauce and vanilla ice cream.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 57,
+    "type": "dessert",
+    "name": "Cazuelita De Chocolate",
+    "ingredients": ["chocolate", "butter", "eggs", "salt", "flour", "vanilla ice cream"],
+    "sauces": ["chocolate sauce"],
+    "description": "Soft-centered, warm chocolate cake served with vanilla ice cream and topped with chocolate sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 58,
+    "type": "dessert",
+    "name": "Tarta De Pera",
+    "ingredients": ["almond paste", "eggs", "butter", "sugar", "flour", "pear", "simple syrup", "lemon"],
+    "sauces": ["caramel sauce"],
+    "description": "Almond pound cake with pear served with caramel sauce and ice cream. Cake base: almond paste, eggs, butter, sugar, flour. Pear poached with simple syrup and lemon.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 59,
+    "type": "dessert",
+    "name": "Tarta De Chocolate Y Carmelo",
+    "ingredients": ["chocolate", "butter", "egg yolks", "caramel", "flour", "hazelnuts", "sugar", "salt", "baking powder", "vanilla ice cream"],
+    "sauces": [],
+    "description": "Warm bitter-sweet chocolate and caramel custard baked in a hazelnut tart crust with vanilla ice cream.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 60,
+    "type": "dessert",
+    "name": "Flan Del Dia",
+    "ingredients": ["half and half", "egg yolk", "whole egg", "sugar", "flavor extract"],
+    "sauces": [],
+    "description": "Featured flan of the day. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 61,
+    "type": "dessert",
+    "name": "Arroz Con Leche",
+    "ingredients": ["rice", "2% milk", "condensed milk", "cinnamon sticks", "orange zest"],
+    "sauces": [],
+    "description": "Spanish style rice pudding, topped with cinnamon and berries. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 62,
+    "type": "lunch_entree",
+    "name": "Mixta Con Pollo",
+    "ingredients": ["mixed greens", "bell peppers", "grilled chicken breast"],
+    "sauces": ["creamy garlic tomato vinaigrette"],
+    "description": "Baby mixed greens tossed with creamy garlic tomato vinaigrette with bell peppers topped with grilled chicken breast. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 63,
+    "type": "lunch_entree",
+    "name": "Ensalada Con Salmon",
+    "ingredients": ["mixed greens", "grilled Atlantic salmon"],
+    "sauces": ["creamy dill white wine vinaigrette"],
+    "description": "Baby mixed greens tossed with creamy dill white wine vinaigrette, topped with grilled Atlantic salmon. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 64,
+    "type": "lunch_entree",
+    "name": "Ensalada Con Cangrejos",
+    "ingredients": ["crabmeat", "avocado", "vine ripped tomatoes", "chives", "capers", "red onions"],
+    "sauces": ["balsamic vinaigrette", "garlic pepper mayonnaise"],
+    "description": "Crabmeat with avocado, vine ripped tomatoes, chives, capers, red onions, drizzled with balsamic vinaigrette and a garlic pepper mayonnaise. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 65,
+    "type": "lunch_entree",
+    "name": "Bocadillo De Solomillo",
+    "ingredients": ["beef tenderloin", "caramelized red onions", "tomato", "fresh basil", "fresh fruit", "french fries"],
+    "sauces": ["horseradish sour cream"],
+    "description": "Grilled beef tenderloin sandwich with horseradish sour cream, caramelized red onions, tomato and fresh basil, served with fresh fruit and french fries.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 66,
+    "type": "lunch_entree",
+    "name": "Bocadillo De Pollo",
+    "ingredients": ["chicken breast", "tomato", "fresh basil", "fresh fruit", "french fries"],
+    "sauces": ["cumin mayonnaise"],
+    "description": "Grilled chicken breast sandwich with cumin mayonnaise, tomato and fresh basil, served with fresh fruit and french fries.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 67,
+    "type": "lunch_entree",
+    "name": "Pasta Con Gambas",
+    "ingredients": ["fettuccine pasta", "tiger shrimp", "scallions"],
+    "sauces": ["tomato garlic sauce", "lemon butter sauce"],
+    "description": "Fettuccine pasta with sautéed tiger shrimp and scallions tossed with tomato garlic sauce and drizzled with lemon butter sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 68,
+    "type": "lunch_entree",
+    "name": "Codillo De Cordero",
+    "ingredients": ["lamb shank", "couscous", "spinach", "julienne vegetables"],
+    "sauces": ["rosemary red wine sauce"],
+    "description": "Roasted lamb shank served with couscous, sautéed spinach and julienne vegetables in a rosemary red wine sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 69,
+    "type": "lunch_entree",
+    "name": "Solomillos A La Plancha",
+    "ingredients": ["beef tenderloin", "Sevillana potatoes", "asparagus"],
+    "sauces": ["red wine sauce"],
+    "description": "Grilled beef tenderloin medallions with Sevillana potatoes and asparagus, drizzled with red wine sauce. (GF*)",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": true, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 70,
+    "type": "lunch_entree",
+    "name": "Salmon A La Plancha",
+    "ingredients": ["Atlantic salmon", "garlic", "peapods", "mashed potatoes"],
+    "sauces": ["lemon butter sauce"],
+    "description": "Grilled Atlantic salmon served with sautéed garlic peapods, mashed potatoes and a lemon butter sauce. (GF)",
+    "dietary": { "gluten_free": true, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 71,
+    "type": "lunch_entree",
+    "name": "Plato Combinado",
+    "ingredients": ["Patatas con Alioli", "Menestra de Verduras", "Salpicón de Mariscos", "Jamon Serrano", "Pollo al Curry"],
+    "sauces": [],
+    "description": "Combination platter with Patatas con Alioli, Menestra de Verduras, Salpicón de Mariscos, Jamon Serrano and Pollo al Curry.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  },
+  {
+    "id": 72,
+    "type": "lunch_entree",
+    "name": "Trucha A La Plancha",
+    "ingredients": ["Rainbow trout", "spinach", "Mediterranean couscous"],
+    "sauces": ["lemon butter sauce"],
+    "description": "Grilled Rainbow trout served with sautéed spinach, Mediterranean couscous and lemon butter sauce.",
+    "dietary": { "gluten_free": false, "gluten_free_modifiable": false, "vegetarian": false, "vegetarian_modifiable": false, "vegan": false, "vegan_modifiable": false }
+  }
+]

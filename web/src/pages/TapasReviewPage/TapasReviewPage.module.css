@@ -1,0 +1,249 @@
+.page {
+  padding: 20px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .page { padding: 32px 24px; }
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: 700;
+  color: #3d6b3a;
+  margin: 0 0 24px;
+  text-align: center;
+  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
+  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Filters ─────────────────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filterBtn {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 2px solid #3d6b3a;
+  background: #fff;
+  color: #3d6b3a;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+  transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+}
+
+.filterBtn:hover { background: #dff0de; }
+
+.filterBtnActive {
+  background: #3d6b3a;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(61,107,58,0.35);
+}
+
+.dietaryBtn {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 2px solid #3d6b3a;
+  background: #fff;
+  color: #3d6b3a;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+  transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+}
+
+.dietaryBtn:hover { background: #dff0de; }
+
+.dietaryBtnActive {
+  background: #3d6b3a;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(61,107,58,0.35);
+}
+
+.count {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text);
+  opacity: 0.5;
+  margin: 0 0 16px;
+}
+
+/* ── Type sections ───────────────────────────────────────────── */
+
+.typeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.typeDivider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.typeLabel {
+  font-family: var(--font-ui);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #3d6b3a;
+  text-shadow: 0 0 6px #fff, 0 0 3px #fff;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ── Grid ────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 16px;
+}
+
+/* ── Card ────────────────────────────────────────────────────── */
+
+.card {
+  background: #fff;
+  border: 1px solid #dde8dc;
+  border-left: 5px solid #3d6b3a;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardName {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.typeBadge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #edf5ec;
+  color: #3d6b3a;
+  border: 1px solid #c2dbbf;
+  flex-shrink: 0;
+}
+
+/* ── Dietary badges ──────────────────────────────────────────── */
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.badge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #3d6b3a;
+  color: #fff;
+}
+
+.badgeMod {
+  background: transparent;
+  color: #3d6b3a;
+  border: 1.5px solid #3d6b3a;
+}
+
+/* ── Description ─────────────────────────────────────────────── */
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ── Ingredients / Sauces ────────────────────────────────────── */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sectionLabel {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3d6b3a;
+  opacity: 0.7;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.chip {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #f3f8f2;
+  border: 1px solid #d0e4ce;
+  color: var(--color-text);
+}
+
+.chipSauce {
+  background: #fdf6ec;
+  border-color: #e8d4b0;
+}

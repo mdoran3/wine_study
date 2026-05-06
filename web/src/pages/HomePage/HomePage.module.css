@@ -212,3 +212,10 @@
 .drawer_allergy .drawerRule { background: linear-gradient(to right, #7a330055, transparent); }
 .navBtn_allergy { border-left-color: #7a3300; }
 .navBtn_allergy { --btn-hover-bg: #f5e0cc; }
+
+/* ── Theme: Tapas ────────────────────────────────────────────── */
+
+.drawer_tapas .drawerHeader span:first-child { color: #3d6b3a; }
+.drawer_tapas .drawerRule { background: linear-gradient(to right, #3d6b3a55, transparent); }
+.navBtn_tapas { border-left-color: #3d6b3a; }
+.navBtn_tapas { --btn-hover-bg: #edf5ec; }

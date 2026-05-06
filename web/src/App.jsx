@@ -15,6 +15,8 @@ import MothersDayTestPage from './pages/MothersDayTestPage/MothersDayTestPage';
 import SherryReviewPage from './pages/SherryReviewPage/SherryReviewPage';
 import SherryTestPage from './pages/SherryTestPage/SherryTestPage';
 import AllergyPage from './pages/AllergyPage/AllergyPage';
+import TapasReviewPage from './pages/TapasReviewPage/TapasReviewPage';
+import TapasTestPage from './pages/TapasTestPage/TapasTestPage';
 import styles from './App.module.css';
 
 export default function App() {
@@ -38,6 +40,8 @@ export default function App() {
             <Route path="/sherry-review" element={<SherryReviewPage />} />
             <Route path="/sherry-test" element={<SherryTestPage />} />
             <Route path="/allergy" element={<AllergyPage />} />
+            <Route path="/tapas-review" element={<TapasReviewPage />} />
+            <Route path="/tapas-test" element={<TapasTestPage />} />
           </Routes>
         </main>
         <Footer />

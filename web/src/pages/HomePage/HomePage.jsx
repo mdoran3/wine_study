@@ -15,6 +15,15 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'tapas',
+    label: '🍽️ Tapas Menu',
+    theme: 'tapas',
+    items: [
+      { label: 'Review Menu Knowledge', path: '/tapas-review' },
+      { label: 'Generate Menu Test', path: '/tapas-test' },
+    ],
+  },
+  {
     id: 'fish',
     label: '🐟 Fish',
     theme: 'fish',
