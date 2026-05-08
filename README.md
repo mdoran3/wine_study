@@ -1,6 +1,6 @@
-# Mesón Sabika Server Education
+# Mesón Server Education
 
-A mobile-first web application for restaurant servers to study, review, and test their knowledge of Mesón Sabika's wine list, tapas menu, fish program, sherry list, holiday menus, and allergen information.
+A mobile-first web application for restaurant servers to study, review, and test their knowledge of Mesón's wine list, tapas menu, fish program, sherry list, holiday menus, and allergen information.
 
 Live at **[mesoneducation.com](https://mesoneducation.com)**
 
