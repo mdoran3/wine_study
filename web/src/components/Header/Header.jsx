@@ -15,7 +15,7 @@ export default function Header() {
         The Spanish wine and server education center
       </h1>
       <div className={styles.grapesWrapper}>
-        <img src="/grapes_dark.jpg" alt="" className={styles.grapesImg} />
+        <img src="/grapes_dark.webp" alt="" className={styles.grapesImg} />
       </div>
     </header>
   );

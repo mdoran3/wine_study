@@ -17,10 +17,18 @@
 body {
   background:
     linear-gradient(rgba(20, 10, 5, 0.55), rgba(20, 10, 5, 0.55)),
-    url('/background.jpg') center / cover fixed;
+    url('/background.webp') center / cover fixed #2a1a10; /* dark colour shows instantly while the photo loads */
   color: var(--color-text);
   font-family: var(--font-body);
   min-height: 100vh;
+}
+
+@media (max-width: 700px) {
+  body {
+    background:
+      linear-gradient(rgba(20, 10, 5, 0.55), rgba(20, 10, 5, 0.55)),
+      url('/background-mobile.webp') center / cover fixed #2a1a10;
+  }
 }
 
 button {
