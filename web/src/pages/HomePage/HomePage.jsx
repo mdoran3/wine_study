@@ -15,6 +15,14 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'map',
+    label: '🗺️ Maps',
+    theme: 'map',
+    items: [
+      { label: 'Wine Regions of Spain', sub: 'interactive map', path: '/wine-regions' },
+    ],
+  },
+  {
     id: 'tapas',
     label: '🍽️ Tapas Menu',
     theme: 'tapas',

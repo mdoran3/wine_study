@@ -16,6 +16,7 @@ import NewYearsEvePage from './pages/NewYearsEvePage/NewYearsEvePage';
 import NewYearsEveReviewPage from './pages/NewYearsEveReviewPage/NewYearsEveReviewPage';
 import NewYearsEveTestPage from './pages/NewYearsEveTestPage/NewYearsEveTestPage';
 import NewYearsEveMenuPdfPage from './pages/NewYearsEveMenuPdfPage/NewYearsEveMenuPdfPage';
+import WineRegionsPage from './pages/WineRegionsPage/WineRegionsPage';
 import SherryReviewPage from './pages/SherryReviewPage/SherryReviewPage';
 import SherryTestPage from './pages/SherryTestPage/SherryTestPage';
 import AllergyPage from './pages/AllergyPage/AllergyPage';
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/holiday/new-years-eve-2026/menu" element={<NewYearsEveMenuPdfPage />} />
             <Route path="/holiday/new-years-eve-2026/review" element={<NewYearsEveReviewPage />} />
             <Route path="/holiday/new-years-eve-2026/test" element={<NewYearsEveTestPage />} />
+            <Route path="/wine-regions" element={<WineRegionsPage />} />
             <Route path="/sherry-review" element={<SherryReviewPage />} />
             <Route path="/sherry-test" element={<SherryTestPage />} />
             <Route path="/allergy" element={<AllergyPage />} />

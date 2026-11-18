@@ -1,0 +1,478 @@
+{
+ "regions": {
+  "rioja": [
+   {
+    "file": "/regions/rioja-1.jpg",
+    "caption": "Vineyards of Rioja Alavesa beneath the Sierra de Cantabria",
+    "author": "G. Villar",
+    "license": "CC BY-SA 3.0 es",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Rioja_Alavesa..jpg"
+   },
+   {
+    "file": "/regions/rioja-2.jpg",
+    "caption": "A cave bodega in Laguardia, Rioja Alavesa",
+    "author": "josealoly",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cueva_Bodega_en_Laguardia_(Rioja_Alavesa).jpg"
+   },
+   {
+    "file": "/regions/rioja-3.jpg",
+    "caption": "Autumn colour in the vineyards of La Rioja",
+    "author": "LBM1948",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Rioja_1998_08.jpg"
+   }
+  ],
+  "navarra": [
+   {
+    "file": "/regions/navarra-1.jpg",
+    "caption": "Vineyards and the Monastery of Irache, Navarra",
+    "author": "Matthias Bethke",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2007-04-06_Bodegas_de_Irache,_Navarra.jpg"
+   },
+   {
+    "file": "/regions/navarra-2.jpg",
+    "caption": "The Royal Palace of Olite, Navarra",
+    "author": "Jose Luis Filpo Cabana",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Olite_(Olite,_Navarra)._Palacio_Nuevo.jpg"
+   }
+  ],
+  "rias-baixas": [
+   {
+    "file": "/regions/rias-baixas-1.jpg",
+    "caption": "Albariño vines trained on granite pergolas (parras)",
+    "author": "jacilluch",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:RUTA_DEL_VINO_EN_AS_RIAS_BAIXAS_(6314679972).jpg"
+   },
+   {
+    "file": "/regions/rias-baixas-2.jpg",
+    "caption": "Albariño vineyards beside the ría",
+    "author": "Re Fresh Vigo",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vi%C3%B1edos_de_albari%C3%B1o_en_la_parroquia_de_Santa_Cruz_de_Castrelo_(Cambados).jpg"
+   },
+   {
+    "file": "/regions/rias-baixas-3.jpg",
+    "caption": "A traditional hórreo (granary) at Cambados, a Rías Baixas wine town",
+    "author": "Luis Miguel Bugallo Sánchez (Lmbuga)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2013._H%C3%B3rreo_en_Cambados._Galicia_(Spain).jpg"
+   }
+  ],
+  "ribera-del-duero": [
+   {
+    "file": "/regions/ribera-del-duero-1.jpg",
+    "caption": "Vineyards and winery in the Ribera del Duero",
+    "author": "P.Regidor",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Comenge.jpg"
+   },
+   {
+    "file": "/regions/ribera-del-duero-2.jpg",
+    "caption": "Peñafiel Castle, overlooking the Duero valley",
+    "author": "Numisfiel",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Castillo_Pe%C3%B1afiel.jpg"
+   },
+   {
+    "file": "/regions/ribera-del-duero-3.jpg",
+    "caption": "Bodega Valdeviñas in the Ribera del Duero",
+    "author": "Pravdaverita",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodega_Valdevi%C3%B1as_Mirat_Langa_Ribera_del_Duero.jpg"
+   }
+  ],
+  "rueda": [
+   {
+    "file": "/regions/rueda-1.jpg",
+    "caption": "Castillo de la Mota, Medina del Campo, in the heart of Rueda country",
+    "author": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Medina_del_Campo_Castillo_de_la_Mota_(53304505886).jpg"
+   }
+  ],
+  "bierzo": [
+   {
+    "file": "/regions/bierzo-1.jpg",
+    "caption": "Vineyards of El Bierzo",
+    "author": "FCPB",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vi%C3%B1edos_bercianos.jpg"
+   },
+   {
+    "file": "/regions/bierzo-2.jpg",
+    "caption": "The Templar Castle in Ponferrada",
+    "author": "Antonio Moreno Nadal",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Castillo-templarios-ponferrada.jpg"
+   },
+   {
+    "file": "/regions/bierzo-3.jpg",
+    "caption": "Vines in the Bierzo district of León",
+    "author": "Random username 083794703875938",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Vi%C3%B1as_en_la_comarca_del_Bierzo,_Le%C3%B3n_Imgn01.jpg"
+   }
+  ],
+  "toro": [
+   {
+    "file": "/regions/toro-1.jpg",
+    "caption": "Old vines on a bed of river pebbles near San Román de Hornija (Toro DO)",
+    "author": "VIEX - Ernest Niedermann",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Wineyard_Spain_in_Spring_-_San_Roman_de_Horinja.jpg"
+   },
+   {
+    "file": "/regions/toro-2.jpg",
+    "caption": "Collegiate church of Santa María la Mayor, Toro",
+    "author": "Lancastermerrin88",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Colegiata_de_Toro._(Zamora).JPG"
+   }
+  ],
+  "jumilla": [
+   {
+    "file": "/regions/jumilla-1.jpg",
+    "caption": "Vineyards at Finca CQ (Casa Quemada), Jumilla",
+    "author": "Malegaetan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vi%C3%B1edos_de_Finca_CQ_(Casa_Quemada)_en_Jumilla,_Murcia,_Espa%C3%B1a.jpg"
+   },
+   {
+    "file": "/regions/jumilla-2.jpg",
+    "caption": "Jumilla Castle",
+    "author": "Pedro J Pacheco",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Castillo_de_Jumilla_Torre.jpg"
+   }
+  ],
+  "alicante": [
+   {
+    "file": "/regions/alicante-1.jpg",
+    "caption": "Stony vineyard in the Vinalopó valley, Alicante",
+    "author": "FoxR",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vi%C3%B1a_Vino_Vinalopo.jpg"
+   },
+   {
+    "file": "/regions/alicante-2.jpg",
+    "caption": "Santa Bárbara Castle above the city of Alicante",
+    "author": "Michael Kranewitter",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Alicante_-_Castillo_de_Santa_B%C3%A1rbara_22.11.2010_16.JPG"
+   }
+  ],
+  "valencia": [
+   {
+    "file": "/regions/valencia-1.jpg",
+    "caption": "City of Arts and Sciences, Valencia",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ciudad_de_las_Artes_y_las_Ciencias,_Valencia,_Espa%C3%B1a,_2014-06-29,_DD_39.JPG"
+   },
+   {
+    "file": "/regions/valencia-2.jpg",
+    "caption": "Barrel hall at Bodega Sierra Norte, Requena (neighbouring DO Utiel-Requena)",
+    "author": "Simon Burchell",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodega_Sierra_Norte,_Requena_09.jpg"
+   }
+  ],
+  "getariako-txakolina": [
+   {
+    "file": "/regions/getariako-txakolina-1.jpg",
+    "caption": "Getaria harbour and Monte San Antón, on the Basque coast",
+    "author": "Fernando Lozano from Donostia/San Sebastián, Basque Country",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Getaria,_Gipuzkoa,_Basque_Country_May_24,_2014_(49552380727).jpg"
+   },
+   {
+    "file": "/regions/getariako-txakolina-2.jpg",
+    "caption": "Txakoli vineyards at Getaria",
+    "author": "Jean Michel Etchecolonea",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Getaria_Vignobles_Txakoli2.jpg"
+   }
+  ],
+  "penedes": [
+   {
+    "file": "/regions/penedes-1.jpg",
+    "caption": "Penedès vineyards with Montserrat on the horizon",
+    "author": "Unknown",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Pened%C3%A8s_montserrat01.jpg"
+   },
+   {
+    "file": "/regions/penedes-2.jpg",
+    "caption": "Vineyard at Codorníu, Sant Sadurní d'Anoia",
+    "author": "JopkeB",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vineyard_of_Codorn%C3%ADu_2012.jpg"
+   },
+   {
+    "file": "/regions/penedes-3.jpg",
+    "caption": "Caves Codorníu, Sant Sadurní d'Anoia",
+    "author": "MARIA ROSA FERRE",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Caves_Codorniu_(Sant_Sadurn%C3%AD_d%27Anoia)_-_13.jpg"
+   }
+  ],
+  "priorat": [
+   {
+    "file": "/regions/priorat-1.jpg",
+    "caption": "Terraced vineyards of the Priorat",
+    "author": "Merdaseca",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vi%C3%B1as_del_Priorat.jpg"
+   },
+   {
+    "file": "/regions/priorat-2.jpg",
+    "caption": "Vineyards at Gratallops, Priorat",
+    "author": "Angela Llop",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vinyes_del_Priorat,_Gratallops..jpg"
+   },
+   {
+    "file": "/regions/priorat-3.jpg",
+    "caption": "Siurana and its reservoir, Priorat",
+    "author": "Lohen11 - Josep Renalias",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Siurana_-_Pant%C3%A0_i_esgl%C3%A9sia.JPG"
+   }
+  ],
+  "montsant": [
+   {
+    "file": "/regions/montsant-1.jpg",
+    "caption": "Vineyards beneath the cliffs of the Serra del Montsant",
+    "author": "Angela Llop",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Serra_del_Montsant_-_12.jpg"
+   },
+   {
+    "file": "/regions/montsant-2.jpg",
+    "caption": "The Montsant massif",
+    "author": "Tabalot",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "page": "https://commons.wikimedia.org/wiki/File:ElMontsant.jpg"
+   }
+  ],
+  "campo-de-borja": [
+   {
+    "file": "/regions/campo-de-borja-1.jpg",
+    "caption": "Snow on the Moncayo, the mountain above Campo de Borja",
+    "author": "Namiac",
+    "license": "CC BY-SA 3.0 es",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Moncayo_urrutitik_2.JPG"
+   },
+   {
+    "file": "/regions/campo-de-borja-2.jpg",
+    "caption": "Borja and its castle",
+    "author": "Chema01",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Borja5.jpg"
+   }
+  ],
+  "canary-islands": [
+   {
+    "file": "/regions/canary-islands-1.jpg",
+    "caption": "Vines in volcanic pits and stone walls, La Geria, Lanzarote",
+    "author": "Tamara Kulikova",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Geria_-_vineyard_region_of_Lanzarote,_Canary_Islands.jpg"
+   },
+   {
+    "file": "/regions/canary-islands-2.jpg",
+    "caption": "Vineyard at Hoya Grande, La Palma",
+    "author": "Gerda Arendt",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Hoya_Grande,_La_Palma,_vineyards.jpg"
+   },
+   {
+    "file": "/regions/canary-islands-3.jpg",
+    "caption": "La Geria vineyards, Lanzarote",
+    "author": "maczopikczu",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Lanzarote_May_2010_-_la_Geria_vineyards_-_panoramio.jpg"
+   }
+  ],
+  "jerez": [
+   {
+    "file": "/regions/jerez-1.jpg",
+    "caption": "Bodega González Byass, Jerez de la Frontera",
+    "author": "Michimaya",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodega_Gonzalez-_Byas_Jerez_de_la_Frontera.JPG"
+   },
+   {
+    "file": "/regions/jerez-2.jpg",
+    "caption": "Bodega La Emperatriz of Lustau, Jerez",
+    "author": "Caballero 1830",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodega_La_Emperatriz._Lustau.jpg"
+   },
+   {
+    "file": "/regions/jerez-3.jpg",
+    "caption": "Bodegas Lustau, Jerez de la Frontera",
+    "author": "Caballero 1830",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodegas_Lustau._Patio.jpg"
+   }
+  ]
+ },
+ "bodegas": {
+  "muga": [
+   {
+    "file": "/bodegas/muga-1.jpg",
+    "caption": "Bodegas Muga, Haro",
+    "author": "Zarateman",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Haro_-_Bodegas_Muga_01.jpg"
+   }
+  ],
+  "cvne": [
+   {
+    "file": "/bodegas/cvne-1.jpg",
+    "caption": "The CVNE bodega in Haro",
+    "author": "Maite Gu",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodegas_de_CVNE.jpg"
+   }
+  ],
+  "lopez-heredia": [
+   {
+    "file": "/bodegas/lopez-heredia-1.jpg",
+    "caption": "Viña Tondonia bodega, Haro",
+    "author": "Zarateman",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Haro_-_Bodegas_L%C3%B3pez_de_Heredia_Vi%C3%B1a_Tondonia_14.jpg"
+   }
+  ],
+  "riscal": [
+   {
+    "file": "/bodegas/riscal-1.jpg",
+    "caption": "Marqués de Riscal hotel and vineyards, Elciego",
+    "author": "Roderich Kahn",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Elciego_-_Marqu%C3%A9s_de_Riscal_Hotel_RK01.jpg"
+   }
+  ],
+  "emilio-moro": [
+   {
+    "file": "/bodegas/emilio-moro-1.jpg",
+    "caption": "Bodegas Emilio Moro, Pesquera de Duero",
+    "author": "Bodegas Emilio Moro",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodegas_Emilio_Moro.jpg"
+   }
+  ],
+  "vega-sicilia": [
+   {
+    "file": "/bodegas/vega-sicilia-1.jpg",
+    "caption": "Barrel cellar at Vega Sicilia",
+    "author": "moctavio from Miami, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vega_Sicilia,_bodegas.jpg"
+   }
+  ],
+  "alvaro-palacios": [
+   {
+    "file": "/bodegas/alvaro-palacios-1.jpg",
+    "caption": "Celler Álvaro Palacios, Gratallops",
+    "author": "Lohen11 - Josep Renalias",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Gratallops_-_Celler_%C3%81lvaro_Palacios.JPG"
+   }
+  ],
+  "gramona": [
+   {
+    "file": "/bodegas/gramona-1.jpg",
+    "caption": "Working the vineyards at Gramona",
+    "author": "NMP01",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Gramona-cavalls19.jpg"
+   }
+  ],
+  "gonzalez-byass": [
+   {
+    "file": "/bodegas/gonzalez-byass-1.jpg",
+    "caption": "A vine-covered street inside Bodega González Byass, Jerez",
+    "author": "Michimaya",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodega_Gonzalez-_Byas_Jerez_de_la_Frontera.JPG"
+   }
+  ],
+  "lustau": [
+   {
+    "file": "/bodegas/lustau-1.jpg",
+    "caption": "Bodegas Lustau, Jerez de la Frontera",
+    "author": "Caballero 1830",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bodegas_Lustau._Patio.jpg"
+   }
+  ],
+  "codorniu": [
+   {
+    "file": "/bodegas/codorniu-1.jpg",
+    "caption": "Caves Codorníu, Sant Sadurní d'Anoia",
+    "author": "MARIA ROSA FERRE",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Caves_Codorniu_(Sant_Sadurn%C3%AD_d%27Anoia)_-_13.jpg"
+   }
+  ]
+ }
+}

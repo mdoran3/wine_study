@@ -213,6 +213,13 @@
 .navBtn_allergy { border-left-color: #7a3300; }
 .navBtn_allergy { --btn-hover-bg: #f5e0cc; }
 
+/* ── Theme: Map ──────────────────────────────────────────────── */
+
+.drawer_map .drawerHeader span:first-child { color: #1f5f7a; }
+.drawer_map .drawerRule { background: linear-gradient(to right, #1f5f7a55, transparent); }
+.navBtn_map { border-left-color: #1f5f7a; }
+.navBtn_map { --btn-hover-bg: #dcecf3; }
+
 /* ── Theme: Tapas ────────────────────────────────────────────── */
 
 .drawer_tapas .drawerHeader span:first-child { color: #3d6b3a; }

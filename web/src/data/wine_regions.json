@@ -1,0 +1,217 @@
+{
+  "groups": {
+    "red": { "label": "Mostly red", "color": "#8e2a3f" },
+    "white": { "label": "Mostly white", "color": "#b59a1e" },
+    "mixed": { "label": "Red, white & rosé", "color": "#c0642f" },
+    "sparkling": { "label": "Sparkling & still", "color": "#4f7fb0" },
+    "fortified": { "label": "Fortified", "color": "#7a4a9e" }
+  },
+  "regions": [
+    {
+      "id": "rioja", "name": "Rioja", "designation": "DOCa Rioja", "group": "red",
+      "dataNames": ["Rioja"],
+      "location": "Along the upper Ebro River in La Rioja, with parts of the Basque Country (Álava) and Navarra",
+      "grapes": ["Tempranillo", "Garnacha", "Graciano", "Mazuelo", "Viura"],
+      "style": "Red wines aged in oak and labeled by time in barrel and bottle: Crianza, Reserva, Gran Reserva.",
+      "facts": [
+        "Spain's first DOCa (Denominación de Origen Calificada), awarded in 1991",
+        "Three subzones: Rioja Alta, Rioja Alavesa and Rioja Oriental",
+        "The Sierra de Cantabria shields the vineyards from Atlantic weather"
+      ]
+    },
+    {
+      "id": "navarra", "name": "Navarra", "designation": "DO Navarra", "group": "mixed",
+      "dataNames": ["Navarra"],
+      "location": "North-central Spain, from the Pyrenean foothills south to the Ebro River",
+      "grapes": ["Garnacha", "Tempranillo", "Cabernet Sauvignon", "Merlot", "Chardonnay"],
+      "style": "Fruit-forward reds and some of Spain's best-known dry rosés (rosados) made from Garnacha.",
+      "facts": [
+        "Climate shifts from Atlantic in the north to Mediterranean in the south",
+        "Neighbors Rioja to the west and Aragón to the east",
+        "Rosado from Garnacha is the signature style"
+      ]
+    },
+    {
+      "id": "rias-baixas", "name": "Rías Baixas", "designation": "DO Rías Baixas", "group": "white",
+      "dataNames": ["Rias Baixas"],
+      "location": "Galicia, on the Atlantic coast around the Galician inlets (rías)",
+      "grapes": ["Albariño"],
+      "style": "Crisp, aromatic, saline whites with high acidity. Albariño is the star.",
+      "facts": [
+        "Cool, wet Atlantic climate with granite soils",
+        "Vines are often trained high on pergolas (parras) to fight humidity",
+        "Subzones include Val do Salnés, Condado do Tea and O Rosal"
+      ]
+    },
+    {
+      "id": "ribera-del-duero", "name": "Ribera del Duero", "designation": "DO Ribera del Duero", "group": "red",
+      "dataNames": ["Ribera del Duero"],
+      "location": "A high-altitude stretch of the Duero River valley across Burgos, Segovia, Soria and Valladolid",
+      "grapes": ["Tempranillo (Tinto Fino)"],
+      "style": "Powerful, structured, deeply colored reds, often oak aged.",
+      "facts": [
+        "Vineyards sit roughly 750 to 900 meters above sea level",
+        "Big swings between hot days and cold nights keep acidity fresh",
+        "Tempranillo is locally called Tinto Fino or Tinta del País"
+      ]
+    },
+    {
+      "id": "rueda", "name": "Rueda", "designation": "DO Rueda", "group": "white",
+      "dataNames": ["Rueda"],
+      "location": "South of the Duero River around Valladolid, Segovia and Ávila",
+      "grapes": ["Verdejo", "Sauvignon Blanc", "Viura"],
+      "style": "Fresh, herbal, citrusy whites. Verdejo is the signature grape.",
+      "facts": [
+        "Stony river-pebble soils and a continental climate",
+        "Harvesting at night is common to keep the grapes cool and fresh",
+        "Rueda Superior must contain at least 85% Verdejo"
+      ]
+    },
+    {
+      "id": "bierzo", "name": "Bierzo", "designation": "DO Bierzo", "group": "red",
+      "dataNames": ["Bierzo"],
+      "location": "A mountain-ringed valley in León, in the northwest of Castilla y León",
+      "grapes": ["Mencía", "Godello"],
+      "style": "Fragrant, mineral reds from Mencía and textured whites from Godello.",
+      "facts": [
+        "Mountains around the valley let in some Atlantic influence",
+        "Slate and clay soils on steep hillsides",
+        "Mencía is the leading red grape"
+      ]
+    },
+    {
+      "id": "toro", "name": "Toro", "designation": "DO Toro", "group": "red",
+      "dataNames": ["Toro"],
+      "location": "Along the Duero River in Zamora, west of Rueda",
+      "grapes": ["Tinta de Toro (Tempranillo)"],
+      "style": "Bold, tannic, high-alcohol reds with dark fruit.",
+      "facts": [
+        "Tinta de Toro is the local clone of Tempranillo",
+        "Extreme continental climate with hot summers and cold winters",
+        "Many old vines on sandy soils"
+      ]
+    },
+    {
+      "id": "jumilla", "name": "Jumilla", "designation": "DO Jumilla", "group": "red",
+      "dataNames": ["Jumilla"],
+      "location": "High plateau in Murcia, extending into Albacete",
+      "grapes": ["Monastrell (Mourvèdre)"],
+      "style": "Ripe, dark, full-bodied reds. Monastrell dominates.",
+      "facts": [
+        "Hot, dry climate on a plateau about 400 to 800 meters up",
+        "Sandy, limestone soils helped many old vines survive",
+        "Monastrell is the same grape as France's Mourvèdre"
+      ]
+    },
+    {
+      "id": "alicante", "name": "Alicante", "designation": "DO Alicante", "group": "mixed",
+      "dataNames": ["Alicante"],
+      "location": "Mediterranean coast and inland valleys of Alicante province",
+      "grapes": ["Monastrell", "Garnacha Tintorera", "Moscatel de Alejandría"],
+      "style": "Warm-climate reds and aromatic Moscatel whites, plus the historic sweet Fondillón.",
+      "facts": [
+        "Sea breezes moderate the Mediterranean heat",
+        "Garnacha Tintorera is also known as Alicante Bouschet",
+        "Fondillón is a historic sweet wine from this area"
+      ]
+    },
+    {
+      "id": "valencia", "name": "Valencia", "designation": "DO Valencia", "group": "mixed",
+      "dataNames": ["Valencia"],
+      "location": "Inland hills behind the Mediterranean coast of Valencia province",
+      "grapes": ["Bobal", "Tempranillo", "Moscatel de Alejandría", "Merseguera"],
+      "style": "Easy-drinking reds and whites, plus sweet Moscatel de Valencia.",
+      "facts": [
+        "Subzones include Alto Turia, Valentino, Clariano and Moscatel de Valencia",
+        "Bobal is a major local red grape",
+        "Mediterranean climate with warm summers"
+      ]
+    },
+    {
+      "id": "getariako-txakolina", "name": "Getariako Txakolina", "designation": "DO Getariako Txakolina", "group": "white",
+      "dataNames": ["Getariako Txakolina"],
+      "location": "Basque coast of Gipuzkoa, on the Bay of Biscay",
+      "grapes": ["Hondarrabi Zuri", "Hondarrabi Beltza"],
+      "style": "Very dry, high-acid, lightly spritzy white. Often poured from a height.",
+      "facts": [
+        "Steep vineyards run right down to the Bay of Biscay",
+        "Hondarrabi Zuri is the main white grape",
+        "Traditionally poured from above the glass to add a little fizz"
+      ]
+    },
+    {
+      "id": "penedes", "name": "Penedès", "designation": "DO Penedès", "group": "sparkling",
+      "dataNames": ["Penedes"],
+      "location": "Catalonia, between Barcelona and Tarragona",
+      "grapes": ["Xarel·lo", "Macabeo", "Parellada"],
+      "style": "Heart of Cava country, plus fresh still whites and reds.",
+      "facts": [
+        "Cava, Spain's traditional-method sparkling wine, is centered here",
+        "Xarel·lo, Macabeo and Parellada are the classic Cava trio",
+        "Three zones: Alt, Mitjà and Baix Penedès, from hills down to the coast"
+      ]
+    },
+    {
+      "id": "priorat", "name": "Priorat", "designation": "DOQ Priorat", "group": "red",
+      "dataNames": ["Priorat"],
+      "location": "Mountains of Tarragona province in Catalonia",
+      "grapes": ["Garnacha", "Cariñena"],
+      "style": "Concentrated, mineral, powerful reds from low-yielding old vines.",
+      "facts": [
+        "Vines grow on steep terraces of dark slate soil called llicorella",
+        "Qualified status (DOQ) is the Catalan name for DOCa",
+        "Garnacha and Cariñena lead the blends"
+      ]
+    },
+    {
+      "id": "montsant", "name": "Montsant", "designation": "DO Montsant", "group": "red",
+      "dataNames": ["Montsant"],
+      "location": "Wraps around Priorat in Tarragona province",
+      "grapes": ["Garnacha", "Cariñena"],
+      "style": "Rich red wines similar in grapes to Priorat, often at friendlier prices.",
+      "facts": [
+        "Surrounds Priorat on three sides",
+        "Named for the Montsant mountain range",
+        "Granted its own DO in 2001"
+      ]
+    },
+    {
+      "id": "campo-de-borja", "name": "Campo de Borja", "designation": "DO Campo de Borja", "group": "red",
+      "dataNames": ["Campo de Borja"],
+      "location": "Zaragoza province in Aragón, near the Moncayo mountain",
+      "grapes": ["Garnacha"],
+      "style": "Juicy, spicy Garnacha reds, often from old bush vines.",
+      "facts": [
+        "Nicknamed the \"Empire of Garnacha\"",
+        "The cold, dry cierzo wind blows through the vineyards",
+        "Many old, low bush vines"
+      ]
+    },
+    {
+      "id": "canary-islands", "name": "Canary Islands", "designation": "Multiple DOs (e.g. Lanzarote, La Palma, Tacoronte-Acentejo)", "group": "mixed",
+      "dataNames": ["Canary Islands"],
+      "location": "Atlantic islands off the coast of Morocco, far southwest of mainland Spain",
+      "grapes": ["Listán Negro", "Listán Blanco", "Malvasía"],
+      "style": "Volcanic, salty, mineral whites and light, spicy reds.",
+      "facts": [
+        "Volcanic soils and Atlantic trade winds",
+        "Many ungrafted, very old vines",
+        "On Lanzarote, vines grow in pits (hoyos) shielded by stone walls"
+      ]
+    },
+    {
+      "id": "jerez", "name": "Jerez (Sherry)", "designation": "DO Jerez-Xérès-Sherry", "group": "fortified",
+      "dataNames": [],
+      "location": "Cádiz province, in the \"Sherry Triangle\" of Jerez, Sanlúcar de Barrameda and El Puerto de Santa María",
+      "grapes": ["Palomino", "Pedro Ximénez", "Moscatel"],
+      "style": "Fortified wines from bone-dry Fino to sweet Pedro Ximénez, aged in a solera system.",
+      "facts": [
+        "Bright white albariza chalk soils hold water through the dry summer",
+        "Palomino is the main grape for dry sherries",
+        "Sanlúcar's coastal air helps make Manzanilla"
+      ],
+      "noWinesText": "Sherries are covered in the Sherry section.",
+      "link": { "label": "Study Sherry", "path": "/sherry-review" }
+    }
+  ]
+}

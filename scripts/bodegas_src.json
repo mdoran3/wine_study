@@ -1,0 +1,448 @@
+[
+ {
+  "id": "muga",
+  "name": "Bodegas Muga",
+  "region": "rioja",
+  "town": "Haro, La Rioja",
+  "lat": 42.5829,
+  "lon": -2.8472,
+  "wines": [
+   "Muga Rose",
+   "Flor de Muga",
+   "Muga Blanco",
+   "Muga Seleccion Especial",
+   "Prado Enea Grand Reserva",
+   "Torre Muga"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "la-rioja-alta",
+  "name": "La Rioja Alta S.A.",
+  "region": "rioja",
+  "town": "Haro, La Rioja",
+  "lat": 42.5844,
+  "lon": -2.8469,
+  "wines": [
+   "Viña Alberdi Reserva",
+   "Viña Ardanza",
+   "Grand Reserva 904"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "cvne",
+  "name": "CVNE",
+  "region": "rioja",
+  "town": "Haro, La Rioja",
+  "lat": 42.5819,
+  "lon": -2.8491,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "lopez-heredia",
+  "name": "R. López de Heredia Viña Tondonia",
+  "region": "rioja",
+  "town": "Haro, La Rioja",
+  "lat": 42.5844,
+  "lon": -2.8481,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "el-coto",
+  "name": "El Coto de Rioja",
+  "region": "rioja",
+  "town": "Oyón, Álava (Rioja Alavesa)",
+  "lat": 42.4957,
+  "lon": -2.4405,
+  "wines": [
+   "El Coto \"Crianza\"",
+   "El Coto Crianza",
+   "El Coto Blanco",
+   "Coto de Imaz Reserva",
+   "Coto de Imaz Gran Reserva"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "riscal",
+  "name": "Marqués de Riscal",
+  "region": "rioja",
+  "town": "Elciego, Álava (Rioja Alavesa)",
+  "lat": 42.5115,
+  "lon": -2.6193,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "murrieta",
+  "name": "Marqués de Murrieta",
+  "region": "rioja",
+  "town": "Logroño, La Rioja (Finca Ygay)",
+  "lat": 42.4546,
+  "lon": -2.3889,
+  "wines": [
+   "Marqués de Murrieta \"Reserva\"",
+   "Marques de Murrieta Reserva"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "arinzano",
+  "name": "Hacienda de Arínzano",
+  "region": "navarra",
+  "town": "Aberin, Navarra",
+  "lat": 42.6308,
+  "lon": -1.9935,
+  "wines": [
+   "Hacienda Arinzano Blanco",
+   "Hacienda Arinzano Rosé",
+   "Hacienda Rose"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "pazo-barrantes",
+  "name": "Pazo de Barrantes",
+  "region": "rias-baixas",
+  "town": "Ribadumia, Pontevedra",
+  "lat": 42.4971,
+  "lon": -8.7769,
+  "wines": [
+   "Pazo Barrantes",
+   "Pazo Barrantes Gran Vino"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "mar-de-frades",
+  "name": "Mar de Frades",
+  "region": "rias-baixas",
+  "town": "Meis, Pontevedra",
+  "lat": 42.503,
+  "lon": -8.7491,
+  "wines": [
+   "Mar de Frades"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "pazo-senorans",
+  "name": "Pazo de Señoráns",
+  "region": "rias-baixas",
+  "town": "Meis, Pontevedra",
+  "lat": 42.5469,
+  "lon": -8.7087,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "emilio-moro",
+  "name": "Bodegas Emilio Moro",
+  "region": "ribera-del-duero",
+  "town": "Pesquera de Duero, Valladolid",
+  "lat": 41.6432,
+  "lon": -4.151,
+  "wines": [
+   "Emilio Moro",
+   "Finca Resalso",
+   "Malleolus"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "pesquera",
+  "name": "Bodega Tinto Pesquera",
+  "region": "ribera-del-duero",
+  "town": "Pesquera de Duero, Valladolid",
+  "lat": 41.6429,
+  "lon": -4.1532,
+  "wines": [
+   "Tinto Pesquera"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "vega-sicilia",
+  "name": "Vega Sicilia",
+  "region": "ribera-del-duero",
+  "town": "Valbuena de Duero, Valladolid",
+  "lat": 41.6293,
+  "lon": -4.2938,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "pingus",
+  "name": "Dominio de Pingus",
+  "region": "ribera-del-duero",
+  "town": "Quintanilla de Onésimo, Valladolid",
+  "lat": 41.6269,
+  "lon": -4.3636,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "palacios-bierzo",
+  "name": "Descendientes de J. Palacios",
+  "region": "bierzo",
+  "town": "Villafranca del Bierzo, León",
+  "lat": 42.5702,
+  "lon": -6.8191,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "vatan",
+  "name": "Bodegas Vatan",
+  "region": "toro",
+  "town": "Polígono Industrial Norte, Toro, Zamora (approximate)",
+  "lat": 41.5268,
+  "lon": -5.3789,
+  "wines": [
+   "Vatan"
+  ],
+  "src": "Address supplied by the project owner; plotted at the centre of the Polígono Industrial de Toro (OpenStreetMap)"
+ },
+ {
+  "id": "txomin-etxaniz",
+  "name": "Txomin Etxaniz",
+  "region": "getariako-txakolina",
+  "town": "Getaria, Gipuzkoa",
+  "lat": 43.296,
+  "lon": -2.1942,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "ameztoi",
+  "name": "Ameztoi",
+  "region": "getariako-txakolina",
+  "town": "Getaria, Gipuzkoa",
+  "lat": 43.294,
+  "lon": -2.1994,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "codorniu",
+  "name": "Codorníu",
+  "region": "penedes",
+  "town": "Sant Sadurní d'Anoia, Barcelona",
+  "lat": 41.4337,
+  "lon": 1.7976,
+  "wines": [
+   "Codorniu Zero Rose",
+   "Codorniu Zero"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "gramona",
+  "name": "Caves Gramona",
+  "region": "penedes",
+  "town": "Sant Sadurní d'Anoia, Barcelona",
+  "lat": 41.427,
+  "lon": 1.773,
+  "wines": [
+   "III Lustros Grand Reserva"
+  ],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "torres",
+  "name": "Bodegas Torres",
+  "region": "penedes",
+  "town": "Vilafranca del Penedès, Barcelona",
+  "lat": 41.3448,
+  "lon": 1.7043,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "alvaro-palacios",
+  "name": "Álvaro Palacios",
+  "region": "priorat",
+  "town": "Gratallops, Tarragona",
+  "lat": 41.1899,
+  "lon": 0.78,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "borsao",
+  "name": "Bodegas Borsao",
+  "region": "campo-de-borja",
+  "town": "Borja, Zaragoza",
+  "lat": 41.8321,
+  "lon": -1.5272,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "el-grifo",
+  "name": "Bodega El Grifo",
+  "region": "canary-islands",
+  "town": "San Bartolomé, Lanzarote",
+  "lat": 29.0015,
+  "lon": -13.6454,
+  "wines": [],
+  "src": "Wikidata"
+ },
+ {
+  "id": "gonzalez-byass",
+  "name": "González Byass",
+  "region": "jerez",
+  "town": "Jerez de la Frontera, Cádiz",
+  "lat": 36.6814,
+  "lon": -6.1409,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "lustau",
+  "name": "Bodegas Lustau",
+  "region": "jerez",
+  "town": "Jerez de la Frontera, Cádiz",
+  "lat": 36.6846,
+  "lon": -6.1307,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "barbadillo",
+  "name": "Bodegas Barbadillo",
+  "region": "jerez",
+  "town": "Sanlúcar de Barrameda, Cádiz",
+  "lat": 36.7776,
+  "lon": -6.3478,
+  "wines": [],
+  "src": "OpenStreetMap"
+ },
+ {
+  "id": "clos-i-terrasses",
+  "name": "Clos i Terrasses (Clos Erasmus)",
+  "region": "priorat",
+  "town": "Carrer de la Font, Gratallops, Tarragona",
+  "lat": 41.1924,
+  "lon": 0.7772,
+  "wines": [
+   "Laurel"
+  ],
+  "src": "Address from DOQ Priorat / Turisme Priorat; plotted on Carrer de la Font (OpenStreetMap)"
+ },
+ {
+  "id": "numanthia",
+  "name": "Bodega Numanthia",
+  "region": "toro",
+  "town": "Valdefinjas, Zamora (approximate: village centre)",
+  "lat": 41.4513,
+  "lon": -5.4529,
+  "wines": [
+   "Termes"
+  ],
+  "src": "Address C/ Real s/n, Valdefinjas (Castilla y León tourism portal); plotted at the village centre (OpenStreetMap)"
+ },
+ {
+  "id": "los-bermejos",
+  "name": "Bodega Los Bermejos",
+  "region": "canary-islands",
+  "town": "La Florida, San Bartolomé, Lanzarote (approximate: hamlet centre)",
+  "lat": 29.0086,
+  "lon": -13.6306,
+  "wines": [
+   "Los Bermejos"
+  ],
+  "src": "Address Camino a los Bermejos 7, La Florida (DO Lanzarote); plotted at the hamlet centre (OpenStreetMap)"
+ },
+ {
+  "id": "shaya",
+  "name": "Bodegas Shaya",
+  "region": "rueda",
+  "town": "Aldeanueva del Codonal, Segovia (approximate)",
+  "lat": 41.0817,
+  "lon": -4.5437,
+  "wines": [
+   "Shaya",
+   "Shaya Habis"
+  ],
+  "src": "Single listing gives Crta. de Aldehuela km 0.4, Aldeanueva del Codonal; plotted at the village centre (OpenStreetMap)"
+ },
+ {
+  "id": "juan-gil",
+  "name": "Bodegas Juan Gil",
+  "region": "jumilla",
+  "town": "Valle de La Aragona, north of Jumilla (approximate)",
+  "lat": 38.5578,
+  "lon": -1.3473,
+  "wines": [
+   "Juan Gil Silver",
+   "Juan Gil Blue"
+  ],
+  "src": "Sources place the winery about 10 km north of Jumilla in La Aragona; plotted at La Aragona (OpenStreetMap)"
+ },
+ {
+  "id": "el-nido",
+  "name": "Bodegas El Nido",
+  "region": "jumilla",
+  "town": "Valle de La Aragona, north of Jumilla (approximate)",
+  "lat": 38.5578,
+  "lon": -1.3433,
+  "wines": [
+   "El Nido",
+   "Clio"
+  ],
+  "src": "Same valley as Juan Gil; plotted next to La Aragona (OpenStreetMap), offset slightly so both dots show"
+ },
+ {
+  "id": "alto-moncayo",
+  "name": "Bodegas Alto Moncayo",
+  "region": "campo-de-borja",
+  "town": "Borja, Zaragoza (approximate)",
+  "lat": 41.8348,
+  "lon": -1.533,
+  "wines": [
+   "Alto Moncayo Veraton"
+  ],
+  "src": "One listing places the winery in Borja; plotted at the town centre (OpenStreetMap)"
+ },
+ {
+  "id": "can-blau",
+  "name": "Cellers Can Blau",
+  "region": "montsant",
+  "town": "El Molar, Tarragona (approximate)",
+  "lat": 41.163,
+  "lon": 0.7058,
+  "wines": [
+   "Can Blau"
+  ],
+  "src": "Winery on the El Molar to El Lloar road; plotted at El Molar (OpenStreetMap)"
+ },
+ {
+  "id": "segura-viudas",
+  "name": "Heredad Segura Viudas",
+  "region": "penedes",
+  "town": "Torrelavit, Barcelona (approximate)",
+  "lat": 41.4433,
+  "lon": 1.7267,
+  "wines": [
+   "Segura Viudas Heredad",
+   "Segura Viudas Aria Brut"
+  ],
+  "src": "Official address: road Sant Sadurní to Sant Pere de Riudebitlles km 5, Torrelavit; plotted at Torrelavit (OpenStreetMap)"
+ },
+ {
+  "id": "volver",
+  "name": "Bodegas Volver",
+  "region": "alicante",
+  "town": "Pinoso, Alicante (approximate)",
+  "lat": 38.4021,
+  "lon": -1.0416,
+  "wines": [
+   "Tarima"
+  ],
+  "src": "Address Ctra. Pinoso-Fortuna 1, Pinoso; plotted at Pinoso (OpenStreetMap)"
+ }
+]

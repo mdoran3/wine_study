@@ -1,0 +1,244 @@
+.page {
+  padding: 20px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: 700;
+  color: #5a2d7e;
+  margin: 0 0 20px;
+  text-align: center;
+  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
+  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .page { padding: 32px 24px; }
+  .layout { grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr); }
+  .panel { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto; }
+}
+
+/* ── Map card ─────────────────────────────────────────────────── */
+.mapCard {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.neighbor { fill: #f1ece0; fill-opacity: 0.55; stroke: #c4baa3; stroke-width: 0.8; vector-effect: non-scaling-stroke; }
+.land { fill: none; stroke: #6f5d3c; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.provinces { fill: none; stroke: rgba(125, 108, 75, 0.28); stroke-width: 0.5; vector-effect: non-scaling-stroke; }
+
+
+.rivers path { fill: none; stroke: #3f86b5; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+
+/* labels */
+.labels text { paint-order: stroke; stroke-linejoin: round; }
+.l_ocean { font: italic 600 calc(14px * var(--inv, 1)) var(--font-body); letter-spacing: 0.18em; fill: #4d7f9c; stroke: none; }
+.l_sea { font: italic 600 calc(12px * var(--inv, 1)) var(--font-body); letter-spacing: 0.12em; fill: #4d7f9c; stroke: none; }
+.l_inlet { font: italic calc(10px * var(--inv, 1)) var(--font-body); fill: #4d7f9c; stroke: none; }
+.l_land { font: italic 600 calc(12px * var(--inv, 1)) var(--font-body); letter-spacing: 0.2em; fill: #a89570; text-transform: uppercase; stroke: none; }
+.l_country { font: 700 calc(10px * var(--inv, 1)) var(--font-ui); letter-spacing: 0.25em; fill: #9a917e; stroke: none; }
+.l_tiny { font: 700 calc(6px * var(--inv, 1)) var(--font-ui); letter-spacing: 0.1em; fill: #9a917e; stroke: none; }
+.l_mountain { font: italic 600 calc(9px * var(--inv, 1)) var(--font-body); fill: #6f5233; stroke: rgba(244, 234, 211, 0.9); stroke-width: calc(2.5px * var(--inv, 1)); }
+.l_river { font: italic calc(9px * var(--inv, 1)) var(--font-body); fill: #2f6f99; stroke: rgba(244, 234, 211, 0.9); stroke-width: calc(2.5px * var(--inv, 1)); }
+.l_inset { font: italic 600 calc(9px * var(--inv, 1)) var(--font-body); fill: #4d7f9c; stroke: none; }
+
+.inset { fill: #a9cfe2; stroke: #7d6c4b; stroke-width: 1; opacity: 0.95; }
+
+/* ── Regions ──────────────────────────────────────────────────── */
+.region {
+  fill: var(--c);
+  fill-opacity: 0.3;
+  stroke: var(--c);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+  cursor: pointer;
+  outline: none;
+  transition: fill-opacity 0.18s, stroke-width 0.18s, opacity 0.18s;
+}
+
+.regionActive {
+  fill-opacity: 0.34;
+  stroke-width: 3.4;
+}
+
+/* once a region is pinned, keep its fill faint so the terrain shows through */
+.regionPinned { fill-opacity: 0.16; }
+
+.regionDim { fill-opacity: 0.14; opacity: 0.75; }
+
+.region:focus-visible { stroke: #222; stroke-width: 2.6; stroke-dasharray: 4 2; }
+
+.marker { cursor: pointer; outline: none; transition: opacity 0.18s; }
+.markerDim { opacity: 0.4; }
+.hit { fill: transparent; }
+.dot { fill: var(--c); stroke: #fff; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+.markerActive .dot { stroke-width: 1.8; }
+
+.callout rect { fill: #3b1d52; opacity: 0.95; }
+.callout text { font: 700 11px var(--font-ui); fill: #fff; }
+
+.compass path { fill: #5b4a30; }
+.compass text { font: 700 10px var(--font-ui); fill: #5b4a30; }
+.scale rect { fill: #5b4a30; }
+.scale text { font: 600 9px var(--font-ui); fill: #5b4a30; }
+
+/* ── Region buttons under the map ─────────────────────────────── */
+.chipsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.regionBtn {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 1px solid var(--c);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--c);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.15s, color 0.15s;
+}
+
+.regionBtnActive { background: var(--c); color: #fff; }
+
+/* ── Info panel ───────────────────────────────────────────────── */
+.panel {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-top: 5px solid var(--color-border);
+  border-radius: 10px;
+  padding: 18px 20px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  font-family: var(--font-ui);
+  color: var(--color-text);
+  animation: panelIn 0.18s ease-out;
+}
+
+@keyframes panelIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.panelHead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.panelTitle { margin: 0; font-family: var(--font-body); font-size: 22px; font-weight: normal; color: #5a2d7e; }
+.tag { font-size: 11px; font-weight: 700; color: #fff; padding: 3px 9px; border-radius: 999px; }
+.designation { margin: 4px 0 12px; font-size: 13px; opacity: 0.7; }
+.label { margin: 12px 0 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #5a2d7e; }
+.text, .hint, .note { margin: 0; font-size: 14px; line-height: 1.5; }
+.note { margin-top: 14px; font-size: 12px; opacity: 0.6; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; background: #f4effa; color: #44206a; border-radius: 999px; padding: 4px 10px; }
+.facts { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.5; }
+.facts li { margin-bottom: 2px; }
+.wineList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.wineList li { display: flex; flex-direction: column; background: #faf7fd; border-radius: 6px; padding: 7px 10px; }
+.wineName { font-weight: 700; font-size: 14px; }
+.wineMeta { font-size: 12px; opacity: 0.65; }
+.linkBtn {
+  margin-top: 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #5a2d7e;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 14px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.legend { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.legend li { display: flex; align-items: center; gap: 8px; }
+.swatch { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+
+.svg text { text-rendering: geometricPrecision; }
+.fadeZoom { transition: opacity 0.3s; }
+.svg[data-zoomed='true'] .fadeZoom { opacity: 0; }
+.l_mountain { text-transform: uppercase; letter-spacing: 0.12em; fill: #5c432a; }
+
+.peaks path { fill: #4e3a24; stroke: #fff; stroke-width: 0.8; vector-effect: non-scaling-stroke; }
+.peaks text { font: 600 8px var(--font-ui); fill: #3e2d1b; paint-order: stroke; stroke: rgba(255, 255, 255, 0.85); stroke-width: 2.4px; stroke-linejoin: round; }
+
+.resetBtn {
+  display: block;
+  margin: 10px 0 0 auto;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #5a2d7e;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* ── Detail relief, gallery, bodegas ──────────────────────────── */
+.detail { opacity: 0; transition: opacity 0.5s ease; }
+.detailOn { opacity: 1; }
+
+.bodegasOff { opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+.bodegasOn { opacity: 1; transition: opacity 0.4s ease 0.2s; }
+.bodega { cursor: pointer; outline: none; }
+.bodegaRing { fill: #fff; stroke: var(--c); stroke-width: 2; vector-effect: non-scaling-stroke; transition: r 0.15s; }
+.bodegaCore { fill: var(--c); }
+.bodegaGold .bodegaRing { stroke: #d99a00; stroke-width: 2.6; }
+.bodegaGold .bodegaCore { fill: #d99a00; }
+.bodega:focus-visible .bodegaRing { stroke: #222; }
+.bodegaSel .bodegaRing { fill: #fff6d9; stroke-width: 3; }
+
+.gallery { margin: 4px 0 6px; }
+.galleryMain { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; background: #eee; animation: panelIn 0.25s ease-out; }
+.caption { margin: 6px 0 0; font-size: 13px; line-height: 1.4; }
+.credit { margin: 2px 0 0; font-size: 11px; line-height: 1.4; opacity: 0.65; }
+.credit a { color: inherit; }
+.thumbs { display: flex; gap: 6px; margin-top: 8px; }
+.thumb { flex: 1; padding: 0; border: 2px solid transparent; border-radius: 6px; overflow: hidden; background: none; cursor: pointer; opacity: 0.6; touch-action: manipulation; }
+.thumb img { display: block; width: 100%; height: 52px; object-fit: cover; }
+.thumbActive { border-color: #5a2d7e; opacity: 1; }
+
+.bodegaCard { margin: 10px 0 4px; padding: 12px 14px; background: #fffaf0; border: 1px solid #ecd9a8; border-radius: 10px; }
+.bodegaHead { display: flex; justify-content: space-between; gap: 8px; }
+.bodegaKicker { margin: 0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #a87500; }
+.bodegaName { margin: 2px 0 0; font-family: var(--font-body); font-size: 18px; font-weight: normal; color: #5a2d7e; }
+.bodegaTown { margin: 2px 0 8px; font-size: 13px; opacity: 0.7; }
+.bodegaPhoto { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; background: #eee; }
+.closeX { align-self: flex-start; border: none; background: none; font-size: 16px; cursor: pointer; color: var(--color-text); opacity: 0.5; padding: 2px 4px; }
+
+.bodegaChips { display: flex; flex-wrap: wrap; gap: 6px; }
+.bodegaChip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 12px; padding: 5px 10px; border: 1px solid #cbbfa3; border-radius: 999px; background: #fff; color: var(--color-text); cursor: pointer; touch-action: manipulation; }
+.bodegaChipActive { background: #fff1c7; border-color: #d99a00; }
+.goldDot { width: 8px; height: 8px; border-radius: 50%; background: #d99a00; display: inline-block; }
+
+.swatchDot { border-radius: 50%; background: #fff; border: 3px solid #8e2a3f; width: 14px; height: 14px; box-sizing: border-box; }
+.swatchGold { border-color: #d99a00; }
+
+.l_mountainMinor { font: italic 600 calc(7.5px * var(--inv, 1)) var(--font-body); text-transform: uppercase; letter-spacing: 0.08em; fill: #5c432a; stroke: rgba(244, 234, 211, 0.9); stroke-width: calc(2.2px * var(--inv, 1)); }
