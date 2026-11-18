@@ -242,3 +242,11 @@
 .swatchGold { border-color: #d99a00; }
 
 .l_mountainMinor { font: italic 600 calc(7.5px * var(--inv, 1)) var(--font-body); text-transform: uppercase; letter-spacing: 0.08em; fill: #5c432a; stroke: rgba(244, 234, 211, 0.9); stroke-width: calc(2.2px * var(--inv, 1)); }
+
+/* ── Cities ───────────────────────────────────────────────────── */
+.cities circle { fill: #2b2b2b; stroke: #fff; stroke-width: 1px; vector-effect: non-scaling-stroke; }
+.cities text { font-family: var(--font-ui); fill: #2b2b2b; paint-order: stroke; stroke: rgba(255, 255, 255, 0.9); stroke-linejoin: round; }
+.city1 text { font-size: calc(10px * var(--inv, 1)); font-weight: 700; stroke-width: calc(2.6px * var(--inv, 1)); }
+.city2 text { font-size: calc(8.5px * var(--inv, 1)); font-weight: 600; stroke-width: calc(2.4px * var(--inv, 1)); }
+.city3 text { font-size: calc(8px * var(--inv, 1)); font-weight: 600; font-style: italic; stroke-width: calc(2.4px * var(--inv, 1)); }
+.city3 circle { fill: #7a4a9e; }

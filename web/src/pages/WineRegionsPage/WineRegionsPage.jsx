@@ -268,6 +268,7 @@ export default function WineRegionsPage() {
   const zoom = W / view.w;
   const inv = 1 / zoom;
   const zoomed = zoom > 1.6;
+  const cityTier = zoom >= 2.2 ? 3 : zoom > 1.6 ? 2 : 1;
 
   const pinRegion = id => {
     setPinned(p => (p === id ? null : id));
@@ -409,6 +410,16 @@ export default function WineRegionsPage() {
                   filter={activeId === r.id ? 'url(#glow)' : undefined}
                   {...bind(r.id)}
                 />
+              ))}
+            </g>
+
+            {/* cities and wine towns; smaller places appear as you zoom in */}
+            <g className={styles.cities} pointerEvents="none">
+              {map.cities.filter(c => c.tier <= cityTier).map(c => (
+                <g key={c.name} className={styles[`city${c.tier}`]}>
+                  <circle cx={c.x} cy={c.y} r={(c.tier === 1 ? 2.6 : 2) * inv} />
+                  <text x={c.x + 4 * inv} y={c.y + 3 * inv}>{c.name}</text>
+                </g>
               ))}
             </g>
 

@@ -1,0 +1,440 @@
+[
+ {
+  "name": "Algeciras",
+  "lat": 36.1319,
+  "lon": -5.4527,
+  "tier": 2
+ },
+ {
+  "name": "León",
+  "lat": 42.58,
+  "lon": -5.57,
+  "tier": 2
+ },
+ {
+  "name": "Gijón",
+  "lat": 43.53,
+  "lon": -5.67,
+  "tier": 2
+ },
+ {
+  "name": "Vitoria",
+  "lat": 42.85,
+  "lon": -2.67,
+  "tier": 2
+ },
+ {
+  "name": "Perpignan",
+  "lat": 42.7,
+  "lon": 2.9,
+  "tier": 2
+ },
+ {
+  "name": "Almería",
+  "lat": 36.8303,
+  "lon": -2.43,
+  "tier": 2
+ },
+ {
+  "name": "Málaga",
+  "lat": 36.7204,
+  "lon": -4.42,
+  "tier": 1
+ },
+ {
+  "name": "Jaén",
+  "lat": 37.7704,
+  "lon": -3.8,
+  "tier": 2
+ },
+ {
+  "name": "Huelva",
+  "lat": 37.2504,
+  "lon": -6.9299,
+  "tier": 2
+ },
+ {
+  "name": "Albacete",
+  "lat": 39.0003,
+  "lon": -1.87,
+  "tier": 2
+ },
+ {
+  "name": "Toledo",
+  "lat": 39.867,
+  "lon": -4.0167,
+  "tier": 2
+ },
+ {
+  "name": "Guadalajara",
+  "lat": 40.6337,
+  "lon": -3.1666,
+  "tier": 2
+ },
+ {
+  "name": "Santander",
+  "lat": 43.3805,
+  "lon": -3.8,
+  "tier": 2
+ },
+ {
+  "name": "Salamanca",
+  "lat": 40.9704,
+  "lon": -5.67,
+  "tier": 2
+ },
+ {
+  "name": "Burgos",
+  "lat": 42.3504,
+  "lon": -3.68,
+  "tier": 2
+ },
+ {
+  "name": "Tarragona",
+  "lat": 41.1204,
+  "lon": 1.25,
+  "tier": 2
+ },
+ {
+  "name": "Lorca",
+  "lat": 37.6886,
+  "lon": -1.6985,
+  "tier": 2
+ },
+ {
+  "name": "Cartagena",
+  "lat": 37.6004,
+  "lon": -0.98,
+  "tier": 2
+ },
+ {
+  "name": "Oviedo",
+  "lat": 43.3505,
+  "lon": -5.83,
+  "tier": 2
+ },
+ {
+  "name": "Santiago de Compostela",
+  "lat": 42.8829,
+  "lon": -8.5411,
+  "tier": 2
+ },
+ {
+  "name": "Badajoz",
+  "lat": 38.8804,
+  "lon": -6.97,
+  "tier": 2
+ },
+ {
+  "name": "Logroño",
+  "lat": 42.4704,
+  "lon": -2.43,
+  "tier": 2
+ },
+ {
+  "name": "San Sebastián",
+  "lat": 43.3204,
+  "lon": -1.98,
+  "tier": 2
+ },
+ {
+  "name": "Alicante",
+  "lat": 38.3512,
+  "lon": -0.4836,
+  "tier": 2
+ },
+ {
+  "name": "Castelló",
+  "lat": 39.9704,
+  "lon": -0.05,
+  "tier": 2
+ },
+ {
+  "name": "Béziers",
+  "lat": 43.3505,
+  "lon": 3.21,
+  "tier": 2
+ },
+ {
+  "name": "Montpellier",
+  "lat": 43.6104,
+  "lon": 3.87,
+  "tier": 2
+ },
+ {
+  "name": "Cádiz",
+  "lat": 36.5248,
+  "lon": -6.2861,
+  "tier": 2
+ },
+ {
+  "name": "Granada",
+  "lat": 37.165,
+  "lon": -3.585,
+  "tier": 2
+ },
+ {
+  "name": "Gibraltar",
+  "lat": 36.1283,
+  "lon": -5.346,
+  "tier": 2
+ },
+ {
+  "name": "Murcia",
+  "lat": 37.98,
+  "lon": -1.13,
+  "tier": 1
+ },
+ {
+  "name": "Ceuta",
+  "lat": 35.889,
+  "lon": -5.307,
+  "tier": 2
+ },
+ {
+  "name": "A Coruña",
+  "lat": 43.33,
+  "lon": -8.42,
+  "tier": 2
+ },
+ {
+  "name": "Ourense",
+  "lat": 42.33,
+  "lon": -7.87,
+  "tier": 2
+ },
+ {
+  "name": "Pamplona",
+  "lat": 42.82,
+  "lon": -1.65,
+  "tier": 2
+ },
+ {
+  "name": "Porto",
+  "lat": 41.152,
+  "lon": -8.6219,
+  "tier": 1
+ },
+ {
+  "name": "Toulouse",
+  "lat": 43.6219,
+  "lon": 1.448,
+  "tier": 2
+ },
+ {
+  "name": "Valladolid",
+  "lat": 41.65,
+  "lon": -4.75,
+  "tier": 1
+ },
+ {
+  "name": "Melilla",
+  "lat": 35.3,
+  "lon": -2.95,
+  "tier": 2
+ },
+ {
+  "name": "Palma",
+  "lat": 39.5743,
+  "lon": 2.6542,
+  "tier": 1
+ },
+ {
+  "name": "Zaragoza",
+  "lat": 41.65,
+  "lon": -0.89,
+  "tier": 1
+ },
+ {
+  "name": "Córdoba",
+  "lat": 37.88,
+  "lon": -4.77,
+  "tier": 2
+ },
+ {
+  "name": "Vigo",
+  "lat": 42.22,
+  "lon": -8.73,
+  "tier": 2
+ },
+ {
+  "name": "Bilbao",
+  "lat": 43.25,
+  "lon": -2.93,
+  "tier": 1
+ },
+ {
+  "name": "Sevilla",
+  "lat": 37.405,
+  "lon": -5.98,
+  "tier": 1
+ },
+ {
+  "name": "Valencia",
+  "lat": 39.487,
+  "lon": -0.402,
+  "tier": 1
+ },
+ {
+  "name": "Barcelona",
+  "lat": 41.3852,
+  "lon": 2.1814,
+  "tier": 1
+ },
+ {
+  "name": "Lisbon",
+  "lat": 38.7247,
+  "lon": -9.1468,
+  "tier": 1
+ },
+ {
+  "name": "Madrid",
+  "lat": 40.402,
+  "lon": -3.6853,
+  "tier": 1
+ },
+ {
+  "name": "Las Palmas",
+  "lat": 28.1235,
+  "lon": -15.4363,
+  "tier": 2
+ },
+ {
+  "name": "Santa Cruz de Tenerife",
+  "lat": 28.4636,
+  "lon": -16.2518,
+  "tier": 2
+ },
+ {
+  "name": "Haro",
+  "lat": 42.5769,
+  "lon": -2.8467,
+  "tier": 3
+ },
+ {
+  "name": "Laguardia",
+  "lat": 42.543,
+  "lon": -2.5805,
+  "tier": 3
+ },
+ {
+  "name": "Olite",
+  "lat": 42.4814,
+  "lon": -1.6512,
+  "tier": 3
+ },
+ {
+  "name": "Cambados",
+  "lat": 42.5193,
+  "lon": -8.7977,
+  "tier": 3
+ },
+ {
+  "name": "Peñafiel",
+  "lat": 41.5966,
+  "lon": -4.1216,
+  "tier": 3
+ },
+ {
+  "name": "Aranda de Duero",
+  "lat": 41.6715,
+  "lon": -3.6851,
+  "tier": 3
+ },
+ {
+  "name": "Rueda",
+  "lat": 41.413,
+  "lon": -4.9598,
+  "tier": 3
+ },
+ {
+  "name": "Toro",
+  "lat": 41.5217,
+  "lon": -5.394,
+  "tier": 3
+ },
+ {
+  "name": "Ponferrada",
+  "lat": 42.4984,
+  "lon": -6.5663,
+  "tier": 3
+ },
+ {
+  "name": "Jumilla",
+  "lat": 38.4735,
+  "lon": -1.3285,
+  "tier": 3
+ },
+ {
+  "name": "Requena",
+  "lat": 39.4881,
+  "lon": -1.1002,
+  "tier": 3
+ },
+ {
+  "name": "Getaria",
+  "lat": 43.3045,
+  "lon": -2.2037,
+  "tier": 3
+ },
+ {
+  "name": "Vilafranca del Penedès",
+  "lat": 41.3464,
+  "lon": 1.6995,
+  "tier": 3
+ },
+ {
+  "name": "Sant Sadurní d'Anoia",
+  "lat": 41.4245,
+  "lon": 1.7864,
+  "tier": 3
+ },
+ {
+  "name": "Gratallops",
+  "lat": 41.1934,
+  "lon": 0.7769,
+  "tier": 3
+ },
+ {
+  "name": "Borja",
+  "lat": 41.8348,
+  "lon": -1.533,
+  "tier": 3
+ },
+ {
+  "name": "Sanlúcar de Barrameda",
+  "lat": 36.7761,
+  "lon": -6.3535,
+  "tier": 3
+ },
+ {
+  "name": "Jerez de la Frontera",
+  "lat": 36.6817,
+  "lon": -6.1377,
+  "tier": 3
+ },
+ {
+  "name": "Pinoso",
+  "lat": 38.4021,
+  "lon": -1.0416,
+  "tier": 3
+ },
+ {
+  "name": "Falset",
+  "lat": 41.1451,
+  "lon": 0.8196,
+  "tier": 3
+ },
+ {
+  "name": "Medina del Campo",
+  "lat": 41.3085,
+  "lon": -4.915,
+  "tier": 3
+ },
+ {
+  "name": "Villafranca del Bierzo",
+  "lat": 42.6953,
+  "lon": -6.7931,
+  "tier": 3
+ }
+]

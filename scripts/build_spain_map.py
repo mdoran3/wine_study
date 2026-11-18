@@ -233,6 +233,18 @@ river_labels = {
     'Guadalquivir': (-5.4, 37.55), 'Miño': (-8.2, 42.35), 'Júcar': (-1.7, 39.5), 'Segura': (-1.5, 38.05),
 }
 
+# ---- cities and wine towns (scripts/cities_src.json, built by fetch_cities.py) ------------
+cities = []
+for c in json.load(open(os.path.join(os.path.dirname(__file__), 'cities_src.json'))):
+    if c['lon'] < -13 and c['lat'] < 30:          # Canary Islands: drawn in the inset
+        x, y = proj(c['lon'], c['lat'], **canary_kw)
+        x += INSET_X; y += INSET_Y
+    else:
+        x, y = proj(c['lon'], c['lat'])
+        if not (0 <= x <= W and 0 <= y <= H):
+            continue
+    cities.append({'name': c['name'], 'tier': c['tier'], 'x': round(x, 1), 'y': round(y, 1)})
+
 # ---- zoom views per region (x, y, w, h in map units) ----------------------------------
 def view_for(box_, pad):
     x0, y0, x1, y1 = box_
@@ -262,6 +274,7 @@ out = {
               'canaryBox': CAN_BOX, 'canaryK': CAN_K},
     'peaks': peaks,
     'regionViews': REGION_VIEWS,
+    'cities': cities,
     'regionCenters': {k: [round(c, 1) for c in proj(g.representative_point().x, g.representative_point().y)]
                       for k, g in regions_geo.items()},
     'canary': {
