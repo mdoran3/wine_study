@@ -101,7 +101,8 @@ wine_study/
         │   ├── menu.json                 # Tapas menu (72 items w/ ingredients, sauces, dietary)
         │   ├── sherry.json               # Sherry list
         │   ├── allergies.json            # Allergen data per menu item
-        │   └── mothers_day_2026.json     # Holiday menu (Mother's Day 2026)
+        │   ├── mothers_day_2026.json     # Holiday menu (Mother's Day 2026)
+        │   └── new_years_eve_2026.json   # Holiday menu (New Year's Eve 2026)
         └── pages/
             ├── HomePage/             # Notebook-style landing page
             ├── ReviewPage/           # Wines by the glass — sort/group controls
@@ -118,6 +119,9 @@ wine_study/
             ├── MothersDayPage/       # Mother's Day 2026 menu
             ├── MothersDayReviewPage/ # Mother's Day review
             ├── MothersDayTestPage/   # Mother's Day quiz
+            ├── NewYearsEvePage/      # New Year's Eve 2026 menu
+            ├── NewYearsEveReviewPage/ # New Year's Eve review (times, courses, dishes)
+            ├── NewYearsEveTestPage/  # New Year's Eve quiz
             └── AllergyPage/          # Allergen search & Safe Options filter
 ```
 

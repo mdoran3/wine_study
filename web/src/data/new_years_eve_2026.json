@@ -1,0 +1,81 @@
+{
+  "event": {
+    "date": "Thursday, December 31, 2026",
+    "entertainment": "Live Flamenco & Spanish Guitar",
+    "entertainment_time": "6:30 PM to 10:30 PM",
+    "photo_booth": "all night",
+    "special_menus": "Young adult and vegetarian menus are available upon request"
+  },
+  "menus": [
+    {
+      "id": "three",
+      "name": "Three-Course Dinner",
+      "courses": ["Cold Tapas", "Entrée", "Dessert"],
+      "time": "4:00 PM - 5:00 PM",
+      "price": "$79 per adult"
+    },
+    {
+      "id": "four",
+      "name": "Four-Course Dinner",
+      "courses": ["Cold Tapas", "Hot Tapas", "Entrée", "Dessert"],
+      "time": "6 PM to Close",
+      "price": "$99 per adult"
+    }
+  ],
+  "items": [
+    {
+      "id": 1, "type": "cold tapa", "name": "Tostada con Cangrejos",
+      "main_ingredients": "Crab meat, crisp toast, avocado relish",
+      "description": "Crab meat atop crisp toast with avocado relish",
+      "sauces": ""
+    },
+    {
+      "id": 2, "type": "cold tapa", "name": "Pastelillo de Salmón Ahumado",
+      "main_ingredients": "Smoked salmon mousse, pastry shell, dill cream cheese, capers, salmon caviar",
+      "description": "Smoked salmon mousse in a pastry shell with dill cream cheese, capers, and salmon caviar",
+      "sauces": ""
+    },
+    {
+      "id": 3, "type": "cold tapa", "name": "Rollito de Buey",
+      "main_ingredients": "Seared beef tenderloin, arugula, Cabrales cheese, caramelized onions, pomegranate reduction",
+      "description": "Seared beef tenderloin wrapped around arugula, Cabrales cheese, and caramelized onions, finished with a pomegranate reduction",
+      "sauces": "Pomegranate reduction"
+    },
+    {
+      "id": 4, "type": "hot tapa", "name": "Croquetas de Setas",
+      "main_ingredients": "Wild mushroom croquettes, black truffle alioli",
+      "description": "Wild mushroom croquettes served with black truffle alioli",
+      "sauces": "Black truffle alioli"
+    },
+    {
+      "id": 5, "type": "hot tapa", "name": "Queso de Cabra",
+      "main_ingredients": "Goat cheese, puff pastry, tomato basil sauce",
+      "description": "Goat cheese in puff pastry, served with tomato basil sauce",
+      "sauces": "Tomato basil sauce"
+    },
+    {
+      "id": 6, "type": "hot tapa", "name": "Dátiles con Tocino",
+      "main_ingredients": "Roasted dates, bacon, red bell pepper sauce",
+      "description": "Roasted bacon-wrapped dates served with red bell pepper sauce",
+      "sauces": "Red bell pepper sauce"
+    },
+    {
+      "id": 7, "type": "entree", "name": "Mar y Montaña",
+      "main_ingredients": "Baked lobster tail, lemon butter sauce, grilled beef tenderloin medallion, wild mushrooms, white truffle potato purée",
+      "description": "Baked lobster tail with lemon butter sauce and a grilled beef tenderloin medallion, accompanied by wild mushrooms and white truffle potato purée",
+      "sauces": "Lemon butter sauce"
+    },
+    {
+      "id": 8, "type": "dessert", "name": "Piña Colada Cheesecake",
+      "main_ingredients": "Coconut and pineapple cheesecake, coconut liqueur, pineapple coulis",
+      "description": "Coconut and pineapple cheesecake infused with coconut liqueur, served with pineapple coulis",
+      "sauces": "Pineapple coulis"
+    },
+    {
+      "id": 9, "type": "dessert", "name": "Pastel de Chocolate",
+      "main_ingredients": "Chocolate sponge cake, dark cherries, chocolate ganache, dark cherry coulis",
+      "description": "Chocolate sponge cake layered with dark cherries and rich chocolate ganache, served with dark cherry coulis",
+      "sauces": "Dark cherry coulis"
+    }
+  ]
+}

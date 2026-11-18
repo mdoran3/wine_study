@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import styles from './HolidayMenusPage.module.css';
 
 const HOLIDAYS = [
+  { label: "New Year's Eve 2026", path: '/holiday/new-years-eve-2026' },
   { label: "Mother's Day 2026", path: '/holiday/mothers-day-2026' },
 ];
 
