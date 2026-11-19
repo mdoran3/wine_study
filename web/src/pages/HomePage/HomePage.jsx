@@ -80,7 +80,7 @@ export default function HomePage() {
           <p className={styles.heroSub}>Pick a topic, review it, then test yourself.</p>
         </div>
         <div className={styles.mosaic} aria-hidden="true">
-          {['#1f4fa3', '#b4441f', '#e0a526', '#5a6a2a', '#136b73', '#6b2233'].map(c => (
+          {['#2f4a7a', '#a8573a', '#a8873a', '#5d6a43', '#2f6468', '#6b2233'].map(c => (
             <span key={c} style={{ backgroundColor: c }} />
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function HomePage() {
         {SECTIONS.map(section => (
           <div key={section.id} className={`${styles.drawer} ${styles[`drawer_${section.theme}`]}`}>
             <div className={styles.drawerHeader}>
-              <span>{section.label}</span>
+              <span>{section.label.replace(/^[^\p{L}]+/u, '')}</span>
             </div>
             <div className={styles.drawerItems}>
               {section.items.map(item => (

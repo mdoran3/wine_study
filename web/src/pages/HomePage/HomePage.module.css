@@ -3,10 +3,10 @@
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 40px 28px 64px;
+  padding: 44px 28px 72px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 52px;
 }
 
 /* ── Hero ────────────────────────────────────────────────────── */
@@ -21,20 +21,21 @@
 .eyebrow {
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-terracotta);
-  margin-bottom: 12px;
+  color: var(--color-clay);
+  margin-bottom: 14px;
 }
 
 .heroTitle {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(34px, 5.4vw, 60px);
-  line-height: 1.02;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -0.012em;
   color: var(--color-ink);
-  max-width: 11em;
+  max-width: 12em;
 }
 
 .heroSub {
@@ -45,32 +46,30 @@
   margin-top: 14px;
 }
 
-/* a little mosaic of glazed tiles */
+/* a quiet mosaic of glazed tiles */
 .mosaic {
   display: grid;
-  grid-template-columns: repeat(3, 72px);
-  grid-auto-rows: 72px;
-  gap: 5px;
-  padding: 5px;
-  background: var(--color-ink);
-  border-radius: 8px;
-  transform: rotate(3deg);
-  box-shadow: 6px 7px 0 rgba(27, 37, 64, 0.18);
+  grid-template-columns: repeat(3, 68px);
+  grid-auto-rows: 68px;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(31, 42, 68, 0.12);
+  border-radius: 6px;
   flex-shrink: 0;
 }
 
 .mosaic span {
   display: block;
-  border-radius: 3px;
+  border-radius: 2px;
   background-image: var(--tile-light);
-  background-size: 72px 72px;
+  background-size: 68px 68px;
   background-position: center;
 }
 
 @media (max-width: 760px) {
   .hero { flex-direction: column; align-items: flex-start; }
-  .mosaic { grid-template-columns: repeat(6, 48px); grid-auto-rows: 48px; transform: none; }
-  .mosaic span { background-size: 48px 48px; }
+  .mosaic { grid-template-columns: repeat(6, 46px); grid-auto-rows: 46px; }
+  .mosaic span { background-size: 46px 46px; }
 }
 
 /* ── Topic tiles ─────────────────────────────────────────────── */
@@ -78,63 +77,56 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: 44px 40px;
+  gap: 28px;
   align-items: start;
 }
 
 .drawer {
   --theme: #6b2233;
-  --on: #fff3d6;
-  --edge: #fffaf0;
+  --on: #f7efe0;
   position: relative;
   background: var(--theme);
   color: var(--on);
-  border-radius: 14px;
-  padding: 24px 22px 22px;
-  /* framed like a ceramic tile: grout line, glaze edge, soft shadow */
-  box-shadow:
-    0 0 0 4px var(--edge),
-    0 0 0 6px var(--color-ink),
-    7px 9px 0 6px rgba(27, 37, 64, 0.16);
-  transition: transform 0.18s, box-shadow 0.18s;
+  border-radius: 12px;
+  padding: 26px 22px 22px;
+  box-shadow: 0 1px 2px rgba(31, 42, 68, 0.18), 0 8px 22px rgba(31, 42, 68, 0.14);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
+/* faint tilework in the corner, tone on tone */
 .drawer::before {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
-  width: 118px;
-  height: 118px;
-  background: var(--tile-light) top right / 59px 59px;
+  width: 150px;
+  height: 150px;
+  background: var(--tile-light) top right / 50px 50px;
   opacity: 0.35;
-  -webkit-mask-image: linear-gradient(225deg, #000 20%, transparent 75%);
-  mask-image: linear-gradient(225deg, #000 20%, transparent 75%);
-  border-radius: 0 14px 0 0;
+  -webkit-mask-image: linear-gradient(225deg, #000 10%, transparent 70%);
+  mask-image: linear-gradient(225deg, #000 10%, transparent 70%);
   pointer-events: none;
 }
 
 @media (hover: hover) {
   .drawer:hover {
-    transform: translateY(-3px);
-    box-shadow:
-      0 0 0 4px var(--edge),
-      0 0 0 6px var(--color-ink),
-      9px 12px 0 6px rgba(27, 37, 64, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(31, 42, 68, 0.2), 0 14px 30px rgba(31, 42, 68, 0.2);
   }
 }
 
-.drawerHeader { margin-bottom: 16px; position: relative; }
+.drawerHeader { margin-bottom: 18px; position: relative; }
 
 .drawerHeader span {
   font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 0.005em;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0;
   line-height: 1.1;
 }
 
-.drawerItems { display: flex; flex-direction: column; gap: 9px; position: relative; }
+.drawerItems { display: flex; flex-direction: column; gap: 8px; position: relative; }
 
 /* ── Nav buttons ─────────────────────────────────────────────── */
 
@@ -143,10 +135,10 @@
   font-size: 15px;
   font-weight: 700;
   color: var(--color-ink);
-  background: #fffaf0;
-  border: 2px solid var(--color-ink);
+  background: rgba(250, 246, 238, 0.96);
+  border: none;
   border-radius: 8px;
-  padding: 11px 14px;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -154,9 +146,8 @@
   width: 100%;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 3px 0 var(--color-ink);
   -webkit-tap-highlight-color: transparent;
-  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+  transition: background 0.15s, transform 0.15s;
 }
 
 .navBtnInner {
@@ -169,38 +160,41 @@
 
 .navBtn::after {
   content: '→';
-  font-size: 17px;
+  font-size: 16px;
+  color: var(--theme);
   flex-shrink: 0;
-  transition: transform 0.12s;
+  opacity: 0.55;
+  transition: transform 0.15s, opacity 0.15s;
 }
 
 @media (hover: hover) {
-  .navBtn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--color-ink); background: #fff; }
-  .navBtn:hover::after { transform: translateX(3px); }
+  .navBtn:hover { background: #fff; }
+  .navBtn:hover::after { transform: translateX(3px); opacity: 1; }
 }
 
-.navBtn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--color-ink); }
+.navBtn:active { transform: translateY(1px); }
 
 .btnSub {
   font-family: var(--font-ui);
   font-size: 10px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--theme);
-  border: 1.5px solid currentColor;
+  border: 1px solid currentColor;
   padding: 1px 7px;
   border-radius: 999px;
   white-space: nowrap;
+  opacity: 0.85;
 }
 
-/* ── Topic colours ───────────────────────────────────────────── */
+/* ── Topic colours (muted ceramic glazes) ────────────────────── */
 
 .drawer_wine    { --theme: #6b2233; }
-.drawer_map     { --theme: #1f4fa3; }
-.drawer_tapas   { --theme: #5a6a2a; }
-.drawer_fish    { --theme: #136b73; }
-.drawer_sherry  { --theme: #e0a526; --on: #231a17; }
-.drawer_holiday { --theme: #7a2a6e; }
-.drawer_allergy { --theme: #b4441f; }
-.drawer_sherry .btnSub { color: #7a5200; }
+.drawer_map     { --theme: #2f4a7a; }
+.drawer_tapas   { --theme: #5d6a43; }
+.drawer_fish    { --theme: #2f6468; }
+.drawer_sherry  { --theme: #a8873a; --on: #20190f; }
+.drawer_holiday { --theme: #6b3a62; }
+.drawer_allergy { --theme: #a8573a; }
+.drawer_sherry .btnSub { color: #6b5018; }

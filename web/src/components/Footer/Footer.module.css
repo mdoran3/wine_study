@@ -2,7 +2,7 @@
   position: relative;
   padding: 34px 24px 18px;
   text-align: center;
-  background: var(--color-ink);
+  background: #1c2338;
   color: rgba(255, 243, 214, 0.75);
   font-family: var(--font-ui);
   font-size: 13px;
@@ -17,7 +17,7 @@
   top: 0;
   height: 18px;
   background: var(--tile-light) 0 0 / 18px 18px repeat-x;
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .link {
