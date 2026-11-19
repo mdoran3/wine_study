@@ -13,12 +13,15 @@
 
 .heroImg {
   position: absolute;
-  inset: 0;
+  left: 0;
+  /* taller than the hero and shifted up, so the parallax drift (which moves it down) never shows an edge */
+  top: -40%;
   width: 100%;
-  height: 100%;
+  height: 140%;
   object-fit: cover;
   object-position: center 62%;
   display: block;
+  will-change: transform;
 }
 
 /* darkens the left so the text reads over the sky; fades out to the right */
@@ -36,6 +39,7 @@
   max-width: 1120px;
   margin: 0 auto;
   padding: 56px 28px 96px;
+  will-change: transform, opacity;
 }
 
 .eyebrow {
@@ -126,7 +130,10 @@
   right: 0;
   width: 150px;
   height: 150px;
-  background: var(--tile-light) top right / 50px 50px;
+  background-image: var(--tile-light);
+  background-size: 50px 50px;
+  /* the tilework drifts with the scroll position (--sy is set on the page) */
+  background-position: right calc(var(--sy, 0) * -0.05px) top calc(var(--sy, 0) * 0.08px);
   opacity: 0.35;
   -webkit-mask-image: linear-gradient(225deg, #000 10%, transparent 70%);
   mask-image: linear-gradient(225deg, #000 10%, transparent 70%);
@@ -222,3 +229,26 @@
 .drawer_holiday { --theme: #6b3a62; }
 .drawer_allergy { --theme: #a8573a; }
 .drawer_sherry .btnSub { color: #6b5018; }
+
+/* ── motion (skipped entirely for people who ask for reduced motion) ── */
+@media (prefers-reduced-motion: no-preference) {
+  .eyebrow, .heroTitle, .heroSub { animation: heroIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+  .eyebrow { animation-delay: 0.05s; }
+  .heroTitle { animation-delay: 0.18s; }
+  .heroSub { animation-delay: 0.34s; }
+
+  /* topic cards wait below their place until they scroll into view, then rise in, staggered across a row */
+  .drawer[data-reveal]:not([data-in]) { opacity: 0; transform: translateY(34px); }
+  .drawer[data-in] {
+    animation: rise 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 90ms);
+  }
+}
+
+@keyframes heroIn { from { opacity: 0; transform: translateY(18px); } }
+@keyframes rise { from { opacity: 0; transform: translateY(34px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .heroImg { top: 0; height: 100%; will-change: auto; }
+  .heroInner { will-change: auto; }
+}
