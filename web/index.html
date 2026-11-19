@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href="/background-mobile.webp" type="image/webp" media="(max-width: 700px)" />
-    <link rel="preload" as="image" href="/background.webp" type="image/webp" media="(min-width: 701px)" />
-    <link rel="preload" as="image" href="/grapes_dark.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // On the home page, start fetching the hero photo straight away, before the app code has loaded.
+      // (This sits after the viewport tag on purpose: phones only report their real width once it is read.)
+      if (location.pathname === '/') {
+        var l = document.createElement('link');
+        l.rel = 'preload'; l.as = 'image'; l.type = 'image/webp'; l.setAttribute('fetchpriority', 'high');
+        l.href = matchMedia('(max-width: 700px)').matches ? '/hero-sky-mobile.webp' : '/hero-sky.webp';
+        document.head.appendChild(l);
+      }
+    </script>
     <title>Mesón Sabika Education</title>
     <meta name="description" content="Server education tool for Mesón Sabika — study wines, fish, and more." />
 

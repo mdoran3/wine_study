@@ -83,7 +83,7 @@ wine_study/
 └── web/                           # React application (Vite)
     ├── public/
     │   ├── audio/                 # MP3 pronunciation files (1.mp3 – 16.mp3)
-    │   ├── background.webp        # Page background image (+ background-mobile.webp)
+    │   ├── hero-*.webp            # Home hero photo layers for the parallax (scripts/build_hero_layers.py)
     │   ├── og-image.svg           # Open Graph link preview image
     │   ├── grapes_dark.webp       # Header accent image
     │   └── meson_sabika_logo.png  # Restaurant logo

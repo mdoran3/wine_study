@@ -89,36 +89,51 @@ export default function HomePage() {
   const heroRef = useRef(null);
   const layerRefs = useRef([]);
   const [cutoutsReady, setCutoutsReady] = useState(0);
+  const [showCutouts, setShowCutouts] = useState(false);
+  const [nativeScroll] = useState(() => typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()'));
   const [reduceMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const textRef = useRef(null);
 
-  // Parallax: the photo drifts at 40% of the scroll speed, the title floats up and fades, and the
-  // corner tilework on each card shifts a little (via --sy). Topic cards rise in as they scroll into
-  // view. All of it is skipped for people who ask for reduced motion.
+  // Parallax. Where the browser supports scroll-linked CSS animations (Chrome/Edge/Android, Safari 26+)
+  // the layers are driven entirely by CSS (see HomePage.module.css): the motion runs on the compositor,
+  // off the main thread, so it stays smooth even while the page is busy. Everywhere else a small scroll
+  // handler does the same job. Cards rise in as they scroll into view. All of it is off for people who
+  // ask for reduced motion.
+  const updateRef = useRef(null);
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    if (reduceMotion) return undefined;
     const page = pageRef.current;
     let frame = 0;
+    let h = heroRef.current.offsetHeight;
+    let cleanup = () => {};
 
-    const update = () => {
-      frame = 0;
-      const y = window.scrollY;
-      const h = heroRef.current.offsetHeight;
-      const p = Math.min(1, Math.max(0, y / h));          // 0 at the top, 1 once the hero has scrolled away
-      const shift = Math.min(y, h);
-      LAYERS.forEach((l, i) => {
-        const el = layerRefs.current[i];
-        if (el) el.style.transform = `translate3d(0, ${shift * l.speed}px, 0) scale(${1 + p * l.zoom})`;
-      });
-      // the title is the nearest thing: it lifts away faster than the page, and fades as it goes
-      textRef.current.style.transform = `translate3d(0, ${-shift * 0.32}px, 0)`;
-      textRef.current.style.opacity = String(Math.max(0, 1 - p * 1.5));
-      page.style.setProperty('--sy', String(Math.round(y)));
-    };
-    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
-    update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    if (!nativeScroll) {
+      const update = () => {
+        frame = 0;
+        const y = window.scrollY;
+        const p = Math.min(1, Math.max(0, y / h));        // 0 at the top, 1 once the hero has scrolled away
+        const shift = Math.min(y, h);
+        LAYERS.forEach((l, i) => {
+          const el = layerRefs.current[i];
+          if (el) el.style.transform = `translate3d(0, ${shift * l.speed}px, 0) scale(${1 + p * l.zoom})`;
+        });
+        // the title is the nearest thing: it lifts away faster than the page, and fades as it goes
+        textRef.current.style.transform = `translate3d(0, ${-shift * 0.32}px, 0)`;
+        textRef.current.style.opacity = String(Math.max(0, 1 - p * 1.5));
+      };
+      updateRef.current = update;
+      const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+      // the hero's height only changes on resize, so it is measured then, not on every scroll frame
+      const ro = new ResizeObserver(() => { h = heroRef.current.offsetHeight; onScroll(); });
+      ro.observe(heroRef.current);
+      update();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      cleanup = () => {
+        cancelAnimationFrame(frame);
+        window.removeEventListener('scroll', onScroll);
+        ro.disconnect();
+      };
+    }
 
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -127,13 +142,20 @@ export default function HomePage() {
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     page.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-      io.disconnect();
-    };
-  }, []);
+    return () => { cleanup(); io.disconnect(); };
+  }, [reduceMotion, nativeScroll]);
+
+  // The cut-out layers are only needed once the user starts to scroll, so they load after the first
+  // paint and an idle moment, instead of competing with the sky photo and the app code for bandwidth.
+  useEffect(() => {
+    if (reduceMotion) return undefined;
+    const go = () => setShowCutouts(true);
+    if ('requestIdleCallback' in window) { const id = window.requestIdleCallback(go, { timeout: 1500 }); return () => window.cancelIdleCallback(id); }
+    const t = setTimeout(go, 400);
+    return () => clearTimeout(t);
+  }, [reduceMotion]);
+  // a layer that arrives after the page has already scrolled needs placing straight away (JS fallback only)
+  useEffect(() => { if (showCutouts) updateRef.current?.(); }, [showCutouts]);
 
   return (
     <div className={styles.page} ref={pageRef}>
@@ -141,20 +163,22 @@ export default function HomePage() {
         <div className={styles.layers} aria-hidden="true">
           {LAYERS.map((l, i) => {
             // people who ask for reduced motion only get the sky layer (the whole photo), nothing else is downloaded
-            if (reduceMotion && l.id !== 'sky') return null;
             const cutout = l.id !== 'sky';
+            if (cutout && (reduceMotion || !showCutouts)) return null;
             return (
               <div
                 key={l.id}
                 ref={el => { layerRefs.current[i] = el; }}
                 className={`${styles.layer} ${cutout ? styles.cutout : ''} ${cutout && cutoutsReady >= 3 ? styles.cutoutOn : ''}`}
+                style={{ '--speed': l.speed, '--zoom': l.zoom }}
               >
                 <picture>
                   <source media="(max-width: 700px)" srcSet={layerSrc(l.id, true)} />
                   <img
                     src={layerSrc(l.id, false)}
                     alt=""
-                    fetchPriority={cutout ? 'auto' : 'high'}
+                    decoding="async"
+                    fetchPriority={cutout ? 'low' : 'high'}
                     style={{ objectPosition: `center ${hero.position}%` }}
                     ref={el => { if (el && cutout && el.complete && !el.dataset.counted) { el.dataset.counted = '1'; queueMicrotask(() => setCutoutsReady(n => n + 1)); } }}
                     onLoad={e => { if (cutout && !e.currentTarget.dataset.counted) { e.currentTarget.dataset.counted = '1'; setCutoutsReady(n => n + 1); } }}

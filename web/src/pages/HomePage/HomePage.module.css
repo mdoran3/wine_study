@@ -4,7 +4,10 @@
 
 .hero {
   position: relative;
-  min-height: clamp(380px, 52vh, 560px);
+  --hero-h: clamp(380px, 52vh, 560px);   /* also the scroll distance the parallax runs over */
+  min-height: var(--hero-h);
+  isolation: isolate;
+  contain: paint;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -140,8 +143,7 @@
   height: 150px;
   background-image: var(--tile-light);
   background-size: 50px 50px;
-  /* the tilework drifts with the scroll position (--sy is set on the page) */
-  background-position: right calc(var(--sy, 0) * -0.1px) top calc(var(--sy, 0) * 0.16px);
+  background-position: right top;
   opacity: 0.35;
   -webkit-mask-image: linear-gradient(225deg, #000 10%, transparent 70%);
   mask-image: linear-gradient(225deg, #000 10%, transparent 70%);
@@ -259,4 +261,30 @@
 @media (prefers-reduced-motion: reduce) {
   .layer { will-change: auto; }
   .heroInner { will-change: auto; }
+}
+
+/* ── scroll-linked parallax, run by the browser (compositor) where supported ─────────────
+   Progress 0 is the top of the page and 1 is one hero-height down; each layer has its own --speed and
+   --zoom. Browsers without this feature use the scroll handler in HomePage.jsx instead. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .layer {
+      animation: layerDrift linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px var(--hero-h);
+    }
+    .heroInner {
+      animation: heroLift linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px var(--hero-h);
+    }
+  }
+}
+@keyframes layerDrift {
+  to { transform: translate3d(0, calc(var(--speed) * var(--hero-h)), 0) scale(calc(1 + var(--zoom))); }
+}
+@keyframes heroLift {
+  0%    { opacity: 1; }
+  66.7% { opacity: 0; }
+  100%  { opacity: 0; transform: translate3d(0, calc(var(--hero-h) * -0.32), 0); }
 }
