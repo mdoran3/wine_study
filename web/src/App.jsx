@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import HomePage from './pages/HomePage/HomePage';
 import ReviewPage from './pages/ReviewPage/ReviewPage';
 import TestPage from './pages/TestPage/TestPage';
@@ -29,6 +30,7 @@ import styles from './App.module.css';
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className={styles.layout}>
         <Header />
         <Breadcrumbs />
