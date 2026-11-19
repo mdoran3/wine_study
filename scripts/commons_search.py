@@ -35,7 +35,7 @@ def api(**params):
 def strip(html):
     return re.sub(r'<[^>]+>', '', html or '').strip()
 
-def search(query, limit=14, min_w=1000):
+def search(query, limit=14, min_w=2000):
     data = api(action='query', generator='search', gsrsearch=query, gsrnamespace=6, gsrlimit=limit,
                prop='imageinfo', iiprop='url|size|extmetadata|mime', iiurlwidth=330)
     out = []

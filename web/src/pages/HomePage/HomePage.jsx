@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import hero from '../../data/hero.json';
 import styles from './HomePage.module.css';
 
 const SECTIONS = [
@@ -72,42 +73,50 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <section className={styles.home}>
-      <div className={styles.hero}>
-        <div className={styles.heroText}>
+    <div className={styles.page}>
+      <section className={styles.hero}>
+        <picture>
+          <source media="(max-width: 700px)" srcSet="/hero-mobile.webp" />
+          <img className={styles.heroImg} src="/hero.webp" alt="" fetchPriority="high" />
+        </picture>
+        <div className={styles.heroShade} />
+        <div className={styles.heroInner}>
           <p className={styles.eyebrow}>Mesón Sabika · Server education</p>
           <h2 className={styles.heroTitle}>What are we studying today?</h2>
           <p className={styles.heroSub}>Pick a topic, review it, then test yourself.</p>
         </div>
-        <div className={styles.mosaic} aria-hidden="true">
-          {['#2f4a7a', '#a8573a', '#a8873a', '#5d6a43', '#2f6468', '#6b2233'].map(c => (
-            <span key={c} style={{ backgroundColor: c }} />
+        <p className={styles.credit}>
+          {hero.caption} · Photo: {hero.author} ·{' '}
+          <a href={hero.licenseUrl} target="_blank" rel="noreferrer">{hero.license}</a> ·{' '}
+          <a href={hero.page} target="_blank" rel="noreferrer">Wikimedia Commons</a>
+        </p>
+      </section>
+
+      <section className={styles.home}>
+        <div className={styles.grid}>
+          {SECTIONS.map(section => (
+            <div key={section.id} className={`${styles.drawer} ${styles[`drawer_${section.theme}`]}`}>
+              <div className={styles.drawerHeader}>
+                <span>{section.label.replace(/^[^\p{L}]+/u, '')}</span>
+              </div>
+              <div className={styles.drawerItems}>
+                {section.items.map(item => (
+                  <button
+                    key={item.path}
+                    className={styles.navBtn}
+                    onClick={() => navigate(item.path)}
+                  >
+                    <span className={styles.navBtnInner}>
+                      {item.label}
+                      {item.sub && <span className={styles.btnSub}>{item.sub}</span>}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-      <div className={styles.grid}>
-        {SECTIONS.map(section => (
-          <div key={section.id} className={`${styles.drawer} ${styles[`drawer_${section.theme}`]}`}>
-            <div className={styles.drawerHeader}>
-              <span>{section.label.replace(/^[^\p{L}]+/u, '')}</span>
-            </div>
-            <div className={styles.drawerItems}>
-              {section.items.map(item => (
-                <button
-                  key={item.path}
-                  className={styles.navBtn}
-                  onClick={() => navigate(item.path)}
-                >
-                  <span className={styles.navBtnInner}>
-                    {item.label}
-                    {item.sub && <span className={styles.btnSub}>{item.sub}</span>}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
