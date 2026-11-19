@@ -76,7 +76,7 @@
   stroke-linejoin: round;
   cursor: pointer;
   outline: none;
-  transition: fill-opacity 0.18s, stroke-width 0.18s, opacity 0.18s;
+  transition: fill-opacity 0.12s, stroke-width 0.12s;
 }
 
 .regionActive {

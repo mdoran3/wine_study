@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import map from '../../data/spain_map.json';
 import info from '../../data/wine_regions.json';
@@ -262,12 +262,27 @@ function DetailRelief({ id }) {
   );
 }
 
+// Hover that is released after a short grace period, so crossing a gap in a thin region, or a marker
+// dot sitting on top of a region, doesn't flip the whole map in and out of its hover state.
+function useHoverIntent(delay = 140) {
+  const [value, setValue] = useState(null);
+  const timer = useRef(null);
+  const enter = useCallback(id => { clearTimeout(timer.current); setValue(id); }, []);
+  const leave = useCallback(() => {
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setValue(null), delay);
+  }, [delay]);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  return [value, enter, leave];
+}
+
 export default function WineRegionsPage() {
   useEffect(() => { document.title = 'Meson Sabika - Wine Regions of Spain'; }, []);
-  const [hover, setHover] = useState(null);
+  const [hover, enterRegion, leaveRegion] = useHoverIntent();
+  const [hoverBodega, enterBodega, leaveBodega] = useHoverIntent();
   const [pinned, setPinned] = useState(null);
   const [selBodega, setSelBodega] = useState(null);
-  const [hoverBodega, setHoverBodega] = useState(null);
+
   const activeId = hover ?? pinned;
   const active = activeId ? BY_ID[activeId] : null;
 
@@ -315,10 +330,10 @@ export default function WineRegionsPage() {
   };
 
   const bind = id => ({
-    onMouseEnter: () => setHover(id),
-    onMouseLeave: () => setHover(null),
-    onFocus: () => setHover(id),
-    onBlur: () => setHover(null),
+    onMouseEnter: () => enterRegion(id),
+    onMouseLeave: leaveRegion,
+    onFocus: () => enterRegion(id),
+    onBlur: leaveRegion,
     onClick: e => { e.stopPropagation(); pinRegion(id); },
     onKeyDown: e => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -337,7 +352,7 @@ export default function WineRegionsPage() {
       cls.push(styles.regionActive);
       if (pinned === id) cls.push(styles.regionPinned);
     }
-    else if (activeId) cls.push(styles.regionDim);
+    else if (pinned) cls.push(styles.regionDim);
     return cls.join(' ');
   };
 
@@ -365,10 +380,6 @@ export default function WineRegionsPage() {
                   <stop key={e} offset={e / 3700} stopColor={c} />
                 ))}
               </linearGradient>
-              <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="3" result="b" />
-                <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
               <clipPath id="landClip">
                 <path d={map.land} />
                 {Object.entries(map.neighbors).map(([n, d]) => <path key={n} d={d} />)}
@@ -440,7 +451,6 @@ export default function WineRegionsPage() {
                   d={map.regions[r.id]}
                   className={regionClass(r.id)}
                   style={{ '--c': groups[r.group].color }}
-                  filter={activeId === r.id ? 'url(#glow)' : undefined}
                   {...bind(r.id)}
                 />
               ))}
@@ -490,10 +500,10 @@ export default function WineRegionsPage() {
                     key={b.id}
                     className={`${styles.bodega} ${onOurList(b) ? styles.bodegaGold : ''} ${sel ? styles.bodegaSel : ''}`}
                     style={{ '--c': groups[BY_ID[b.region].group].color }}
-                    onMouseEnter={() => setHoverBodega(b.id)}
-                    onMouseLeave={() => setHoverBodega(null)}
-                    onFocus={() => setHoverBodega(b.id)}
-                    onBlur={() => setHoverBodega(null)}
+                    onMouseEnter={() => enterBodega(b.id)}
+                    onMouseLeave={leaveBodega}
+                    onFocus={() => enterBodega(b.id)}
+                    onBlur={leaveBodega}
                     onClick={e => { e.stopPropagation(); chooseBodega(b.id); }}
                     onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseBodega(b.id); } }}
                     tabIndex={zoomed ? 0 : -1}
@@ -528,7 +538,6 @@ export default function WineRegionsPage() {
                 d={map.canary.land}
                 className={regionClass('canary-islands')}
                 style={{ '--c': groups.mixed.color }}
-                filter={activeId === 'canary-islands' ? 'url(#glow)' : undefined}
                 {...bind('canary-islands')}
               />
               {map.canary.peaks.map(pk => (
@@ -578,8 +587,8 @@ export default function WineRegionsPage() {
                 key={r.id}
                 className={`${styles.regionBtn} ${activeId === r.id ? styles.regionBtnActive : ''}`}
                 style={{ '--c': groups[r.group].color }}
-                onMouseEnter={() => setHover(r.id)}
-                onMouseLeave={() => setHover(null)}
+                onMouseEnter={() => enterRegion(r.id)}
+                onMouseLeave={leaveRegion}
                 onClick={() => pinRegion(r.id)}
               >
                 {r.name}
