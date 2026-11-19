@@ -97,7 +97,7 @@ export default function HomePage() {
           {SECTIONS.map(section => (
             <div key={section.id} className={`${styles.drawer} ${styles[`drawer_${section.theme}`]}`}>
               <div className={styles.drawerHeader}>
-                <span>{section.label.replace(/^[^\p{L}]+/u, '')}</span>
+                <span>{section.label}</span>
               </div>
               <div className={styles.drawerItems}>
                 {section.items.map(item => (
