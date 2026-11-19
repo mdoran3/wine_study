@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import sherry from '../../data/sherry.json';
 import wines from '../../data/wines.json';
+import MissedReview from '../../components/MissedReview/MissedReview';
 import styles from './SherryTestPage.module.css';
 
 // ── constants ─────────────────────────────────────────────────────────────────
@@ -202,7 +203,7 @@ export default function SherryTestPage() {
     setSelected(answer);
     setWasCorrect(correct);
     if (correct) setScore(s => s + 1);
-    else setMissed(m => [...m, q]);
+    else setMissed(m => [...m, { q, answer }]);
     setStatus(STATES.confirmed);
   };
 
@@ -274,43 +275,20 @@ export default function SherryTestPage() {
             <span className={styles.pct}>{pct}%</span>
           </p>
           {missed.length > 0 && (
-            <div className={styles.missed}>
-              <h3 className={styles.missedHeading}>Review these:</h3>
-              {missed.map((q, i) => {
-                if (q.type === 'mc') return (
-                  <div key={i} className={styles.missedRow}>
-                    <span className={styles.missedName}>{q.sherry.name}</span>
-                    <span className={styles.missedLabel}>{FIELD_LABEL[q.field]}:</span>
-                    <span className={styles.missedAnswer}>{q.correct}</span>
-                  </div>
-                );
-                if (q.type === 'tf') return (
-                  <div key={i} className={styles.missedRow}>
-                    <span className={styles.missedName}>{q.sherryName}:</span>
-                    <span className={styles.missedAnswer}>{q.statement} — <strong>{q.correct ? 'True' : 'False'}</strong></span>
-                  </div>
-                );
-                if (q.type === 'fill') return (
-                  <div key={i} className={styles.missedRow}>
-                    <span className={styles.missedName}>{q.missedLabel}:</span>
-                    <span className={styles.missedAnswer}>{q.answers.join(', ')}</span>
-                  </div>
-                );
-                if (q.type === 'multiselect') return (
-                  <div key={i} className={styles.missedRow}>
-                    <span className={styles.missedName}>{q.missedLabel}:</span>
-                    <span className={styles.missedAnswer}>{q.correct.join(', ')}</span>
-                  </div>
-                );
-                if (q.type === 'sort') return (
-                  <div key={i} className={styles.missedRow}>
-                    <span className={styles.missedName}>{q.missedLabel}:</span>
-                    <span className={styles.missedAnswer}>{q.correct.join(' → ')}</span>
-                  </div>
-                );
-                return null;
-              })}
-            </div>
+            <MissedReview items={missed.map(({ q, answer }) => {
+              switch (q.type) {
+                case 'mc':
+                  return { title: q.sherry.name, prompt: QUESTION_TEXT[q.field], kind: 'choice', options: q.options, correct: q.correct, answer };
+                case 'tf':
+                  return { title: q.sherryName, prompt: q.statement, kind: 'choice', options: q.options, correct: q.correct ? 'True' : 'False', answer };
+                case 'fill':
+                  return { prompt: q.prompt, kind: 'text', correct: q.answers.join(', '), answer, check: v => checkAnswer(q, v), hint: q.hint };
+                case 'multiselect':
+                  return { prompt: q.prompt, kind: 'multi', options: q.options, correct: q.correct, answer };
+                default:
+                  return { prompt: q.prompt, kind: 'sort', correct: q.correct, initial: q.initial, answer };
+              }
+            })} />
           )}
           <button className={styles.startBtn} onClick={start}>Try Again</button>
         </div>

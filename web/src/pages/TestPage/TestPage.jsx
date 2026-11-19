@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import wines from '../../data/wines.json';
+import MissedReview from '../../components/MissedReview/MissedReview';
 import styles from './TestPage.module.css';
 
 function shuffle(arr) {
@@ -100,7 +101,7 @@ export default function TestPage() {
     if (isCorrect) {
       setScore(s => s + 1);
     } else {
-      setMissed(m => [...m, questions[index]]);
+      setMissed(m => [...m, { q: questions[index], answer: value }]);
     }
     setStatus(STATES.confirmed);
   };
@@ -160,18 +161,16 @@ export default function TestPage() {
             <span className={styles.pct}>{pct}%</span>
           </p>
           {missed.length > 0 && (
-            <div className={styles.missed}>
-              <h3 className={styles.missedHeading}>Review these:</h3>
-              {missed.map(q => (
-                <div key={`${q.wine.id}-${q.field}`} className={styles.missedRow}>
-                  <span className={styles.missedWine}>{q.wine.name}</span>
-                  <span className={styles.missedLabel}>
-                    {q.field === 'region' ? 'Region' : 'Grapes'}:
-                  </span>
-                  <span className={styles.missedAnswer}>{q.correct}</span>
-                </div>
-              ))}
-            </div>
+            <MissedReview items={missed.map(({ q, answer }) => ({
+              title: q.wine.name,
+              prompt: q.field === 'region' ? 'What region is this wine from?' : 'What grapes are used in this wine?',
+              kind: difficulty === 'hard' ? 'text' : 'choice',
+              options: q.options,
+              correct: q.correct,
+              answer,
+              check: v => fuzzyMatch(v, q.correct),
+              hint: q.field === 'region' ? 'Type the region' : 'Type the grapes, separated by commas',
+            }))} />
           )}
           <button className={styles.startBtn} onClick={restart}>Try Again</button>
         </div>

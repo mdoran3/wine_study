@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import fish from '../../data/fish.json';
+import MissedReview from '../../components/MissedReview/MissedReview';
 import styles from './FishTestPage.module.css';
 
 function shuffle(arr) {
@@ -56,7 +57,7 @@ export default function FishTestPage() {
     if (pending === correct) {
       setScore(s => s + 1);
     } else {
-      setMissed(m => [...m, questions[index]]);
+      setMissed(m => [...m, { q: questions[index], answer: pending }]);
     }
     setStatus(STATES.confirmed);
   };
@@ -100,18 +101,14 @@ export default function FishTestPage() {
             <span className={styles.pct}>{pct}%</span>
           </p>
           {missed.length > 0 && (
-            <div className={styles.missed}>
-              <h3 className={styles.missedHeading}>Review these:</h3>
-              {missed.map(q => (
-                <div key={`${q.fish.id}-${q.field}`} className={styles.missedRow}>
-                  <span className={styles.missedFish}>{q.fish.name}</span>
-                  <span className={styles.missedLabel}>
-                    {q.field === 'flake_type' ? 'Flake Size' : 'Oil Content'}:
-                  </span>
-                  <span className={styles.missedAnswer}>{q.correct}</span>
-                </div>
-              ))}
-            </div>
+            <MissedReview items={missed.map(({ q, answer }) => ({
+              title: q.fish.name,
+              prompt: q.field === 'flake_type' ? 'What is the flake size of this fish?' : 'What is the oil content of this fish?',
+              kind: 'choice',
+              options: q.options,
+              correct: q.correct,
+              answer,
+            }))} />
           )}
           <button className={styles.startBtn} onClick={start}>Try Again</button>
         </div>

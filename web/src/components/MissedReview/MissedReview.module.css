@@ -1,0 +1,138 @@
+.missed {
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.heading {
+  margin: 0 0 4px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.card {
+  --accent: var(--theme, var(--color-accent));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #faf6ee;
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+
+.title { margin: 0; font-weight: 700; color: var(--accent); }
+.prompt { margin: 0; font-weight: 700; color: var(--color-ink, #1f2a44); }
+.detail { margin: 0; font-style: italic; color: var(--color-muted); line-height: 1.45; border-left: 3px solid var(--color-border); padding-left: 10px; }
+.line { margin: 0; line-height: 1.5; }
+.label { color: var(--color-muted); }
+.wrong { color: #9b2c1e; }
+.right { color: #1a6640; font-weight: 600; }
+
+/* the correct answer is hidden until asked for */
+.answerWrap { position: relative; display: inline-block; vertical-align: top; }
+.blurred { filter: blur(7px); user-select: none; pointer-events: none; transition: filter 0.2s; }
+.reveal {
+  position: absolute;
+  inset: 0;
+  min-width: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: rgba(250, 246, 238, 0.35);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.reveal:hover { background: rgba(250, 246, 238, 0.7); }
+
+.retryBtn {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  background: #fff;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.retryBox { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.hint { margin: 0; font-size: 12px; color: var(--color-muted); text-align: center; }
+.options { display: flex; flex-direction: column; gap: 8px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.opt {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  padding: 11px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fffaf0;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  touch-action: manipulation;
+}
+.grid .opt { text-align: center; }
+.opt:disabled { cursor: default; }
+.optPicked { border-color: var(--accent); background: #fff; font-weight: 600; box-shadow: inset 0 0 0 1px var(--accent); }
+.optRight { background: #edfaf2; border-color: #2e9e5e; color: #1a6640; font-weight: 600; }
+.optWrong { background: #fdecea; border-color: #d94f3d; color: #9b2c1e; }
+.optMissed { background: #fff8e1; border-color: #e6a817; color: #7a5500; font-weight: 600; }
+.optDim { opacity: 0.45; }
+
+.input {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  padding: 11px 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+}
+.input:focus { outline: none; border-color: var(--accent); }
+.inputRight { border-color: #2e9e5e; background: #edfaf2; }
+.inputWrong { border-color: #d94f3d; background: #fdecea; }
+
+.sortList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.sortRow { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: 8px; background: #fffaf0; }
+.sortBtns { display: flex; gap: 4px; }
+.sortBtns button { width: 30px; height: 30px; border: 1px solid var(--color-border); border-radius: 6px; background: #fff; cursor: pointer; touch-action: manipulation; }
+.sortBtns button:disabled { opacity: 0.35; cursor: default; }
+
+.confirm {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.confirm:disabled { opacity: 0.45; cursor: default; }
+
+.ok, .no { margin: 0; font-weight: 700; }
+.ok { color: #1a6640; }
+.no { color: #9b2c1e; }

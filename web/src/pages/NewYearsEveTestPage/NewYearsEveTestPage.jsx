@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import data from '../../data/new_years_eve_2026.json';
+import MissedReview from '../../components/MissedReview/MissedReview';
 import styles from './NewYearsEveTestPage.module.css';
 
 const { event, menus, items } = data;
@@ -255,7 +256,6 @@ const checkAnswer = (q, pending) => {
   }
   return pending === q.correct;
 };
-const answerText = q => (Array.isArray(q.correct) ? q.correct.join(', ') : q.correct);
 
 const STATES = { idle: 'idle', active: 'active', confirmed: 'confirmed', done: 'done' };
 
@@ -268,83 +268,6 @@ const QTYPE_LABELS = {
   multi: 'Select All',
   sides: 'Sides',
 };
-
-function MissedItem({ q, answer }) {
-  const multi = isMulti(q);
-  const [retrying, setRetrying] = useState(false);
-  const [pend, setPend] = useState(initPending(q));
-  const [checked, setChecked] = useState(false);
-  const ok = checked && checkAnswer(q, pend);
-  const ready = multi ? pend.length > 0 : !!pend;
-
-  const startRetry = () => { setPend(initPending(q)); setChecked(false); setRetrying(true); };
-  const choose = opt => {
-    if (checked) return;
-    setPend(multi ? (pend.includes(opt) ? pend.filter(x => x !== opt) : [...pend, opt]) : opt);
-  };
-  const has = opt => (multi ? pend.includes(opt) : pend === opt);
-  const isRight = opt => (multi ? q.correct.includes(opt) : q.correct === opt);
-
-  return (
-    <div className={styles.missedCard}>
-      <p className={styles.missedQuestion}>{q.question}</p>
-      <p className={styles.missedLine}>
-        <span className={styles.missedLabel}>You selected:</span>{' '}
-        <span className={styles.missedWrong}>{answerText({ correct: answer })}</span>
-      </p>
-      <p className={styles.missedLine}>
-        <span className={styles.missedLabel}>Correct answer:</span>{' '}
-        <span className={styles.missedRight}>{answerText(q)}</span>
-      </p>
-
-      {!retrying && (
-        <button className={styles.retryBtn} onClick={startRetry}>↻ Retry this question</button>
-      )}
-
-      {retrying && (
-        <div className={styles.retryBox}>
-          {multi && !checked && (
-            <p className={styles.selectHint}>
-              Select all {q.correct.length} correct {q.noun} ({pend.length} of {q.correct.length} selected)
-            </p>
-          )}
-          <div className={multi ? styles.multiGrid : styles.options}>
-            {q.options.map(opt => {
-              const base = multi ? styles.multiBtn : styles.optionBtn;
-              let cls = base;
-              if (checked) {
-                if (has(opt) && isRight(opt)) cls = `${base} ${multi ? styles.multiCorrect : styles.correct}`;
-                else if (has(opt)) cls = `${base} ${multi ? styles.multiWrong : styles.wrong}`;
-                else if (isRight(opt)) cls = `${base} ${multi ? styles.multiMissed : styles.correct}`;
-                else cls = `${base} ${multi ? styles.multiDimmed : styles.dimmed}`;
-              } else if (has(opt)) {
-                cls = `${base} ${multi ? styles.multiSelected : styles.selectedPending}`;
-              }
-              return (
-                <button key={opt} className={cls} onClick={() => choose(opt)} disabled={checked}>
-                  {opt}
-                </button>
-              );
-            })}
-          </div>
-          {!checked && (
-            <button className={styles.confirmBtn} onClick={() => setChecked(true)} disabled={!ready}>
-              Confirm Answer
-            </button>
-          )}
-          {checked && (
-            <>
-              <p className={ok ? styles.retryOk : styles.retryNo}>
-                {ok ? '✓ Got it!' : '✗ Not quite. Check the highlighted answers.'}
-              </p>
-              {!ok && <button className={styles.retryBtn} onClick={startRetry}>↻ Try again</button>}
-            </>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default function NewYearsEveTestPage() {
   const navigate = useNavigate();
@@ -429,10 +352,13 @@ export default function NewYearsEveTestPage() {
             <span className={styles.pct}>{pct}%</span>
           </p>
           {missed.length > 0 && (
-            <div className={styles.missed}>
-              <h3 className={styles.missedHeading}>Review these:</h3>
-              {missed.map((m, i) => <MissedItem key={i} q={m.q} answer={m.answer} />)}
-            </div>
+            <MissedReview items={missed.map(({ q, answer }) => ({
+              prompt: q.question,
+              kind: isMulti(q) ? 'multi' : 'choice',
+              options: q.options,
+              correct: q.correct,
+              answer,
+            }))} />
           )}
           <p className={styles.tip}>💡 Tip: Take it again as many times as you like. Every test is uniquely generated and will be different, so keep practicing!</p>
           <button className={styles.startBtn} onClick={start}>Try Again</button>

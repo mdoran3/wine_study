@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import menu from '../../data/mothers_day_2026.json';
+import MissedReview from '../../components/MissedReview/MissedReview';
 import styles from './MothersDayTestPage.module.css';
 
 function shuffle(arr) {
@@ -119,7 +120,7 @@ export default function MothersDayTestPage() {
     if (pending === questions[index].correct) {
       setScore(s => s + 1);
     } else {
-      setMissed(m => [...m, questions[index]]);
+      setMissed(m => [...m, { q: questions[index], answer: pending }]);
     }
     setStatus(STATES.confirmed);
   };
@@ -170,16 +171,13 @@ export default function MothersDayTestPage() {
             <span className={styles.pct}>{pct}%</span>
           </p>
           {missed.length > 0 && (
-            <div className={styles.missed}>
-              <h3 className={styles.missedHeading}>Review these:</h3>
-              {missed.map((q, i) => (
-                <div key={i} className={styles.missedRow}>
-                  <span className={styles.missedDish}>{q.item ? q.item.name : 'Category'}</span>
-                  <span className={styles.missedLabel}>{QTYPE_LABELS[q.qtype]}:</span>
-                  <span className={styles.missedAnswer}>{q.correct}</span>
-                </div>
-              ))}
-            </div>
+            <MissedReview items={missed.map(({ q, answer }) => ({
+              prompt: q.question,
+              kind: 'choice',
+              options: q.options,
+              correct: q.correct,
+              answer,
+            }))} />
           )}
           <button className={styles.startBtn} onClick={start}>Try Again</button>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import menu from '../../data/menu.json';
+import MissedReview from '../../components/MissedReview/MissedReview';
 import styles from './TapasTestPage.module.css';
 
 const QUESTION_TEXT = {
@@ -297,7 +298,7 @@ export default function TapasTestPage() {
     setSelected(pending);
     setWasCorrect(correct);
     if (correct) setScore(s => s + 1);
-    else setMissed(m => [...m, q]);
+    else setMissed(m => [...m, { q, answer: pending }]);
     setStatus(STATES.confirmed);
   };
 
@@ -370,15 +371,15 @@ export default function TapasTestPage() {
             <span className={styles.pct}>{pct}%</span>
           </p>
           {missed.length > 0 && (
-            <div className={styles.missed}>
-              <h3 className={styles.missedHeading}>Review these:</h3>
-              {missed.map((q, i) => (
-                <div key={i} className={styles.missedRow}>
-                  <span className={styles.missedName}>{q.missedLabel}</span>
-                  <span className={styles.missedAnswer}>{q.missedAnswer}</span>
-                </div>
-              ))}
-            </div>
+            <MissedReview items={missed.map(({ q, answer }) => ({
+              title: q.dish,
+              prompt: q.type === 'description' ? 'Which dish is being described?' : (q.prompt ?? QUESTION_TEXT[q.type]),
+              detail: q.type === 'description' ? q.description : undefined,
+              kind: isMulti(q.type) ? 'multi' : 'choice',
+              options: q.options,
+              correct: q.correct,
+              answer: answer ?? (isMulti(q.type) ? [] : ''),
+            }))} />
           )}
           <button className={styles.startBtn} onClick={start}>Try Again</button>
         </div>
