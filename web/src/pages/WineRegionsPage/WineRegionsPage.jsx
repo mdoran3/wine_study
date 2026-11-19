@@ -221,6 +221,30 @@ function InfoPanel({ region, pinned, bodega, onSelectBodega }) {
   );
 }
 
+// Bodegas that are almost on top of each other (e.g. Muga and La Rioja Alta in Haro) are fanned out
+// sideways so every pin can be seen and clicked; a thin line still points to the true location.
+function layoutPins(inv) {
+  const wx = 18 * inv;
+  const wy = 24 * inv;
+  const left = new Set(bodegas.map(b => b.id));
+  const out = {};
+  for (const b of bodegas) {
+    if (!left.has(b.id)) continue;
+    const group = bodegas.filter(o => left.has(o.id) && Math.abs(o.x - b.x) < wx && Math.abs(o.y - b.y) < wy)
+      .sort((a, c) => a.x - c.x || a.name.localeCompare(c.name));
+    group.forEach((o, i) => {
+      left.delete(o.id);
+      const fan = group.length > 1;
+      out[o.id] = {
+        x: o.x + (fan ? (i - (group.length - 1) / 2) * 20 * inv : 0),
+        y: o.y - (fan ? 9 * inv : 0),
+        fan,
+      };
+    });
+  }
+  return out;
+}
+
 function DetailRelief({ id }) {
   const [loaded, setLoaded] = useState(false);
   const [x, y, w, h] = map.regionViews[id];
@@ -276,6 +300,7 @@ export default function WineRegionsPage() {
   const zoom = W / view.w;
   const inv = 1 / zoom;
   const zoomed = zoom > 1.6;
+  const pinPos = layoutPins(inv);
   const cityTier = zoom >= 2.2 ? 3 : zoom > 1.6 ? 2 : 1;
 
   const pinRegion = id => {
@@ -459,6 +484,7 @@ export default function WineRegionsPage() {
             <g className={zoomed ? styles.bodegasOn : styles.bodegasOff}>
               {[...bodegas].sort((a, b) => (a.id === selBodega) - (b.id === selBodega)).map(b => {
                 const sel = selBodega === b.id;
+                const pos = pinPos[b.id];
                 return (
                   <g
                     key={b.id}
@@ -474,8 +500,14 @@ export default function WineRegionsPage() {
                     role="button"
                     aria-label={`Bodega ${b.name}, ${b.town}`}
                   >
-                    {/* a map pin whose tip sits exactly on the bodega's location */}
-                    <g transform={`translate(${b.x},${b.y}) scale(${(sel ? 1.25 : 1) * inv})`}>
+                    {pos.fan && (
+                      <>
+                        <line className={styles.leader} x1={b.x} y1={b.y} x2={pos.x} y2={pos.y} />
+                        <circle className={styles.trueSpot} cx={b.x} cy={b.y} r={2 * inv} />
+                      </>
+                    )}
+                    {/* a map pin whose tip sits on the bodega's location (or on its leader line when fanned) */}
+                    <g transform={`translate(${pos.x},${pos.y}) scale(${(sel ? 1.25 : 1) * inv})`}>
                       <circle cy="-9" r="13" className={styles.hit} />
                       <path className={styles.pin} d="M0,0 C-4,-6 -8,-9 -8,-14 a8,8 0 1 1 16,0 C8,-9 4,-6 0,0 Z" />
                       <circle className={styles.pinCore} cy="-14" r="3.2" />
@@ -533,7 +565,7 @@ export default function WineRegionsPage() {
                   inv={inv}
                 />)}
             {hoverBodega && zoomed && (
-              <Callout label={BODEGA_BY_ID[hoverBodega].name} x={BODEGA_BY_ID[hoverBodega].x} y={BODEGA_BY_ID[hoverBodega].y} inv={inv} lift={36} />
+              <Callout label={BODEGA_BY_ID[hoverBodega].name} x={pinPos[hoverBodega].x} y={pinPos[hoverBodega].y} inv={inv} lift={36} />
             )}
           </svg>
 
