@@ -1,18 +1,29 @@
 .footer {
-  padding: 18px 24px;
+  position: relative;
+  padding: 34px 24px 18px;
   text-align: center;
-  background: #2a1a1f;
-  color: rgba(255, 255, 255, 0.7);
+  background: var(--color-ink);
+  color: rgba(255, 243, 214, 0.75);
   font-family: var(--font-ui);
   font-size: 13px;
   letter-spacing: 0.02em;
-  border-top: 3px solid var(--color-gold);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 18px;
+  background: var(--tile-light) 0 0 / 18px 18px repeat-x;
+  opacity: 0.9;
 }
 
 .link {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-decoration-color: rgba(255, 243, 214, 0.4);
   text-underline-offset: 3px;
 }
 

@@ -73,10 +73,17 @@ export default function HomePage() {
 
   return (
     <section className={styles.home}>
-      <div className={styles.intro}>
-        <p className={styles.eyebrow}>Mesón Sabika · Server education</p>
-        <h2 className={styles.introTitle}>What would you like to study?</h2>
-        <div className={styles.introRule} />
+      <div className={styles.hero}>
+        <div className={styles.heroText}>
+          <p className={styles.eyebrow}>Mesón Sabika · Server education</p>
+          <h2 className={styles.heroTitle}>What are we studying today?</h2>
+          <p className={styles.heroSub}>Pick a topic, review it, then test yourself.</p>
+        </div>
+        <div className={styles.mosaic} aria-hidden="true">
+          {['#1f4fa3', '#b4441f', '#e0a526', '#5a6a2a', '#136b73', '#6b2233'].map(c => (
+            <span key={c} style={{ backgroundColor: c }} />
+          ))}
+        </div>
       </div>
       <div className={styles.grid}>
         {SECTIONS.map(section => (
