@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './MissedReview.module.css';
 
 const text = v => (Array.isArray(v) ? v.join(', ') : String(v ?? ''));
@@ -38,7 +38,14 @@ function MissedCard({ item }) {
   const [retrying, setRetrying] = useState(false);
   const [value, setValue] = useState(startValue);
   const [checked, setChecked] = useState(false);
-  const [revealed, setRevealed] = useState(false);
+  // 'hidden' -> 'revealing' (button confirms the press and fades, blur dissolves) -> 'shown'
+  const [phase, setPhase] = useState('hidden');
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const reveal = () => {
+    setPhase('revealing');
+    timer.current = setTimeout(() => setPhase('shown'), 650);
+  };
 
   const correct = (() => {
     if (kind === 'text') return item.check(value);
@@ -47,10 +54,17 @@ function MissedCard({ item }) {
     return value === item.correct;
   })();
   const ready = kind === 'multi' ? value.length > 0 : kind === 'text' ? value.trim() !== '' : kind === 'sort' ? true : !!value;
-  const showAnswer = revealed || checked;
+  const showAnswer = phase !== 'hidden' || checked;
   const shownCorrect = kind === 'sort' ? item.correct.join(' → ') : text(item.correct);
 
-  const begin = () => { setValue(startValue()); setChecked(false); setRetrying(true); };
+  // starting (or restarting) a retry covers the answer again, so it can't be read while answering
+  const begin = () => {
+    clearTimeout(timer.current);
+    setPhase('hidden');
+    setValue(startValue());
+    setChecked(false);
+    setRetrying(true);
+  };
   const toggle = opt => setValue(v => (v.includes(opt) ? v.filter(x => x !== opt) : [...v, opt]));
   const move = (i, d) => setValue(v => { const a = [...v]; [a[i], a[i + d]] = [a[i + d], a[i]]; return a; });
 
@@ -67,12 +81,20 @@ function MissedCard({ item }) {
       <div className={styles.line}>
         <span className={styles.label}>Correct answer:</span>{' '}
         <span className={styles.answerWrap}>
-          <span className={showAnswer ? styles.right : `${styles.right} ${styles.blurred}`} aria-hidden={!showAnswer}>
+          <span
+            className={[styles.right, !showAnswer && styles.blurred, phase === 'revealing' && styles.flash].filter(Boolean).join(' ')}
+            aria-hidden={!showAnswer}
+          >
             {shownCorrect}
           </span>
-          {!showAnswer && (
-            <button type="button" className={styles.reveal} onClick={() => setRevealed(true)}>
-              Reveal Answer
+          {!checked && phase !== 'shown' && (
+            <button
+              type="button"
+              className={phase === 'revealing' ? `${styles.reveal} ${styles.revealing}` : styles.reveal}
+              onClick={reveal}
+              disabled={phase === 'revealing'}
+            >
+              {phase === 'revealing' ? '✓ Revealed' : 'Reveal Answer'}
             </button>
           )}
         </span>
