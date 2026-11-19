@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import hero from '../../data/hero.json';
 import styles from './HomePage.module.css';
@@ -71,13 +71,17 @@ const SECTIONS = [
 export default function HomePage() {
   useEffect(() => { document.title = 'Meson Sabika Education'; }, []);
   const navigate = useNavigate();
+  // ?photo=rodezno | penedes | montsant previews the hero options
+  const [params] = useSearchParams();
+  const photoId = hero[params.get('photo')] ? params.get('photo') : 'rodezno';
+  const photo = hero[photoId];
 
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
         <picture>
-          <source media="(max-width: 700px)" srcSet="/hero-mobile.webp" />
-          <img className={styles.heroImg} src="/hero.webp" alt="" fetchPriority="high" />
+          <source media="(max-width: 700px)" srcSet={`/hero-${photoId}-mobile.webp`} />
+          <img className={styles.heroImg} src={`/hero-${photoId}.webp`} alt="" fetchPriority="high" style={{ objectPosition: `center ${photo.position}%` }} />
         </picture>
         <div className={styles.heroShade} />
         <div className={styles.heroInner}>
@@ -86,9 +90,9 @@ export default function HomePage() {
           <p className={styles.heroSub}>Pick a topic, review it, then test yourself.</p>
         </div>
         <p className={styles.credit}>
-          {hero.caption} · Photo: {hero.author} ·{' '}
-          <a href={hero.licenseUrl} target="_blank" rel="noreferrer">{hero.license}</a> ·{' '}
-          <a href={hero.page} target="_blank" rel="noreferrer">Wikimedia Commons</a>
+          {photo.caption} · Photo: {photo.author} ·{' '}
+          <a href={photo.licenseUrl} target="_blank" rel="noreferrer">{photo.license}</a> ·{' '}
+          <a href={photo.page} target="_blank" rel="noreferrer">Wikimedia Commons</a>
         </p>
       </section>
 
