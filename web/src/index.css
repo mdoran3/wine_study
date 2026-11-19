@@ -5,30 +5,43 @@
 }
 
 :root {
-  --color-bg: #faf7f2;
-  --color-text: #2c1a0e;
-  --color-accent: #7b2d3e;
-  --color-accent-hover: #5e2230;
-  --color-border: #d4b8a0;
+  /* palette: deep burgundy + warm ivory, with a restrained gold accent */
+  --color-bg: #f5f0e8;
+  --color-surface: #ffffff;
+  --color-text: #2a1d18;
+  --color-muted: #6f625a;
+  --color-accent: #6b2233;
+  --color-accent-hover: #521a28;
+  --color-gold: #a98a52;
+  --color-border: #e3d9ca;
   --font-body: 'Playfair Display', Georgia, serif;
   --font-ui: 'Lato', system-ui, sans-serif;
+
+  --radius: 10px;
+  --shadow-sm: 0 1px 2px rgba(42, 29, 24, 0.06), 0 2px 8px rgba(42, 29, 24, 0.06);
+  --shadow-md: 0 2px 4px rgba(42, 29, 24, 0.07), 0 8px 24px rgba(42, 29, 24, 0.10);
+  --shadow-btn: 0 1px 2px rgba(42, 29, 24, 0.25), 0 3px 8px rgba(42, 29, 24, 0.12);
+  --shadow-btn-hover: 0 2px 4px rgba(42, 29, 24, 0.25), 0 6px 14px rgba(42, 29, 24, 0.16);
 }
+
+html { scroll-behavior: smooth; }
 
 body {
   background:
-    linear-gradient(rgba(20, 10, 5, 0.55), rgba(20, 10, 5, 0.55)),
-    url('/background.webp') center / cover fixed #2a1a10; /* dark colour shows instantly while the photo loads */
+    radial-gradient(1200px 500px at 50% -120px, rgba(107, 34, 51, 0.07), transparent 70%),
+    var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-@media (max-width: 700px) {
-  body {
-    background:
-      linear-gradient(rgba(20, 10, 5, 0.55), rgba(20, 10, 5, 0.55)),
-      url('/background-mobile.webp') center / cover fixed #2a1a10;
-  }
+::selection { background: rgba(107, 34, 51, 0.18); }
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 button {

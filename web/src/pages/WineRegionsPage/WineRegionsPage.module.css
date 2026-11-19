@@ -9,11 +9,9 @@
   font-family: var(--font-body);
   font-size: 26px;
   font-weight: 700;
-  color: #5a2d7e;
+  color: var(--color-accent);
   margin: 0 0 20px;
   text-align: center;
-  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
-  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
 }
 
 .layout {
@@ -99,7 +97,7 @@
 .dot { fill: var(--c); stroke: #fff; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
 .markerActive .dot { stroke-width: 1.8; }
 
-.callout rect { fill: #3b1d52; opacity: 0.95; }
+.callout rect { fill: #3a1520; opacity: 0.95; }
 .callout text { font: 700 11px var(--font-ui); fill: #fff; }
 
 .compass path { fill: #5b4a30; }
@@ -143,17 +141,17 @@
   animation: panelIn 0.18s ease-out;
 }
 
-@keyframes panelIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes panelIn { from { opacity: 0; transform: translateY(1px); } to { opacity: 1; transform: none; } }
 
 .panelHead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.panelTitle { margin: 0; font-family: var(--font-body); font-size: 22px; font-weight: normal; color: #5a2d7e; }
+.panelTitle { margin: 0; font-family: var(--font-body); font-size: 22px; font-weight: normal; color: var(--color-accent); }
 .tag { font-size: 11px; font-weight: 700; color: #fff; padding: 3px 9px; border-radius: 999px; }
 .designation { margin: 4px 0 12px; font-size: 13px; opacity: 0.7; }
-.label { margin: 12px 0 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #5a2d7e; }
+.label { margin: 12px 0 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); }
 .text, .hint, .note { margin: 0; font-size: 14px; line-height: 1.5; }
 .note { margin-top: 14px; font-size: 12px; opacity: 0.6; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font-size: 12px; background: #f4effa; color: #44206a; border-radius: 999px; padding: 4px 10px; }
+.chip { font-size: 12px; background: #f6eef0; color: var(--color-accent-hover); border-radius: 999px; padding: 4px 10px; }
 .facts { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.5; }
 .facts li { margin-bottom: 2px; }
 .wineList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -166,7 +164,7 @@
   font-size: 13px;
   font-weight: 700;
   color: #fff;
-  background: #5a2d7e;
+  background: var(--color-accent);
   border: none;
   border-radius: 6px;
   padding: 9px 14px;
@@ -193,7 +191,7 @@
   font-size: 13px;
   font-weight: 700;
   color: #fff;
-  background: #5a2d7e;
+  background: var(--color-accent);
   border: none;
   border-radius: 6px;
   padding: 8px 14px;
@@ -217,12 +215,12 @@
 .thumbs { display: flex; gap: 6px; margin-top: 8px; }
 .thumb { flex: 1; padding: 0; border: 2px solid transparent; border-radius: 6px; overflow: hidden; background: none; cursor: pointer; opacity: 0.6; touch-action: manipulation; }
 .thumb img { display: block; width: 100%; height: 52px; object-fit: cover; }
-.thumbActive { border-color: #5a2d7e; opacity: 1; }
+.thumbActive { border-color: var(--color-accent); opacity: 1; }
 
 .bodegaCard { margin: 10px 0 4px; padding: 12px 14px; background: #fffaf0; border: 1px solid #ecd9a8; border-radius: 10px; }
 .bodegaHead { display: flex; justify-content: space-between; gap: 8px; }
 .bodegaKicker { margin: 0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #a87500; }
-.bodegaName { margin: 2px 0 0; font-family: var(--font-body); font-size: 18px; font-weight: normal; color: #5a2d7e; }
+.bodegaName { margin: 2px 0 0; font-family: var(--font-body); font-size: 18px; font-weight: normal; color: var(--color-accent); }
 .bodegaTown { margin: 2px 0 8px; font-size: 13px; opacity: 0.7; }
 .bodegaPhoto { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; background: #eee; }
 .closeX { align-self: flex-start; border: none; background: none; font-size: 16px; cursor: pointer; color: var(--color-text); opacity: 0.5; padding: 2px 4px; }

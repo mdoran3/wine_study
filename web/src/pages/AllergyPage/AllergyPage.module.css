@@ -19,8 +19,6 @@
   color: var(--color-accent);
   margin: 0;
   text-align: center;
-  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
-  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
 }
 
 .subheading {
@@ -32,8 +30,6 @@
   text-align: center;
   padding-top: 16px;
   border-top: 1px solid var(--color-border);
-  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
-  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
 }
 
 /* ── Disclaimer ── */
@@ -341,8 +337,6 @@
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
-  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
 }
 
 /* ── Category sections ── */
@@ -369,8 +363,6 @@
   color: var(--color-accent);
   white-space: nowrap;
   margin: 0;
-  text-shadow: 0 0 12px #fff, 0 0 6px #fff, 0 0 3px #fff;
-  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.15);
 }
 
 .categoryDivider {

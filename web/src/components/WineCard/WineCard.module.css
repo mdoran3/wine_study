@@ -48,7 +48,7 @@
 
 .typeBadge.red {
   background: #fdf0f0;
-  color: #7b2d3e;
+  color: var(--color-accent);
   border: 1px solid #e8a8a8;
 }
 
