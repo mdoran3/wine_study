@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Cut the home-page hero photo into depth layers for the parallax.
 
-Writes web/public/hero-<layer>.webp (and -mobile) for: land, mid, front. The existing hero.webp is
-the full photo and stays the back layer (sky). Each layer is the ORIGINAL pixels with an alpha mask, so
-stacking them at rest reproduces the photo exactly, and when they move at different speeds the layer
+Writes web/public/hero-<layer>.webp (and -mobile) for: sky, land, mid, front. Every layer is the SAME
+canvas size (the photo plus PAD_FRAC extra rows on top, a mirror of the top of the photo, so the sky has
+room to drift down without showing an edge) and is made of the ORIGINAL pixels, the cut-outs with an alpha
+mask. Stacking them at rest reproduces the photo exactly, and when they move at different speeds the layer
 behind always has real picture content to show.
 
 Layers (back to front):  sky = hero.webp (the whole photo)
@@ -23,6 +24,7 @@ PUBLIC = os.path.join(HERE, '..', 'web', 'public')
 SRC = os.path.join(PUBLIC, 'hero.webp')
 REF_W = 1280          # the coordinate system the lines were traced in
 W_OUT = 2048          # layer resolution
+PAD_FRAC = 0.12       # extra rows above the photo, as a fraction of its height (mirrored sky)
 
 # ridge: where the dark distant hills meet the sky
 RIDGE = [(0, 292), (40, 288), (100, 280), (200, 272), (330, 271), (430, 272), (520, 281), (575, 282), (600, 270),
@@ -30,7 +32,7 @@ RIDGE = [(0, 292), (40, 288), (100, 280), (200, 272), (330, 271), (430, 272), (5
 # bottom of the distant-hills band: below this line everything is "mid ground"
 MID_TOP = [(0, 352), (150, 350), (300, 342), (450, 345), (600, 345), (700, 338), (800, 332), (1000, 328), (1280, 325)]
 # near/far split: the road and embankment on the left, the first rows of vines in the middle and right
-FRONT_TOP = [(0, 503), (200, 472), (400, 441), (560, 417), (650, 395), (720, 392), (800, 408), (1000, 424), (1280, 458)]
+FRONT_TOP = [(0, 503), (200, 472), (400, 441), (560, 417), (650, 395), (720, 395), (800, 424), (1000, 446), (1280, 486)]
 
 
 def line_mask(size, pts, scale, feather):
@@ -43,11 +45,11 @@ def line_mask(size, pts, scale, feather):
     return m.filter(ImageFilter.GaussianBlur(feather)) if feather else m
 
 
-def save(im_rgba, name, width, quality):
+def save(im_rgba, name, width, quality, alpha=True):
     out = im_rgba.resize((width, round(im_rgba.height * width / im_rgba.width)), Image.LANCZOS)
     tmp = os.path.join(PUBLIC, name + '.png')
     out.save(tmp)
-    subprocess.run(['cwebp', '-q', str(quality), '-alpha_q', '85', '-quiet', tmp, '-o', os.path.join(PUBLIC, name + '.webp')], check=True)
+    subprocess.run(['cwebp', '-q', str(quality)] + (['-alpha_q', '85'] if alpha else []) + ['-quiet', tmp, '-o', os.path.join(PUBLIC, name + '.webp')], check=True)
     os.remove(tmp)
     return os.path.getsize(os.path.join(PUBLIC, name + '.webp')) // 1024
 
@@ -74,7 +76,7 @@ def main(debug_dir=None):
         yt = np.interp(x / s, [p[0] for p in MID_TOP], [p[1] for p in MID_TOP]) * s
         near[int(max(0, yt - 30 * s)):int(yt), x] = 1
     mid = np.maximum(mid_top, band * (np.asarray(not_hill).astype(np.float32) / 255) * near)
-    mid = np.asarray(Image.fromarray((mid * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.6))).astype(np.float32) / 255
+    mid = np.asarray(Image.fromarray((mid * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(9))).astype(np.float32) / 255   # soft: it reads as haze where field meets hills
     mid = mid * land                                    # never above the ridge
 
     front = np.asarray(line_mask((W, H), FRONT_TOP, s, 26 * s / 1.6)).astype(np.float32) / 255
@@ -91,8 +93,17 @@ def main(debug_dir=None):
 
     layers = {'land': land, 'mid': mid, 'front': front}
     sizes = {}
+    pad = round(PAD_FRAC * H)
+    def padded(arr, mirror):
+        top = np.flipud(arr[:pad]) if mirror else np.zeros((pad,) + arr.shape[1:], arr.dtype)
+        return np.concatenate([top, arr], axis=0)
+    layers = {'sky': np.ones((H, W), np.float32), **layers}
     for name, alpha in layers.items():
-        rgba = np.dstack([a, alpha[..., None] * 255]).astype(np.uint8)
+        rgba = np.dstack([padded(a, True), padded(alpha[..., None] * 255, False)]).astype(np.uint8)
+        if name == 'sky':                      # the sky is the whole photo, no transparency
+            im = Image.fromarray(rgba[..., :3], 'RGB')
+            sizes[name] = (save(im, 'hero-sky', 2048, 74, alpha=False), save(im, 'hero-sky-mobile', 1100, 70, alpha=False))
+            continue
         im = Image.fromarray(rgba, 'RGBA')
         sizes[name] = (save(im, f'hero-{name}', 2048, 74), save(im, f'hero-{name}-mobile', 1100, 70))
         if debug_dir:

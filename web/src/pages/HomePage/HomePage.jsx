@@ -68,16 +68,19 @@ const SECTIONS = [
   },
 ];
 
-// The hero photo is cut into depth layers (see scripts/build_hero_layers.py). Each drifts down at its own
-// fraction of the scroll speed: the far sky moves most, the foreground vines least, so they slide past
-// each other. At rest the stack is exactly the original photo.
+// The hero photo is cut into depth layers (see scripts/build_hero_layers.py). As you scroll, each layer
+// drifts down at its own fraction of the scroll speed (the far sky most, the foreground vines least)
+// and zooms in by its own amount (the foreground most), so they slide and swell past each other like a
+// slow dolly shot. `zoom` is the extra scale reached once the hero has scrolled away.
+// Rules that keep it gap-free: nearer layers never drift faster or zoom less than the ones behind
+// them, and every layer scales around its bottom edge.
 const LAYERS = [
-  { id: 'sky',   speed: 0.5 },
-  { id: 'land',  speed: 0.4 },
-  { id: 'mid',   speed: 0.3 },
-  { id: 'front', speed: 0.2 },
+  { id: 'sky',   speed: 0.80, zoom: 0.02 },
+  { id: 'land',  speed: 0.60, zoom: 0.05 },
+  { id: 'mid',   speed: 0.40, zoom: 0.09 },
+  { id: 'front', speed: 0.22, zoom: 0.15 },
 ];
-const layerSrc = (id, mobile) => (id === 'sky' ? `/hero${mobile ? '-mobile' : ''}.webp` : `/hero-${id}${mobile ? '-mobile' : ''}.webp`);
+const layerSrc = (id, mobile) => `/hero-${id}${mobile ? '-mobile' : ''}.webp`;
 
 export default function HomePage() {
   useEffect(() => { document.title = 'Meson Sabika Education'; }, []);
@@ -105,10 +108,11 @@ export default function HomePage() {
       const shift = Math.min(y, h);
       LAYERS.forEach((l, i) => {
         const el = layerRefs.current[i];
-        if (el) el.style.transform = `translate3d(0, ${shift * l.speed}px, 0)`;
+        if (el) el.style.transform = `translate3d(0, ${shift * l.speed}px, 0) scale(${1 + p * l.zoom})`;
       });
-      textRef.current.style.transform = `translate3d(0, ${p * 70}px, 0)`;
-      textRef.current.style.opacity = String(Math.max(0, 1 - p * 1.15));
+      // the title is the nearest thing: it lifts away faster than the page, and fades as it goes
+      textRef.current.style.transform = `translate3d(0, ${-shift * 0.32}px, 0)`;
+      textRef.current.style.opacity = String(Math.max(0, 1 - p * 1.5));
       page.style.setProperty('--sy', String(Math.round(y)));
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
