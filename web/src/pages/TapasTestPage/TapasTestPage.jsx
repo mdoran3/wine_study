@@ -5,9 +5,12 @@ import styles from './TapasTestPage.module.css';
 
 const QUESTION_TEXT = {
   sauce:                  'Which sauce is served with this dish?',
-  ingredient:             'Which of these is an ingredient in this dish?',
-  multiselect_ingredients: 'Select all ingredients that are in this dish.',
+  ingredient:             'Which of these is a main ingredient in this dish?',
+  multiselect_ingredients: 'Select the main ingredients that are in this dish.',
 };
+
+const MULTI_TYPES = new Set(['multiselect_ingredients', 'multiselect_sauces']);
+const isMulti = t => MULTI_TYPES.has(t);
 
 const STATES = { idle: 'idle', active: 'active', confirmed: 'confirmed', done: 'done' };
 
@@ -15,16 +18,64 @@ function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
+// Two spellings of the same thing ("tomato" / "tomatoes", "red onion" / "red onions") must never
+// show up as the right answer and a wrong option in the same question.
+const DROP_WORDS = new Set(['fresh', 'diced', 'minced', 'chopped', 'julienne', 'julienned', 'grilled', 'roasted', 'sliced', 'mixed']);
+function norm(s) {
+  return s
+    .toLowerCase()
+    .replace(/\(.*?\)/g, '')
+    .split(/[^a-z]+/)
+    .filter(w => w && !DROP_WORDS.has(w))
+    .map(w => (/(ch|sh|x|o)es$/.test(w) ? w.slice(0, -2) : /[^su]s$/.test(w) ? w.slice(0, -1) : w))
+    .join(' ');
+}
+
+// Quiz answers use core_ingredients (the food itself). The full ingredient list, with seasonings,
+// herbs, oils and garnishes, stays on the review page. See scripts/classify_ingredients.py.
+const coreOf = item => (item.core_ingredients?.length ? item.core_ingredients : item.ingredients);
+
+// Pick up to n wrong options: not in the dish (any spelling, and not in any same-named variant of it,
+// e.g. the two Salmon A La Plancha entries), and no two alike.
+function pickWrongs(pool, item, n) {
+  const taken = new Set(menu.filter(m => m.name === item.name).flatMap(m => m.ingredients).map(norm));
+  const out = [];
+  for (const cand of shuffle(pool)) {
+    const k = norm(cand);
+    if (taken.has(k)) continue;
+    taken.add(k);
+    out.push(cand);
+    if (out.length === n) break;
+  }
+  return out;
+}
+
+const TYPE_LABELS = {
+  cold_tapas: 'Cold Tapa', hot_tapas: 'Hot Tapa', soup: 'Soup', salad: 'Salad',
+  paella: 'Paella', dessert: 'Dessert', lunch_entree: 'Lunch Entrée',
+};
+// Dishes that exist both as a lunch entrée and as something else (e.g. Salmon A La Plancha, which is
+// a hot tapa and a lunch entrée with different sides).
+const lunchNames = new Set(menu.filter(i => i.type === 'lunch_entree').map(i => i.name));
+
+// How a dish is named in a question. A lunch entrée always says so; a dish that also exists as a
+// lunch entrée says which one it is, so the question is never ambiguous.
+function dishLabel(item) {
+  if (item.type === 'lunch_entree') return `${item.name} (Lunch Entrée)`;
+  if (lunchNames.has(item.name)) return `${item.name} (${TYPE_LABELS[item.type] ?? 'menu item'}, not the lunch entrée)`;
+  return item.name;
+}
+
 function shortSauceName(s) {
   return s.split('(')[0].trim();
 }
 
 function initPending(q) {
-  return q.type === 'multiselect_ingredients' ? [] : null;
+  return isMulti(q.type) ? [] : null;
 }
 
 function checkAnswer(q, pending) {
-  if (q.type === 'multiselect_ingredients') {
+  if (isMulti(q.type)) {
     const sel = pending || [];
     return sel.length === q.correct.length && q.correct.every(c => sel.includes(c));
   }
@@ -57,57 +108,98 @@ function generateQuiz(filter) {
     ? menu.filter(i => FILTER_TYPES[filter].includes(i.type))
     : menu;
 
-  const allIngredients = [...new Set(menu.flatMap(i => i.ingredients))];
+  // wrong options come only from other dishes' core ingredients (and never from a dish's own name)
+  const dishNames = new Set(menu.map(i => i.name.toLowerCase()));
+  const corePool = [...new Set(menu.flatMap(coreOf))].filter(i => !dishNames.has(i.toLowerCase()));
   const itemsWithSauces = pool.filter(i => i.sauces.length > 0);
-  const allShortSauces = [...new Set(menu.filter(i => i.sauces.length > 0).flatMap(i => i.sauces.map(shortSauceName)))];
-  const allNames = pool.map(i => i.name);
+  const allNames = pool.map(dishLabel);
 
-  // ── Single-select: sauce ──────────────────────────────────────
+  // Salads are asked about their dressing, everything else about its sauce. Wrong options come
+  // from the same family: other dressings for a salad, other sauces for any other dish.
+  const isSalad = item => item.type === 'salad' || /^ensalada/i.test(item.name);
+  const shortSauces = item => item.sauces.map(shortSauceName);
+  const DRESSING_LIKE = /vinaigrette|dressing|mayonnaise|aioli|alioli|reduction/i;
+  const dressingPool = [...new Set(menu.flatMap(i => (isSalad(i)
+    ? shortSauces(i)
+    : shortSauces(i).filter(x => DRESSING_LIKE.test(x)))))];
+  const saucePool = [...new Set(menu.filter(i => !isSalad(i)).flatMap(shortSauces))];
+  const wrongSauces = (item, n) => {
+    const own = new Set(menu.filter(m => m.name === item.name).flatMap(shortSauces).map(norm));
+    const out = [];
+    for (const cand of shuffle(isSalad(item) ? dressingPool : saucePool)) {
+      if (own.has(norm(cand)) || out.some(o => norm(o) === norm(cand))) continue;
+      out.push(cand);
+      if (out.length === n) break;
+    }
+    return out;
+  };
+
+  // ── Single-select: sauce / dressing (dishes with exactly one) ─
   const sauceQs = [];
+  // ── Multi-select: dishes with more than one sauce / dressing ──
+  const sauceMultiQs = [];
   for (const item of shuffle([...itemsWithSauces])) {
-    const correct = shortSauceName(shuffle([...item.sauces])[0]);
-    const wrongs = shuffle(allShortSauces.filter(s => !item.sauces.map(shortSauceName).includes(s))).slice(0, 3);
-    if (wrongs.length < 3) continue;
-    sauceQs.push({
-      type: 'sauce',
-      dish: item.name,
-      correct,
-      options: shuffle([correct, ...wrongs]),
-      missedLabel: item.name,
-      missedAnswer: correct,
-    });
+    const noun = isSalad(item) ? 'dressing' : 'sauce';
+    const all = shortSauces(item);
+    if (all.length === 1) {
+      const wrongs = wrongSauces(item, 3);
+      if (wrongs.length < 3) continue;
+      sauceQs.push({
+        type: 'sauce',
+        dish: dishLabel(item),
+        prompt: `Which ${noun} is served with this dish?`,
+        correct: all[0],
+        options: shuffle([all[0], ...wrongs]),
+        missedLabel: dishLabel(item),
+        missedAnswer: all[0],
+      });
+    } else {
+      const wrongs = wrongSauces(item, 4);
+      if (wrongs.length < 3) continue;
+      sauceMultiQs.push({
+        type: 'multiselect_sauces',
+        dish: dishLabel(item),
+        prompt: `Select all the ${noun}s served with this dish.`,
+        correct: all,
+        options: shuffle([...all, ...wrongs]),
+        missedLabel: dishLabel(item),
+        missedAnswer: all.join(', '),
+      });
+    }
   }
 
   // ── Single-select: ingredient ─────────────────────────────────
   const ingQs = [];
   for (const item of shuffle([...pool])) {
-    if (item.ingredients.length === 0) continue;
-    const correct = shuffle([...item.ingredients])[0];
-    const wrongs = shuffle(allIngredients.filter(i => !item.ingredients.includes(i))).slice(0, 3);
+    const core = coreOf(item);
+    if (core.length === 0) continue;
+    const correct = shuffle([...core])[0];
+    const wrongs = pickWrongs(corePool, item, 3);
     if (wrongs.length < 3) continue;
     ingQs.push({
       type: 'ingredient',
-      dish: item.name,
+      dish: dishLabel(item),
       correct,
       options: shuffle([correct, ...wrongs]),
-      missedLabel: item.name,
-      missedAnswer: item.name,
+      missedLabel: dishLabel(item),
+      missedAnswer: dishLabel(item),
     });
   }
 
   // ── Multi-select: select all ingredients ─────────────────────
   const multiQs = [];
   for (const item of shuffle([...pool])) {
-    if (item.ingredients.length < 2) continue;
-    const correct = shuffle([...item.ingredients]).slice(0, Math.min(4, item.ingredients.length));
-    const distractors = shuffle(allIngredients.filter(i => !item.ingredients.includes(i))).slice(0, 4);
+    const core = coreOf(item);
+    if (core.length < 2) continue;
+    const correct = shuffle([...core]).slice(0, Math.min(4, core.length));
+    const distractors = pickWrongs(corePool, item, 4);
     if (distractors.length < 2) continue;
     multiQs.push({
       type: 'multiselect_ingredients',
-      dish: item.name,
+      dish: dishLabel(item),
       correct,
       options: shuffle([...correct, ...distractors]),
-      missedLabel: item.name,
+      missedLabel: dishLabel(item),
       missedAnswer: correct.join(', '),
     });
   }
@@ -115,26 +207,38 @@ function generateQuiz(filter) {
   // ── Description: name the dish ────────────────────────────────
   const descQs = [];
   for (const item of shuffle([...pool])) {
-    const wrongs = shuffle(allNames.filter(n => n !== item.name)).slice(0, 3);
+    const wrongs = shuffle(allNames.filter(n => n !== dishLabel(item))).slice(0, 3);
     if (wrongs.length < 3) continue;
     descQs.push({
       type: 'description',
       description: item.description,
-      correct: item.name,
-      options: shuffle([item.name, ...wrongs]),
-      missedLabel: item.name,
-      missedAnswer: item.name,
+      correct: dishLabel(item),
+      options: shuffle([dishLabel(item), ...wrongs]),
+      missedLabel: dishLabel(item),
+      missedAnswer: dishLabel(item),
     });
   }
 
   const main  = shuffle([...sauceQs, ...ingQs]).slice(0, mainCount);
-  const multi = shuffle(multiQs).slice(0, multiCount);
+  const multi = [...shuffle(sauceMultiQs).slice(0, 2), ...shuffle(multiQs)].slice(0, multiCount);
   const desc  = shuffle(descQs).slice(0, descCount);
   const base  = shuffle([...main, ...desc]);
   const step  = Math.floor(base.length / (multi.length + 1));
   const result = [...base];
   multi.forEach((q, i) => result.splice(step * (i + 1) + i, 0, q));
   return result;
+}
+
+// "Salmon A La Plancha (Lunch Entrée)" -> the name, with the qualifier as a smaller line beneath it
+function DishTitle({ label }) {
+  const at = label.indexOf(' (');
+  if (at === -1) return label;
+  return (
+    <>
+      {label.slice(0, at)}
+      <span className={styles.dishNote}>{label.slice(at + 1)}</span>
+    </>
+  );
 }
 
 export default function TapasTestPage() {
@@ -200,7 +304,7 @@ export default function TapasTestPage() {
     if (status === STATES.confirmed) return true;
     const q = questions[index];
     if (!q) return true;
-    if (q.type === 'multiselect_ingredients') return (pending?.length ?? 0) === 0;
+    if (isMulti(q.type)) return (pending?.length ?? 0) === 0;
     return !pending;
   })();
 
@@ -296,31 +400,31 @@ export default function TapasTestPage() {
         {(q.type === 'sauce' || q.type === 'ingredient') && (
           <>
             <h2 className={styles.dishName}>
-              {q.dish}
+              <DishTitle label={q.dish} />
               {isConfirmed && (
                 <span className={wasCorrect ? styles.iconCorrect : styles.iconWrong}>
                   {wasCorrect ? ' ✓' : ' ✗'}
                 </span>
               )}
             </h2>
-            <p className={styles.question}>{QUESTION_TEXT[q.type]}</p>
+            <p className={styles.question}>{q.prompt ?? QUESTION_TEXT[q.type]}</p>
           </>
         )}
 
         {/* ── Multi-select: all ingredients ── */}
-        {q.type === 'multiselect_ingredients' && (
+        {isMulti(q.type) && (
           <>
             <h2 className={styles.dishName}>
-              {q.dish}
+              <DishTitle label={q.dish} />
               {isConfirmed && (
                 <span className={wasCorrect ? styles.iconCorrect : styles.iconWrong}>
                   {wasCorrect ? ' ✓' : ' ✗'}
                 </span>
               )}
             </h2>
-            <p className={styles.question}>{QUESTION_TEXT[q.type]}</p>
+            <p className={styles.question}>{q.prompt ?? QUESTION_TEXT[q.type]}</p>
             {!isConfirmed && (
-              <p className={styles.selectHint}>{pending?.length ?? 0} selected</p>
+              <p className={styles.selectHint}>Select all {q.correct.length} that apply ({pending?.length ?? 0} selected)</p>
             )}
             {isConfirmed && (
               <p className={styles.selectHint}>
@@ -354,7 +458,7 @@ export default function TapasTestPage() {
         )}
 
         {/* ── Options (multi-select) ── */}
-        {q.type === 'multiselect_ingredients' && (
+        {isMulti(q.type) && (
           <div className={styles.multiGrid}>
             {q.options.map(opt => {
               const isSelected = (pending || []).includes(opt);

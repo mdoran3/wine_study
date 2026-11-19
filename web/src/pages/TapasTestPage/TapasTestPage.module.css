@@ -485,3 +485,14 @@
   opacity: 0.9;
   pointer-events: none;
 }
+
+.dishNote {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
