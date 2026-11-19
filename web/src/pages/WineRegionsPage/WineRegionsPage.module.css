@@ -208,13 +208,7 @@
 .bodegasOff { opacity: 0; pointer-events: none; transition: opacity 0.2s; }
 .bodegasOn { opacity: 1; transition: opacity 0.4s ease 0.2s; }
 .bodega { cursor: pointer; outline: none; }
-.bodegaRing { fill: #fff; stroke: var(--c); stroke-width: 2; vector-effect: non-scaling-stroke; transition: r 0.15s; }
-.bodegaCore { fill: var(--c); }
-.bodegaGold .bodegaRing { stroke: #d99a00; stroke-width: 2.6; }
-.bodegaGold .bodegaCore { fill: #d99a00; }
-.bodega:focus-visible .bodegaRing { stroke: #222; }
-.bodegaSel .bodegaRing { fill: #fff6d9; stroke-width: 3; }
-
+.bodegaGold .bodegaGold .bodega:focus-visible .bodegaSel 
 .gallery { margin: 4px 0 6px; }
 .galleryMain { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; background: #eee; animation: panelIn 0.25s ease-out; }
 .caption { margin: 6px 0 0; font-size: 13px; line-height: 1.4; }
@@ -250,3 +244,13 @@
 .city2 text { font-size: calc(8.5px * var(--inv, 1)); font-weight: 600; stroke-width: calc(2.4px * var(--inv, 1)); }
 .city3 text { font-size: calc(8px * var(--inv, 1)); font-weight: 600; font-style: italic; stroke-width: calc(2.4px * var(--inv, 1)); }
 .city3 circle { fill: #7a4a9e; }
+
+/* bodega pins: bold, outlined in white with a soft shadow so they stand out on the terrain */
+.pin { fill: var(--c); stroke: #fff; stroke-width: 2px; vector-effect: non-scaling-stroke; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65)); }
+.pinCore { fill: #fff; }
+.bodegaGold .pin { fill: #e5a100; }
+.bodega:hover .pin, .bodega:focus-visible .pin { stroke: #222; }
+.bodegaSel .pin { stroke: #222; stroke-width: 2.6px; }
+.markersOff { opacity: 0; pointer-events: none; }
+
+.legendPin { flex: none; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4)); }

@@ -125,6 +125,15 @@ function BodegaCard({ bodega, onClose }) {
   );
 }
 
+function LegendPin({ color }) {
+  return (
+    <svg className={styles.legendPin} width="14" height="19" viewBox="-9 -17 18 18" aria-hidden="true">
+      <path d="M0,0 C-4,-6 -8,-9 -8,-14 a8,8 0 1 1 16,0 C8,-9 4,-6 0,0 Z" fill={color} stroke="#fff" strokeWidth="1.5" />
+      <circle cy="-14" r="3.2" fill="#fff" />
+    </svg>
+  );
+}
+
 const regionBodegas = id => bodegas.filter(b => b.region === id);
 
 function InfoPanel({ region, pinned, bodega, onSelectBodega }) {
@@ -141,8 +150,8 @@ function InfoPanel({ region, pinned, bodega, onSelectBodega }) {
           {Object.values(groups).map(gr => (
             <li key={gr.label}><span className={styles.swatch} style={{ background: gr.color }} />{gr.label}</li>
           ))}
-          <li><span className={`${styles.swatch} ${styles.swatchDot}`} />Bodega (shown when zoomed in)</li>
-          <li><span className={`${styles.swatch} ${styles.swatchDot} ${styles.swatchGold}`} />Bodega we pour from</li>
+          <li><LegendPin color="#8e2a3f" />Bodega (shown when zoomed in)</li>
+          <li><LegendPin color="#e5a100" />Bodega we pour from</li>
         </ul>
         <p className={styles.note}>Region outlines are approximate and show the general area, not exact legal boundaries.</p>
       </aside>
@@ -424,7 +433,7 @@ export default function WineRegionsPage() {
             </g>
 
             {/* marker dots: larger, easier targets for small regions */}
-            <g>
+            <g className={zoomed ? styles.markersOff : undefined}>
               {regions.filter(r => r.id !== 'canary-islands').map(r => {
                 const c = map.regionCenters[r.id];
                 return (
@@ -446,26 +455,32 @@ export default function WineRegionsPage() {
 
             {/* bodegas: shown once zoomed in */}
             <g className={zoomed ? styles.bodegasOn : styles.bodegasOff}>
-              {bodegas.map(b => (
-                <g
-                  key={b.id}
-                  className={`${styles.bodega} ${onOurList(b) ? styles.bodegaGold : ''} ${selBodega === b.id ? styles.bodegaSel : ''}`}
-                  style={{ '--c': groups[BY_ID[b.region].group].color }}
-                  onMouseEnter={() => setHoverBodega(b.id)}
-                  onMouseLeave={() => setHoverBodega(null)}
-                  onFocus={() => setHoverBodega(b.id)}
-                  onBlur={() => setHoverBodega(null)}
-                  onClick={e => { e.stopPropagation(); chooseBodega(b.id); }}
-                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseBodega(b.id); } }}
-                  tabIndex={zoomed ? 0 : -1}
-                  role="button"
-                  aria-label={`Bodega ${b.name}, ${b.town}`}
-                >
-                  <circle cx={b.x} cy={b.y} r={9 * inv} className={styles.hit} />
-                  <circle cx={b.x} cy={b.y} r={(selBodega === b.id ? 5.6 : 4.2) * inv} className={styles.bodegaRing} />
-                  <circle cx={b.x} cy={b.y} r={1.9 * inv} className={styles.bodegaCore} />
-                </g>
-              ))}
+              {[...bodegas].sort((a, b) => (a.id === selBodega) - (b.id === selBodega)).map(b => {
+                const sel = selBodega === b.id;
+                return (
+                  <g
+                    key={b.id}
+                    className={`${styles.bodega} ${onOurList(b) ? styles.bodegaGold : ''} ${sel ? styles.bodegaSel : ''}`}
+                    style={{ '--c': groups[BY_ID[b.region].group].color }}
+                    onMouseEnter={() => setHoverBodega(b.id)}
+                    onMouseLeave={() => setHoverBodega(null)}
+                    onFocus={() => setHoverBodega(b.id)}
+                    onBlur={() => setHoverBodega(null)}
+                    onClick={e => { e.stopPropagation(); chooseBodega(b.id); }}
+                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseBodega(b.id); } }}
+                    tabIndex={zoomed ? 0 : -1}
+                    role="button"
+                    aria-label={`Bodega ${b.name}, ${b.town}`}
+                  >
+                    {/* a map pin whose tip sits exactly on the bodega's location */}
+                    <g transform={`translate(${b.x},${b.y}) scale(${(sel ? 1.25 : 1) * inv})`}>
+                      <circle cy="-9" r="13" className={styles.hit} />
+                      <path className={styles.pin} d="M0,0 C-4,-6 -8,-9 -8,-14 a8,8 0 1 1 16,0 C8,-9 4,-6 0,0 Z" />
+                      <circle className={styles.pinCore} cy="-14" r="3.2" />
+                    </g>
+                  </g>
+                );
+              })}
             </g>
 
             {/* Canary Islands inset */}
@@ -506,14 +521,18 @@ export default function WineRegionsPage() {
               <text x="56" y="-4" textAnchor="middle">Elevation</text>
             </g>
 
-            {hoverBodega && zoomed
-              ? <Callout label={BODEGA_BY_ID[hoverBodega].name} x={BODEGA_BY_ID[hoverBodega].x} y={BODEGA_BY_ID[hoverBodega].y} inv={inv} lift={14} />
-              : active && <Callout
+            {/* region name: a banner at the top of the view when zoomed (so it never covers a bodega), or at the region's centre */}
+            {active && (zoomed
+              ? <Callout label={active.name} x={view.x + view.w / 2} y={view.y + 30 * inv} inv={inv} lift={0} />
+              : <Callout
                   label={active.name}
                   x={activeId === 'canary-islands' ? map.canary.x + map.canary.w / 2 : map.regionCenters[activeId][0]}
                   y={activeId === 'canary-islands' ? map.canary.y + 8 : map.regionCenters[activeId][1]}
                   inv={inv}
-                />}
+                />)}
+            {hoverBodega && zoomed && (
+              <Callout label={BODEGA_BY_ID[hoverBodega].name} x={BODEGA_BY_ID[hoverBodega].x} y={BODEGA_BY_ID[hoverBodega].y} inv={inv} lift={36} />
+            )}
           </svg>
 
           {pinned && (
