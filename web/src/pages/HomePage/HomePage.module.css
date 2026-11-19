@@ -236,6 +236,7 @@
 .drawer_tapas   { --theme: #5d6a43; }
 .drawer_fish    { --theme: #2f6468; }
 .drawer_sherry  { --theme: #a8873a; --on: #20190f; }
+.drawer_cocktail { --theme: #a14b5e; }
 .drawer_holiday { --theme: #6b3a62; }
 .drawer_allergy { --theme: #a8573a; }
 .drawer_sherry .btnSub { color: #6b5018; }

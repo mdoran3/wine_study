@@ -51,6 +51,14 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'cocktail',
+    label: '🍸 Cocktails',
+    theme: 'cocktail',
+    items: [
+      { label: 'Review Cocktail Knowledge', path: '/cocktail-review' },
+    ],
+  },
+  {
     id: 'holiday',
     label: '🎉 Holiday',
     theme: 'holiday',

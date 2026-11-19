@@ -119,6 +119,7 @@ wine_study/
             ├── FishTestPage/         # Randomized fish quiz
             ├── SherryReviewPage/     # Sherry browser
             ├── SherryTestPage/       # Randomized sherry quiz
+            ├── CocktailReviewPage/   # Cocktails (coming soon)
             ├── HolidayMenusPage/     # Holiday menu index
             ├── MothersDayPage/       # Mother's Day 2026 menu
             ├── MothersDayReviewPage/ # Mother's Day review

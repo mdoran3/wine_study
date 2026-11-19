@@ -15,6 +15,7 @@ const PAGES = {
   '/sherry-review': { label: 'Sherry Review', parent: '/' },
   '/sherry-test': { label: 'Sherry Test', parent: '/' },
   '/allergy': { label: 'Allergen Guide', parent: '/' },
+  '/cocktail-review': { label: 'Cocktails', parent: '/' },
   '/holiday': { label: 'Holiday Menus', parent: '/' },
   '/holiday/mothers-day-2026': { label: "Mother's Day 2026", parent: '/holiday' },
   '/holiday/mothers-day-2026/review': { label: 'Menu', parent: '/holiday/mothers-day-2026' },

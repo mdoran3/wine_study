@@ -21,6 +21,7 @@ import WineRegionsPage from './pages/WineRegionsPage/WineRegionsPage';
 import SherryReviewPage from './pages/SherryReviewPage/SherryReviewPage';
 import SherryTestPage from './pages/SherryTestPage/SherryTestPage';
 import AllergyPage from './pages/AllergyPage/AllergyPage';
+import CocktailReviewPage from './pages/CocktailReviewPage/CocktailReviewPage';
 import TapasReviewPage from './pages/TapasReviewPage/TapasReviewPage';
 import TapasTestPage from './pages/TapasTestPage/TapasTestPage';
 import styles from './App.module.css';
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="/sherry-review" element={<SherryReviewPage />} />
             <Route path="/sherry-test" element={<SherryTestPage />} />
             <Route path="/allergy" element={<AllergyPage />} />
+            <Route path="/cocktail-review" element={<CocktailReviewPage />} />
             <Route path="/tapas-review" element={<TapasReviewPage />} />
             <Route path="/tapas-test" element={<TapasTestPage />} />
           </Routes>
