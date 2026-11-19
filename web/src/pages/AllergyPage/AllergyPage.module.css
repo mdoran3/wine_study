@@ -38,7 +38,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  background: #fdf6e3;
+  background: #f7efdc;
   border: 1px solid #e8c97a;
   border-left: 4px solid #b8860b;
   border-radius: 8px;
@@ -55,7 +55,7 @@
   font-family: var(--font-ui);
   font-size: 13px;
   line-height: 1.6;
-  color: #6b4e06;
+  color: #6b5018;
   margin: 0;
 }
 

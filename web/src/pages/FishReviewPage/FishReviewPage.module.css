@@ -9,7 +9,7 @@
   font-family: var(--font-body);
   font-size: 26px;
   font-weight: 700;
-  color: #0f4e4e;
+  color: #2f6468;
   margin: 0 0 24px;
   text-align: center;
 }
@@ -34,7 +34,7 @@
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 700;
-  color: #0f4e4e;
+  color: #2f6468;
   margin-right: 4px;
 }
 
@@ -53,14 +53,14 @@
 
 @media (hover: hover) {
   .sortBtn:hover {
-    border-color: #0f4e4e;
-    color: #0f4e4e;
+    border-color: #2f6468;
+    color: #2f6468;
   }
 }
 
 .sortBtn.active {
-  background: #0f4e4e;
-  border-color: #0f4e4e;
+  background: #2f6468;
+  border-color: #2f6468;
   color: #fff;
 }
 
@@ -81,7 +81,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #0f4e4e;
+  color: #2f6468;
   white-space: nowrap;
 }
 

@@ -9,10 +9,10 @@ export default function MothersDayPage() {
     <section className={styles.page}>
       <h2 className={styles.heading}>Mother's Day 2026</h2>
       <button className={styles.navBtn} onClick={() => navigate('/holiday/mothers-day-2026/review')}>
-        🌸 Review Mother's Day Menu
+        Review Mother's Day Menu
       </button>
       <button className={styles.navBtn} onClick={() => navigate('/holiday/mothers-day-2026/test')}>
-        📝 Generate Mother's Day Test
+        Generate Mother's Day Test
       </button>
     </section>
   );

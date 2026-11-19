@@ -31,7 +31,7 @@
   width: min(320px, 100%);
   -webkit-tap-highlight-color: transparent;
   background:
-    #5a2d7e;
+    #6b3a62;
   box-shadow: var(--shadow-btn);
   transition: box-shadow 0.1s, transform 0.1s;
 }
@@ -39,7 +39,7 @@
 @media (hover: hover) {
   .navBtn:hover {
     background:
-      #6a3d8e;
+      #74436a;
     box-shadow: var(--shadow-btn-hover);
     transform: translateY(-1px);
   }

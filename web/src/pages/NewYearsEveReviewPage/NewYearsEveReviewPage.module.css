@@ -9,7 +9,7 @@
   font-family: var(--font-body);
   font-size: 26px;
   font-weight: 700;
-  color: #5a2d7e;
+  color: #6b3a62;
   margin: 0 0 24px;
   text-align: center;
 }
@@ -37,7 +37,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #5a2d7e;
+  color: #6b3a62;
   white-space: nowrap;
 }
 
@@ -64,7 +64,7 @@
 
 .infoTitle {
   font-size: 19px;
-  color: #5a2d7e;
+  color: #6b3a62;
   font-weight: normal;
   margin: 0 0 8px;
 }

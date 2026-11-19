@@ -12,10 +12,10 @@ export default function NewYearsEvePage() {
         📄 View Printed Menu
       </button>
       <button className={styles.navBtn} onClick={() => navigate('/holiday/new-years-eve-2026/review')}>
-        🥂 Review New Year's Eve Menu
+        Review New Year's Eve Menu
       </button>
       <button className={styles.navBtn} onClick={() => navigate('/holiday/new-years-eve-2026/test')}>
-        📝 Generate New Year's Eve Test
+        Generate New Year's Eve Test
       </button>
     </section>
   );

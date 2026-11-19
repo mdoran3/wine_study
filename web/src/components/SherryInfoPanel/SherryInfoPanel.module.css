@@ -14,7 +14,7 @@
   font-family: var(--font-body);
   font-size: 18px;
   font-weight: normal;
-  color: #8b6508;
+  color: #8a6a1e;
   margin: 0;
   text-align: center;
 }
@@ -45,7 +45,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #8b6508;
+  color: #8a6a1e;
   margin: 0;
 }
 
@@ -201,7 +201,7 @@
   font-family: var(--font-ui);
   font-size: 13px;
   font-weight: 700;
-  color: #6b4e06;
+  color: #6b5018;
 }
 
 .tier1 .tierLabel,
@@ -210,7 +210,7 @@
 .tierSub {
   font-family: var(--font-ui);
   font-size: 12px;
-  color: #8b6508;
+  color: #8a6a1e;
   opacity: 0.8;
 }
 
@@ -245,7 +245,7 @@
 .tierArrow {
   font-family: var(--font-ui);
   font-size: 12px;
-  color: #8b6508;
+  color: #8a6a1e;
   text-align: center;
   padding: 8px 0 2px;
   opacity: 0.7;

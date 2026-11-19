@@ -15,7 +15,7 @@ export default function HolidayMenusPage() {
       <h2 className={styles.heading}>Holiday Menus</h2>
       {HOLIDAYS.map(h => (
         <button key={h.path} className={styles.navBtn} onClick={() => navigate(h.path)}>
-          🎉 {h.label}
+          {h.label}
         </button>
       ))}
     </section>

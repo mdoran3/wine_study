@@ -23,7 +23,7 @@
 
 .name {
   font-size: 19px;
-  color: #8b6508;
+  color: #8a6a1e;
   font-weight: normal;
   margin: 0;
 }
@@ -47,8 +47,8 @@
 }
 
 .dry_meats {
-  background: #fdf6e3;
-  color: #7a5200;
+  background: #f7efdc;
+  color: #6b5018;
   border: 1px solid #e8c97a;
 }
 
@@ -60,7 +60,7 @@
 
 .dessert {
   background: #f5f0fd;
-  color: #5a2d7e;
+  color: #6b3a62;
   border: 1px solid #c8a8e8;
 }
 
@@ -78,8 +78,8 @@
   letter-spacing: 0.06em;
   padding: 3px 9px;
   border-radius: 10px;
-  background: #fdf6e3;
-  color: #8b6508;
+  background: #f7efdc;
+  color: #8a6a1e;
   border: 1px solid #e8c97a;
 }
 

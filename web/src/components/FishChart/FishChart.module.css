@@ -14,7 +14,7 @@
   font-family: var(--font-body);
   font-size: 18px;
   font-weight: normal;
-  color: #0f4e4e;
+  color: #2f6468;
   margin: 0 0 4px;
   text-align: center;
   text-shadow: 0 0 6px #fff, 0 0 3px #fff;
@@ -36,7 +36,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #0f4e4e;
+  color: #2f6468;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   display: flex;
@@ -53,7 +53,7 @@
   flex-shrink: 0;
   width: 58px;
   padding-bottom: 32px; /* leave space for x-labels row */
-  border-right: 2px solid #0f4e4e;
+  border-right: 2px solid #2f6468;
 }
 
 .yLabel {
@@ -64,7 +64,7 @@
   font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 600;
-  color: #0f4e4e;
+  color: #2f6468;
   white-space: nowrap;
   padding-right: 6px;
   opacity: 0.85;
@@ -89,7 +89,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(75px, 1fr));
   grid-template-rows: repeat(3, 1fr);
-  border-bottom: 2px solid #0f4e4e;
+  border-bottom: 2px solid #2f6468;
 }
 
 .cell {
@@ -123,7 +123,7 @@
   font-weight: 600;
 }
 
-.dot_oily      { background: #7a5200; color: #fff; }
+.dot_oily      { background: #6b5018; color: #fff; }
 .dot_semi_oily { background: #1a4f6b; color: #fff; }
 .dot_lean      { background: #1a5c35; color: #fff; }
 
@@ -137,7 +137,7 @@
   font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 600;
-  color: #0f4e4e;
+  color: #2f6468;
   text-align: center;
   opacity: 0.85;
   transform: rotate(-45deg);
@@ -151,7 +151,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #0f4e4e;
+  color: #2f6468;
   text-align: center;
   margin-top: 22px;
 }
