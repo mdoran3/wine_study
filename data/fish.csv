@@ -8,3 +8,4 @@ id,name,oil_content,firmness,flake_type,description
 7,Skate,lean,firm,fibrous,"Mildly pronounced flavor similar to scallops or crab. Flesh is soft when raw but firms up when cooked. Wing meat has a distinctive fibrous, fan-like structure and is not oily."
 8,Branzino,lean,medium,small flakes,"Very mild, slightly sweet Mediterranean fish with a delicate flavor. Lean yet tender, with fine flakes and a light, clean taste. Not an oily fish."
 9,Tilapia,lean,firm,small flakes,"Extremely mild, neutral-tasting fish with slight sweetness. Firm, fine flake and highly adaptable. Flavor depends on farming conditions; not an oily fish."
+10,Corvina,lean,firm,large flakes,"Mild, slightly sweet white fish from the drum family, often compared to sea bass and cod. Firm white-to-pale-pink flesh separates into large flakes with a clean, not-fishy taste. Lean to moderately lean, so it stays moist without being rich."

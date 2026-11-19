@@ -1,6 +1,6 @@
 # Fish Test — Answer Key
 
-All 18 possible questions (9 fish × 2 question types).
+All 20 possible questions (10 fish × 2 question types).
 Each test draws 16 of these at random.
 
 ---
@@ -18,6 +18,7 @@ Each test draws 16 of these at random.
 | Skate | Lean |
 | Branzino | Lean |
 | Tilapia | Lean |
+| Corvina | Lean |
 
 ---
 
@@ -34,6 +35,7 @@ Each test draws 16 of these at random.
 | Skate | Fibrous |
 | Branzino | Small flakes |
 | Tilapia | Small flakes |
+| Corvina | Large flakes |
 
 ---
 
@@ -50,13 +52,14 @@ Each test draws 16 of these at random.
 | Skate | Lean | Fibrous | Firm |
 | Branzino | Lean | Small flakes | Medium |
 | Tilapia | Lean | Small flakes | Firm |
+| Corvina | Lean | Large flakes | Firm |
 
 ---
 
 ## Grouped by Oil Content
 
 ### Lean
-Halibut, Lake Whitefish, Bacalao, Skate, Branzino, Tilapia
+Halibut, Lake Whitefish, Bacalao, Skate, Branzino, Tilapia, Corvina
 
 ### Semi-Oily
 Rainbow Trout
@@ -75,7 +78,7 @@ Branzino, Tilapia
 Rainbow Trout
 
 ### Large Flakes
-Halibut, Atlantic Salmon, Lake Whitefish, Chilean Sea Bass, Bacalao
+Halibut, Atlantic Salmon, Lake Whitefish, Chilean Sea Bass, Bacalao, Corvina
 
 ### Fibrous
 Skate

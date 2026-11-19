@@ -70,5 +70,13 @@
     "firmness": "firm",
     "flake_type": "small flakes",
     "description": "Extremely mild, neutral-tasting fish with slight sweetness. Firm, fine flake and highly adaptable. Flavor depends on farming conditions; not an oily fish."
+  },
+  {
+    "id": 10,
+    "name": "Corvina",
+    "oil_content": "lean",
+    "firmness": "firm",
+    "flake_type": "large flakes",
+    "description": "Mild, slightly sweet white fish from the drum family, often compared to sea bass and cod. Firm white-to-pale-pink flesh separates into large flakes with a clean, not-fishy taste. Lean to moderately lean, so it stays moist without being rich."
   }
 ]
