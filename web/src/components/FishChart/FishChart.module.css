@@ -1,157 +1,148 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  --oily: #8a6a1e;      --oily-bg: #f7efdc;   --oily-bg2: #f1e5c6;
+  --semi: #2f4a7a;      --semi-bg: #e8edf5;   --semi-bg2: #d9e2f0;
+  --lean: #2f6468;      --lean-bg: #e6f0ee;   --lean-bg2: #d3e5e1;
+
   margin-bottom: 40px;
-  padding: 20px 16px 16px;
-  background: #fff;
+  padding: 20px 20px 22px;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
 }
 
 .title {
+  margin: 0 0 16px;
   font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: normal;
-  color: #2f6468;
-  margin: 0 0 4px;
-  text-align: center;
-  text-shadow: 0 0 6px #fff, 0 0 3px #fff;
-}
-
-/* Row containing y-axis label, y-labels, and scrollable grid */
-.inner {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 4px;
-  min-height: 0;
-}
-
-/* Rotated "Oil Content" text on far left */
-.yAxisLabel {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #2f6468;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding-bottom: 32px; /* roughly aligns with grid, not x-labels */
-}
-
-/* Row labels (Oily / Semi-Oily / Lean) — fixed width, never scrolls */
-.yLabels {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  width: 58px;
-  padding-bottom: 32px; /* leave space for x-labels row */
-  border-right: 2px solid #2f6468;
-}
-
-.yLabel {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: 19px;
   font-weight: 600;
-  color: #2f6468;
-  white-space: nowrap;
-  padding-right: 6px;
-  opacity: 0.85;
-  transform: rotate(-45deg);
-  transform-origin: right center;
-}
-
-/* Scrollable container — only this part moves on mobile */
-.scrollArea {
-  flex: 1;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.gridAndX {
-  display: flex;
-  flex-direction: column;
-  min-width: 300px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(75px, 1fr));
-  grid-template-rows: repeat(3, 1fr);
-  border-bottom: 2px solid #2f6468;
-}
-
-.cell {
-  border-right: 1px solid rgba(15, 78, 78, 0.12);
-  border-top: 1px solid rgba(15, 78, 78, 0.12);
-  padding: 8px 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  min-height: 70px;
-}
-
-.cell.oily       { background: #fef3e2; }
-.cell.semi_oily  { background: #e8f4fd; }
-.cell.lean       { background: #eafaf2; }
-
-.cell.oily:hover      { background: #fde8c8; }
-.cell.semi_oily:hover { background: #d4ecf9; }
-.cell.lean:hover      { background: #d4f5e4; }
-
-.dot {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  border-radius: 20px;
-  padding: 3px 8px;
+  color: var(--color-teal, #2f6468);
   text-align: center;
-  line-height: 1.3;
-  white-space: nowrap;
-  font-weight: 600;
 }
 
-.dot_oily      { background: #6b5018; color: #fff; }
-.dot_semi_oily { background: #1a4f6b; color: #fff; }
-.dot_lean      { background: #1a5c35; color: #fff; }
-
-.xLabels {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(75px, 1fr));
-  margin-top: 6px;
-}
-
-.xLabel {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  color: #2f6468;
-  text-align: center;
-  opacity: 0.85;
-  transform: rotate(-45deg);
-  transform-origin: center top;
-  padding-top: 4px;
-}
-
-.xAxisLabel {
+/* ── chips ───────────────────────────────────────────────────── */
+.chip {
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  padding: 4px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.chip_oily { background: var(--oily); }
+.chip_semi_oily { background: var(--semi); }
+.chip_lean { background: var(--lean); }
+
+/* ── wide: matrix ────────────────────────────────────────────── */
+.matrix {
+  display: grid;
+  grid-template-columns: 104px repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.corner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 0 6px 6px 0;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.colHead {
+  align-self: end;
+  padding: 0 4px 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  color: #2f6468;
+  text-transform: uppercase;
+  color: var(--color-teal, #2f6468);
   text-align: center;
-  margin-top: 22px;
+}
+
+/* each oil band is a row of five grid cells */
+.row { display: contents; }
+
+.rowHead {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px 0 4px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+}
+.head_oily { color: var(--oily); }
+.head_semi_oily { color: var(--semi); }
+.head_lean { color: var(--lean); }
+
+.cell {
+  min-height: 92px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.cell_oily { background: var(--oily-bg); }
+.cell_semi_oily { background: var(--semi-bg); }
+.cell_lean { background: var(--lean-bg); }
+.cell_oily:hover { background: var(--oily-bg2); }
+.cell_semi_oily:hover { background: var(--semi-bg2); }
+.cell_lean:hover { background: var(--lean-bg2); }
+
+/* ── phone: stacked bands ────────────────────────────────────── */
+.stack { display: none; }
+
+@media (max-width: 680px) {
+  .wrapper { padding: 16px 12px 14px; }
+  .matrix { display: none; }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+
+  .band {
+    padding: 12px 12px 10px;
+    border-radius: 10px;
+    border-left: 4px solid currentColor;
+  }
+  .band_oily { background: var(--oily-bg); color: var(--oily); }
+  .band_semi_oily { background: var(--semi-bg); color: var(--semi); }
+  .band_lean { background: var(--lean-bg); color: var(--lean); }
+
+  .bandTitle {
+    margin: 0 0 8px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .groups { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .group {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+  .groupLabel {
+    padding-top: 4px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 }
