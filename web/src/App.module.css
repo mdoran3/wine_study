@@ -9,3 +9,10 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Mid-quiz (a question or the results card is showing) the only way out is the Exit Test button,
+   so a stray tap on Back can't abandon a test. The quiz start screens still show the strip. */
+.layout:has([class*='quizCard']) nav[aria-label='Breadcrumb'],
+.layout:has([class*='resultsCard']) nav[aria-label='Breadcrumb'] {
+  display: none;
+}

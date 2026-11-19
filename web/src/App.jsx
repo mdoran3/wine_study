@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import HomePage from './pages/HomePage/HomePage';
 import ReviewPage from './pages/ReviewPage/ReviewPage';
 import TestPage from './pages/TestPage/TestPage';
@@ -29,6 +30,7 @@ export default function App() {
     <BrowserRouter>
       <div className={styles.layout}>
         <Header />
+        <Breadcrumbs />
         <main className={styles.main}>
           <Routes>
             <Route path="/" element={<HomePage />} />
