@@ -374,36 +374,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:Haro_-_Bodegas_Muga_01.jpg"
    }
   ],
-  "cvne": [
-   {
-    "file": "/bodegas/cvne-1.jpg",
-    "caption": "The CVNE bodega in Haro",
-    "author": "Maite Gu",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "page": "https://commons.wikimedia.org/wiki/File:Bodegas_de_CVNE.jpg"
-   }
-  ],
-  "lopez-heredia": [
-   {
-    "file": "/bodegas/lopez-heredia-1.jpg",
-    "caption": "Viña Tondonia bodega, Haro",
-    "author": "Zarateman",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "page": "https://commons.wikimedia.org/wiki/File:Haro_-_Bodegas_L%C3%B3pez_de_Heredia_Vi%C3%B1a_Tondonia_14.jpg"
-   }
-  ],
-  "riscal": [
-   {
-    "file": "/bodegas/riscal-1.jpg",
-    "caption": "Marqués de Riscal hotel and vineyards, Elciego",
-    "author": "Roderich Kahn",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "page": "https://commons.wikimedia.org/wiki/File:Elciego_-_Marqu%C3%A9s_de_Riscal_Hotel_RK01.jpg"
-   }
-  ],
   "emilio-moro": [
    {
     "file": "/bodegas/emilio-moro-1.jpg",
@@ -414,26 +384,6 @@
     "page": "https://commons.wikimedia.org/wiki/File:Bodegas_Emilio_Moro.jpg"
    }
   ],
-  "vega-sicilia": [
-   {
-    "file": "/bodegas/vega-sicilia-1.jpg",
-    "caption": "Barrel cellar at Vega Sicilia",
-    "author": "moctavio from Miami, USA",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "page": "https://commons.wikimedia.org/wiki/File:Vega_Sicilia,_bodegas.jpg"
-   }
-  ],
-  "alvaro-palacios": [
-   {
-    "file": "/bodegas/alvaro-palacios-1.jpg",
-    "caption": "Celler Álvaro Palacios, Gratallops",
-    "author": "Lohen11 - Josep Renalias",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "page": "https://commons.wikimedia.org/wiki/File:Gratallops_-_Celler_%C3%81lvaro_Palacios.JPG"
-   }
-  ],
   "gramona": [
    {
     "file": "/bodegas/gramona-1.jpg",
@@ -442,26 +392,6 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Gramona-cavalls19.jpg"
-   }
-  ],
-  "gonzalez-byass": [
-   {
-    "file": "/bodegas/gonzalez-byass-1.jpg",
-    "caption": "A vine-covered street inside Bodega González Byass, Jerez",
-    "author": "Michimaya",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "page": "https://commons.wikimedia.org/wiki/File:Bodega_Gonzalez-_Byas_Jerez_de_la_Frontera.JPG"
-   }
-  ],
-  "lustau": [
-   {
-    "file": "/bodegas/lustau-1.jpg",
-    "caption": "Bodegas Lustau, Jerez de la Frontera",
-    "author": "Caballero 1830",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "page": "https://commons.wikimedia.org/wiki/File:Bodegas_Lustau._Patio.jpg"
    }
   ],
   "codorniu": [

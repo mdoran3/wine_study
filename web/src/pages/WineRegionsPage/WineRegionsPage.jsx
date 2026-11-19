@@ -150,8 +150,7 @@ function InfoPanel({ region, pinned, bodega, onSelectBodega }) {
           {Object.values(groups).map(gr => (
             <li key={gr.label}><span className={styles.swatch} style={{ background: gr.color }} />{gr.label}</li>
           ))}
-          <li><LegendPin color="#8e2a3f" />Bodega (shown when zoomed in)</li>
-          <li><LegendPin color="#e5a100" />Bodega we pour from</li>
+          <li><LegendPin color="#e5a100" />Bodega we pour from (shown when zoomed in)</li>
         </ul>
         <p className={styles.note}>Region outlines are approximate and show the general area, not exact legal boundaries.</p>
       </aside>
@@ -427,7 +426,10 @@ export default function WineRegionsPage() {
               {map.cities.filter(c => c.tier <= cityTier).map(c => (
                 <g key={c.name} className={styles[`city${c.tier}`]}>
                   <circle cx={c.x} cy={c.y} r={(c.tier === 1 ? 2.6 : 2) * inv} />
-                  <text x={c.x + 4 * inv} y={c.y + 3 * inv}>{c.name}</text>
+                  {c.side === 'left' && <text x={c.x - 4 * inv} y={c.y + 3 * inv} textAnchor="end">{c.name}</text>}
+                  {c.side === 'up' && <text x={c.x} y={c.y - 5 * inv} textAnchor="middle">{c.name}</text>}
+                  {c.side === 'down' && <text x={c.x} y={c.y + 11 * inv} textAnchor="middle">{c.name}</text>}
+                  {c.side === 'right' && <text x={c.x + 4 * inv} y={c.y + 3 * inv}>{c.name}</text>}
                 </g>
               ))}
             </g>

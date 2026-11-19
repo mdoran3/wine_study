@@ -234,6 +234,9 @@ river_labels = {
 }
 
 # ---- cities and wine towns (scripts/cities_src.json, built by fetch_cities.py) ------------
+# label side for towns whose names would otherwise collide with a neighbour's label
+CITY_SIDE = {'Haro': 'left', 'Laguardia': 'down', 'Logroño': 'down', 'Peñafiel': 'down', 'Rueda': 'left',
+             'Medina del Campo': 'down'}
 cities = []
 for c in json.load(open(os.path.join(os.path.dirname(__file__), 'cities_src.json'))):
     if c['lon'] < -13 and c['lat'] < 30:          # Canary Islands: drawn in the inset
@@ -243,7 +246,8 @@ for c in json.load(open(os.path.join(os.path.dirname(__file__), 'cities_src.json
         x, y = proj(c['lon'], c['lat'])
         if not (0 <= x <= W and 0 <= y <= H):
             continue
-    cities.append({'name': c['name'], 'tier': c['tier'], 'x': round(x, 1), 'y': round(y, 1)})
+    cities.append({'name': c['name'], 'tier': c['tier'], 'x': round(x, 1), 'y': round(y, 1),
+                   'side': CITY_SIDE.get(c['name'], 'right')})
 
 # ---- zoom views per region (x, y, w, h in map units) ----------------------------------
 def view_for(box_, pad):
@@ -289,6 +293,8 @@ from shapely.geometry import Point
 bod_src = json.load(open(os.path.join(os.path.dirname(__file__), 'bodegas_src.json')))
 bodegas = []
 for b in bod_src:
+    if not b['wines']:
+        continue   # only list bodegas we pour wines from
     pt = Point(b['lon'], b['lat'])
     geom = regions_geo.get(b['region'])
     if b['region'] == 'canary-islands':

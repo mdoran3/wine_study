@@ -33,28 +33,6 @@
   ]
  },
  {
-  "id": "cvne",
-  "name": "CVNE",
-  "region": "rioja",
-  "town": "Haro, La Rioja",
-  "lat": 42.5819,
-  "lon": -2.8491,
-  "x": 349.1,
-  "y": 100.3,
-  "wines": []
- },
- {
-  "id": "lopez-heredia",
-  "name": "R. López de Heredia Viña Tondonia",
-  "region": "rioja",
-  "town": "Haro, La Rioja",
-  "lat": 42.5844,
-  "lon": -2.8481,
-  "x": 349.2,
-  "y": 100.2,
-  "wines": []
- },
- {
   "id": "el-coto",
   "name": "El Coto de Rioja",
   "region": "rioja",
@@ -70,17 +48,6 @@
    "Coto de Imaz Reserva",
    "Coto de Imaz Gran Reserva"
   ]
- },
- {
-  "id": "riscal",
-  "name": "Marqués de Riscal",
-  "region": "rioja",
-  "town": "Elciego, Álava (Rioja Alavesa)",
-  "lat": 42.5115,
-  "lon": -2.6193,
-  "x": 360.0,
-  "y": 104.7,
-  "wines": []
  },
  {
   "id": "murrieta",
@@ -139,17 +106,6 @@
   ]
  },
  {
-  "id": "pazo-senorans",
-  "name": "Pazo de Señoráns",
-  "region": "rias-baixas",
-  "town": "Meis, Pontevedra",
-  "lat": 42.5469,
-  "lon": -8.7087,
-  "x": 70.8,
-  "y": 102.5,
-  "wines": []
- },
- {
   "id": "emilio-moro",
   "name": "Bodegas Emilio Moro",
   "region": "ribera-del-duero",
@@ -178,39 +134,6 @@
   ]
  },
  {
-  "id": "vega-sicilia",
-  "name": "Vega Sicilia",
-  "region": "ribera-del-duero",
-  "town": "Valbuena de Duero, Valladolid",
-  "lat": 41.6293,
-  "lon": -4.2938,
-  "x": 280.5,
-  "y": 159.4,
-  "wines": []
- },
- {
-  "id": "pingus",
-  "name": "Dominio de Pingus",
-  "region": "ribera-del-duero",
-  "town": "Quintanilla de Onésimo, Valladolid",
-  "lat": 41.6269,
-  "lon": -4.3636,
-  "x": 277.2,
-  "y": 159.5,
-  "wines": []
- },
- {
-  "id": "palacios-bierzo",
-  "name": "Descendientes de J. Palacios",
-  "region": "bierzo",
-  "town": "Villafranca del Bierzo, León",
-  "lat": 42.5702,
-  "lon": -6.8191,
-  "x": 160.6,
-  "y": 101.0,
-  "wines": []
- },
- {
   "id": "vatan",
   "name": "Bodegas Vatan",
   "region": "toro",
@@ -222,28 +145,6 @@
   "wines": [
    "Vatan"
   ]
- },
- {
-  "id": "txomin-etxaniz",
-  "name": "Txomin Etxaniz",
-  "region": "getariako-txakolina",
-  "town": "Getaria, Gipuzkoa",
-  "lat": 43.296,
-  "lon": -2.1942,
-  "x": 380.2,
-  "y": 56.0,
-  "wines": []
- },
- {
-  "id": "ameztoi",
-  "name": "Ameztoi",
-  "region": "getariako-txakolina",
-  "town": "Getaria, Gipuzkoa",
-  "lat": 43.294,
-  "lon": -2.1994,
-  "x": 380.0,
-  "y": 56.2,
-  "wines": []
  },
  {
   "id": "codorniu",
@@ -271,83 +172,6 @@
   "wines": [
    "III Lustros Grand Reserva"
   ]
- },
- {
-  "id": "torres",
-  "name": "Bodegas Torres",
-  "region": "penedes",
-  "town": "Vilafranca del Penedès, Barcelona",
-  "lat": 41.3448,
-  "lon": 1.7043,
-  "x": 565.4,
-  "y": 177.0,
-  "wines": []
- },
- {
-  "id": "alvaro-palacios",
-  "name": "Álvaro Palacios",
-  "region": "priorat",
-  "town": "Gratallops, Tarragona",
-  "lat": 41.1899,
-  "lon": 0.78,
-  "x": 521.5,
-  "y": 186.6,
-  "wines": []
- },
- {
-  "id": "borsao",
-  "name": "Bodegas Borsao",
-  "region": "campo-de-borja",
-  "town": "Borja, Zaragoza",
-  "lat": 41.8321,
-  "lon": -1.5272,
-  "x": 411.9,
-  "y": 146.8,
-  "wines": []
- },
- {
-  "id": "el-grifo",
-  "name": "Bodega El Grifo",
-  "region": "canary-islands",
-  "town": "San Bartolomé, Lanzarote",
-  "lat": 29.0015,
-  "lon": -13.6454,
-  "x": 155.7,
-  "y": 524.9,
-  "wines": []
- },
- {
-  "id": "gonzalez-byass",
-  "name": "González Byass",
-  "region": "jerez",
-  "town": "Jerez de la Frontera, Cádiz",
-  "lat": 36.6814,
-  "lon": -6.1409,
-  "x": 192.8,
-  "y": 466.2,
-  "wines": []
- },
- {
-  "id": "lustau",
-  "name": "Bodegas Lustau",
-  "region": "jerez",
-  "town": "Jerez de la Frontera, Cádiz",
-  "lat": 36.6846,
-  "lon": -6.1307,
-  "x": 193.3,
-  "y": 466.0,
-  "wines": []
- },
- {
-  "id": "barbadillo",
-  "name": "Bodegas Barbadillo",
-  "region": "jerez",
-  "town": "Sanlúcar de Barrameda, Cádiz",
-  "lat": 36.7776,
-  "lon": -6.3478,
-  "x": 183.0,
-  "y": 460.2,
-  "wines": []
  },
  {
   "id": "clos-i-terrasses",
