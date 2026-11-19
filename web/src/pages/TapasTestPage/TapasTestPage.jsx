@@ -31,6 +31,12 @@ function norm(s) {
     .join(' ');
 }
 
+// Ingredients that come in several forms ("eggs", "egg yolk", "whole egg"; "tomato", "cherry tomatoes").
+// A wrong option from the same family as anything in the dish would be arguable, so it is never offered.
+const FAMILIES = ['egg', 'tomato', 'potato', 'onion', 'pepper', 'mushroom', 'lettuce', 'cabbage', 'beet', 'scallop',
+  'shrimp', 'apple', 'pear', 'almond', 'walnut', 'pistachio', 'hazelnut', 'sprout', 'pasta', 'rice', 'bean'];
+const familiesOf = s => FAMILIES.filter(f => norm(s).split(' ').some(w => w.startsWith(f)));
+
 // Quiz answers use core_ingredients (the food itself). The full ingredient list, with seasonings,
 // herbs, oils and garnishes, stays on the review page. See scripts/classify_ingredients.py.
 const coreOf = item => (item.core_ingredients?.length ? item.core_ingredients : item.ingredients);
@@ -38,12 +44,16 @@ const coreOf = item => (item.core_ingredients?.length ? item.core_ingredients : 
 // Pick up to n wrong options: not in the dish (any spelling, and not in any same-named variant of it,
 // e.g. the two Salmon A La Plancha entries), and no two alike.
 function pickWrongs(pool, item, n) {
-  const taken = new Set(menu.filter(m => m.name === item.name).flatMap(m => m.ingredients).map(norm));
+  const inDish = menu.filter(m => m.name === item.name).flatMap(m => m.ingredients);
+  const taken = new Set(inDish.map(norm));
+  const takenFamilies = new Set(inDish.flatMap(familiesOf));
   const out = [];
   for (const cand of shuffle(pool)) {
     const k = norm(cand);
-    if (taken.has(k)) continue;
+    const fams = familiesOf(cand);
+    if (taken.has(k) || fams.some(f => takenFamilies.has(f))) continue;
     taken.add(k);
+    fams.forEach(f => takenFamilies.add(f));       // and no two wrong options from one family either
     out.push(cand);
     if (out.length === n) break;
   }
@@ -108,9 +118,15 @@ function generateQuiz(filter) {
     ? menu.filter(i => FILTER_TYPES[filter].includes(i.type))
     : menu;
 
-  // wrong options come only from other dishes' core ingredients (and never from a dish's own name)
+  // Wrong options come only from other dishes' core ingredients (never from a dish's own name), and
+  // only from the same side of the menu: a dessert gets other desserts' ingredients, a savoury dish
+  // never gets chocolate or vanilla ice cream.
   const dishNames = new Set(menu.map(i => i.name.toLowerCase()));
-  const corePool = [...new Set(menu.flatMap(coreOf))].filter(i => !dishNames.has(i.toLowerCase()));
+  const poolFor = dessert => [...new Set(menu.filter(i => (i.type === 'dessert') === dessert).flatMap(coreOf))]
+    .filter(i => !dishNames.has(i.toLowerCase()));
+  const dessertPool = poolFor(true);
+  const savouryPool = poolFor(false);
+  const corePoolOf = item => (item.type === 'dessert' ? dessertPool : savouryPool);
   const itemsWithSauces = pool.filter(i => i.sauces.length > 0);
   const allNames = pool.map(dishLabel);
 
@@ -122,11 +138,17 @@ function generateQuiz(filter) {
   const dressingPool = [...new Set(menu.flatMap(i => (isSalad(i)
     ? shortSauces(i)
     : shortSauces(i).filter(x => DRESSING_LIKE.test(x)))))];
-  const saucePool = [...new Set(menu.filter(i => !isSalad(i)).flatMap(shortSauces))];
+  // sweet sauces are only ever offered for desserts, and never for a savoury dish
+  const isDessert = item => item.type === 'dessert';
+  const dessertSaucePool = [...new Set(menu.filter(isDessert).flatMap(shortSauces))];
+  const saucePool = [...new Set(menu.filter(i => !isSalad(i) && !isDessert(i)).flatMap(shortSauces))];
+  const poolOf = item => (isSalad(item) ? dressingPool : isDessert(item) ? dessertSaucePool : saucePool);
+  // there are only three distinct dessert sauces, so a dessert question may have just three choices
+  const minWrongs = item => (isDessert(item) ? 2 : 3);
   const wrongSauces = (item, n) => {
     const own = new Set(menu.filter(m => m.name === item.name).flatMap(shortSauces).map(norm));
     const out = [];
-    for (const cand of shuffle(isSalad(item) ? dressingPool : saucePool)) {
+    for (const cand of shuffle(poolOf(item))) {
       if (own.has(norm(cand)) || out.some(o => norm(o) === norm(cand))) continue;
       out.push(cand);
       if (out.length === n) break;
@@ -143,7 +165,7 @@ function generateQuiz(filter) {
     const all = shortSauces(item);
     if (all.length === 1) {
       const wrongs = wrongSauces(item, 3);
-      if (wrongs.length < 3) continue;
+      if (wrongs.length < minWrongs(item)) continue;
       sauceQs.push({
         type: 'sauce',
         dish: dishLabel(item),
@@ -155,7 +177,7 @@ function generateQuiz(filter) {
       });
     } else {
       const wrongs = wrongSauces(item, 4);
-      if (wrongs.length < 3) continue;
+      if (wrongs.length < minWrongs(item)) continue;
       sauceMultiQs.push({
         type: 'multiselect_sauces',
         dish: dishLabel(item),
@@ -174,7 +196,7 @@ function generateQuiz(filter) {
     const core = coreOf(item);
     if (core.length === 0) continue;
     const correct = shuffle([...core])[0];
-    const wrongs = pickWrongs(corePool, item, 3);
+    const wrongs = pickWrongs(corePoolOf(item), item, 3);
     if (wrongs.length < 3) continue;
     ingQs.push({
       type: 'ingredient',
@@ -192,7 +214,7 @@ function generateQuiz(filter) {
     const core = coreOf(item);
     if (core.length < 2) continue;
     const correct = shuffle([...core]).slice(0, Math.min(4, core.length));
-    const distractors = pickWrongs(corePool, item, 4);
+    const distractors = pickWrongs(corePoolOf(item), item, 4);
     if (distractors.length < 2) continue;
     multiQs.push({
       type: 'multiselect_ingredients',
