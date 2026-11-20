@@ -61,20 +61,10 @@ function pickWrongs(pool, item, n) {
   return out;
 }
 
-const TYPE_LABELS = {
-  cold_tapas: 'Cold Tapa', hot_tapas: 'Hot Tapa', soup: 'Soup', salad: 'Salad',
-  paella: 'Paella', dessert: 'Dessert', lunch_entree: 'Lunch Entrée',
-};
-// Dishes that exist both as a lunch entrée and as something else (e.g. Salmon A La Plancha, which is
-// a hot tapa and a lunch entrée with different sides).
-const lunchNames = new Set(menu.filter(i => i.type === 'lunch_entree').map(i => i.name));
-
-// How a dish is named in a question. A lunch entrée always says so; a dish that also exists as a
-// lunch entrée says which one it is, so the question is never ambiguous.
+// How a dish is named in a question. A lunch entrée always says so. (Lunch entrées are only ever tested
+// in the Lunch Entrées section, never mixed in with the other dishes, so nothing else needs a qualifier.)
 function dishLabel(item) {
-  if (item.type === 'lunch_entree') return `${item.name} (Lunch Entrée)`;
-  if (lunchNames.has(item.name)) return `${item.name} (${TYPE_LABELS[item.type] ?? 'menu item'}, not the lunch entrée)`;
-  return item.name;
+  return item.type === 'lunch_entree' ? `${item.name} (Lunch Entrée)` : item.name;
 }
 
 function shortSauceName(s) {
@@ -115,15 +105,18 @@ function generateQuiz(filter) {
   const multiCount = 5;
   const mainCount  = total - descCount - multiCount;
 
+  // Lunch entrées belong to their own section: "All Items" and the other sections leave them out entirely,
+  // both as questions and as a source of wrong options. Only the Lunch Entrées test uses them.
+  const scope = filter === 'lunch_entree' ? menu : menu.filter(i => i.type !== 'lunch_entree');
   const pool = filter && FILTER_TYPES[filter]
-    ? menu.filter(i => FILTER_TYPES[filter].includes(i.type))
-    : menu;
+    ? scope.filter(i => FILTER_TYPES[filter].includes(i.type))
+    : scope;
 
   // Wrong options come only from other dishes' core ingredients (never from a dish's own name), and
   // only from the same side of the menu: a dessert gets other desserts' ingredients, a savoury dish
   // never gets chocolate or vanilla ice cream.
-  const dishNames = new Set(menu.map(i => i.name.toLowerCase()));
-  const poolFor = dessert => [...new Set(menu.filter(i => (i.type === 'dessert') === dessert).flatMap(coreOf))]
+  const dishNames = new Set(scope.map(i => i.name.toLowerCase()));
+  const poolFor = dessert => [...new Set(scope.filter(i => (i.type === 'dessert') === dessert).flatMap(coreOf))]
     .filter(i => !dishNames.has(i.toLowerCase()));
   const dessertPool = poolFor(true);
   const savouryPool = poolFor(false);
@@ -136,13 +129,13 @@ function generateQuiz(filter) {
   const isSalad = item => item.type === 'salad' || /^ensalada/i.test(item.name);
   const shortSauces = item => item.sauces.map(shortSauceName);
   const DRESSING_LIKE = /vinaigrette|dressing|mayonnaise|aioli|alioli|reduction/i;
-  const dressingPool = [...new Set(menu.flatMap(i => (isSalad(i)
+  const dressingPool = [...new Set(scope.flatMap(i => (isSalad(i)
     ? shortSauces(i)
     : shortSauces(i).filter(x => DRESSING_LIKE.test(x)))))];
   // sweet sauces are only ever offered for desserts, and never for a savoury dish
   const isDessert = item => item.type === 'dessert';
-  const dessertSaucePool = [...new Set(menu.filter(isDessert).flatMap(shortSauces))];
-  const saucePool = [...new Set(menu.filter(i => !isSalad(i) && !isDessert(i)).flatMap(shortSauces))];
+  const dessertSaucePool = [...new Set(scope.filter(isDessert).flatMap(shortSauces))];
+  const saucePool = [...new Set(scope.filter(i => !isSalad(i) && !isDessert(i)).flatMap(shortSauces))];
   const poolOf = item => (isSalad(item) ? dressingPool : isDessert(item) ? dessertSaucePool : saucePool);
   // there are only three distinct dessert sauces, so a dessert question may have just three choices
   const minWrongs = item => (isDessert(item) ? 2 : 3);
@@ -351,6 +344,7 @@ export default function TapasTestPage() {
         <div className={styles.instructions}>
           <p>{filter ? '20' : '30'} randomly generated questions per test</p>
           <p>Covers sauces, ingredients, and matching descriptions to dishes</p>
+          {!filter && <p>Lunch Entrées have their own test and are not included here</p>}
           <p>Once you confirm an answer, you cannot go back and change it</p>
         </div>
         <button className={styles.startBtn} onClick={start}>Start Test</button>
